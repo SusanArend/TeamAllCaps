@@ -1,0 +1,20 @@
+{
+  "name": "groupproject2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SusanArend/TeamAllCaps.git"
+  },
+  "author": "Michelle Didier, Susan Heiniger, Adam McNerney, Rebecca Palmore, Yilin Xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SusanArend/TeamAllCaps/issues"
+  },
+  "homepage": "https://github.com/SusanArend/TeamAllCaps#readme"
+}
