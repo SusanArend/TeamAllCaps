@@ -35,8 +35,8 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
-					    <button class="waves-effect waves-blue lighten-2 btn" type="submit">
+					<div class="input-field col s12 center-align">
+					    <button class="waves-effect waves-light cyan accent-3 btn" type="submit">
 					      	SUBMIT
 					    </button>
 					</div>
@@ -62,21 +62,22 @@
 		<div class="row">
 			<form class="col s6 offset-s3">
 				<div class="row">
-					<div class="input-field col s12">
-					    <input id="first-name" type="text" class="validate" required>
-					    <label for="first-name">First Name</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <input id="last-name" type="text" class="validate" required>
-					    <label for="last-name">Last Name</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <input id="email-new" type="email" class="validate" required>
+					<div class="input-field col s10">
+					    <input id="email-new search" type="email" class="validate" required>
 					    <label for="email">Email</label>
+					</div>
+					<div class="input-field col s2">
+    					<button class="btn waves-effect waves-light" type="search" id="email-search"><i class="material-icons">search</i></button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+					   	<input disabled id="first-name" type="text" class="validate" required>
+					    <label for="first-name">First Name</label>
+  					</div>
+					<div class="input-field col s6">
+					    <input disabled id="last-name" type="text" class="validate" required>
+					    <label for="last-name">Last Name</label>
 					</div>
 				</div>
 				<div class="row">
@@ -98,8 +99,8 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
-					    <button class="waves-effect waves-blue lighten-2 btn" type="submit">
+					<div class="input-field col s12 center-align">
+					    <button class="waves-effect waves-light cyan accent-3 btn" type="submit" id="newuser-submit">
 					      	SUBMIT
 					    </button>
 					</div>
@@ -128,7 +129,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 	<script>
 		$(document).ready(function(){
-				//---ONE PAGER SMOOTH SCROLL SCRIPT---//
+			//---ONE PAGER SMOOTH SCROLL SCRIPT---//
 
 		    // Select all links with hashes
 		    $('a[href*="#"]')
