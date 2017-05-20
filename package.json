@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/SusanArend/TeamAllCaps/issues"
   },
-  "homepage": "https://github.com/SusanArend/TeamAllCaps#readme"
+  "homepage": "https://github.com/SusanArend/TeamAllCaps#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
+  }
 }
