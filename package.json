@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/SusanArend/TeamAllCaps/issues"
   },
-  "homepage": "https://github.com/SusanArend/TeamAllCaps#readme"
+  "homepage": "https://github.com/SusanArend/TeamAllCaps#readme",
+  "dependencies": {
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
 }
