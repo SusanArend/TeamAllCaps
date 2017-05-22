@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+	<title>APP NAME</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../public/assets/css/landing.css">
+</head>
+
+<body>
+	<div class="container" id="greeting-page">
+		<div class="row">
+			<div class="col s12 center-align" id="title">
+			<a id="greeting-link" class="smooth"></a>
+			    <h1>APP NAME</h1>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col s6 offset-s3">
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="email" type="email" class="validate" required>
+					    <label for="email">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="password" type="password" class="validate" required>
+					    <label for="password">Password</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <button class="waves-effect waves-blue lighten-2 btn" type="submit">
+					      	SUBMIT
+					    </button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="row">
+			<div class="col s12 center-align" id="title">
+			    <span class="flow-text">
+			      	<a href="#">Forgot Password?</a> | New User? <a href="#newuser-link">Sign-up!</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="newuser-page">
+		<a id="newuser-link" class="smooth"></a>
+		<div class="row">
+			<div class="col s12 center-align" id="title">
+			    <h1>Welcome!</h1>
+			</div>
+		</div>
+		<div class="row">
+			<form class="col s6 offset-s3">
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="first-name" type="text" class="validate" required>
+					    <label for="first-name">First Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="last-name" type="text" class="validate" required>
+					    <label for="last-name">Last Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="email-new" type="email" class="validate" required>
+					    <label for="email">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="pw-new" type="password" class="validate" required>
+					    <label for="password">Password</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="pw-new-valid" type="password" class="validate" required>
+					    <label for="password">Re-enter Password</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="fact" type="text" class="validate" required>
+					    <label for="fact">Fun Fact</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <button class="waves-effect waves-blue lighten-2 btn" type="submit">
+					      	SUBMIT
+					    </button>
+					</div>
+				</div>
+			</form>
+			<div class="row">
+				<div class="col s12 center-align" id="title">
+			    	<a href="#greeting-link">Back to Top</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="container">
+		<div class="row">
+        	<div class="col s12">
+				<div class="footer-copyright center-align">
+		            © 2017 Copyright Text
+		        </div>
+		    </div>
+		</div>
+    </footer>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function(){
+				//---ONE PAGER SMOOTH SCROLL SCRIPT---//
+		    // Select all links with hashes
+		    $('a[href*="#"]')
+		    // Remove links that don't actually link to anything
+		    .not('[href="#"]')
+		    .not('[href="#0"]')
+		    .click(function(event) {
+		        // On-page links
+		        if (
+		            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+		            && 
+		            location.hostname == this.hostname
+		            ) {
+		            // Figure out element to scroll to
+		            var target = $(this.hash);
+		            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		            // Does a scroll target exist?
+		            if (target.length) {
+		                // Only prevent default if animation is actually going to happen
+		                event.preventDefault();
+		                $('html, body').animate({
+		                scrollTop: target.offset().top
+		                }, 1000, function() {
+		                    // Callback after animation
+		                    // Must change focus!
+		                    var $target = $(target);
+		                    $target.focus();
+		                    if ($target.is(":focus")) { // Checking if the target was focused
+		                        return false;
+		                    } else {
+		                        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+		                        $target.focus(); // Set focus again
+		                    };
+		                });
+		            };
+		        };
+		    });
+		})
+	</script>
+</body>
+</html>
