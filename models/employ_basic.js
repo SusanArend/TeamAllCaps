@@ -1,3 +1,10 @@
+// table employ_basics schema
+// Columns: id (primary key), name (first and last name), 
+// email(email adress, set as unique), phone(phone number),
+// linkedin_url, title(position in the company),manager_id(manager index for this employee)
+// Foreign key relationship established between id and manager_id, foreign key: manager_id, 
+// reference: id
+
 module.exports = function(sequelize, DataTypes) {
   var employ_basic = sequelize.define("employ_basic", {
     id: {
