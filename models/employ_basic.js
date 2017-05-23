@@ -39,6 +39,10 @@ module.exports = function(sequelize, DataTypes) {
         model: "employ_basics",
         key: "id"
       }
+    },
+    photo_path: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
   return employ_basic;

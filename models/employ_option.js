@@ -19,10 +19,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.Integer,
       allowNull: false,
     },
-    photo: {
-      type: DataTypes.BLOB,
-      allowNull: false
-    },
     favorite: {
       type: DataTypes.STRING,
       allowNull: false
