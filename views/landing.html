@@ -5,23 +5,35 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 
-	<title>APP NAME</title>
+	<title>Plaudit!</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../public/assets/css/landing.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="yellow darken-1">
 	<div class="container" id="greeting-page">
 		<div class="row">
 			<div class="col s12 center-align" id="title">
-			<a id="greeting-link" class="smooth"></a>
-			    <h1>APP NAME</h1>
+				<a id="greeting-link" class="smooth"></a>
+			    <h1>Plaudit!</h1>
 			</div>
 		</div>
 		<div class="row">
-			<form class="col s6 offset-s3">
+			<div class="col m8 offset-m2 col s10 offset-s1 center-align" id="intro-text">
+			    <p>
+			    ˈplôdət<br>
+				noun<br>
+				1. an enthusiastic expression of approval<br>
+				2. a demonstration or round of applause, as for some approved or admired performance.
+			    </p>
+			</div>
+		</div>
+		<div class="row" id="sign-in">
+			<form class="col s10 offset-s1 col m6 offset-m3">
 				<div class="row">
 					<div class="input-field col s12">
 					    <input id="email" type="email" class="validate" required>
@@ -42,11 +54,10 @@
 					</div>
 				</div>
 			</form>
-		</div>
-		<div class="row">
 			<div class="col s12 center-align" id="title">
 			    <span class="flow-text">
-			      	<a href="#">Forgot Password?</a> | New User? <a href="#newuser-link">Sign-up!</a>
+			      		<a href="#">Forgot Password?</a> | 
+			      		New User? <a href="#newuser-link">Sign-up!</a>
 				</span>
 			</div>
 		</div>
@@ -60,7 +71,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<form class="col s6 offset-s3">
+			<form class="col s10 offset-s1 col m6 offset-m3">
 				<div class="row">
 					<div class="input-field col s10">
 					    <input id="email-new search" type="email" class="validate" required>
@@ -127,8 +138,25 @@
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+	<script src="../public/assets/js/DrawSVGPlugin.min.js"></script>
+	<script src="../public/assets/js/SplitText.min.js"></script>
 	<script>
 		$(document).ready(function(){
+
+			var tl = new TimelineLite, 
+		    mySplitText = new SplitText("#intro-text", {type:"words,chars"}), 
+		    words = mySplitText.words; //an array of all the divs that wrap each character
+
+			TweenLite.set("#intro-text", {perspective:400});
+
+			tl.staggerFrom(words, 1.0, {opacity:0, scale:3, x:20, rotationX:50, transformOrigin:"0% 100% 300",  ease:Back.easeOut}, 0.1, "+=0")
+			.to("#intro-text", 1.0, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=1.5")
+			.to("#intro-text", .8, {display: "none", scale:1.75, ease:Back.easeOut}, "-=.75")
+
+			.from("#sign-in", .8, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=0");
+
+
 			//---ONE PAGER SMOOTH SCROLL SCRIPT---//
 
 		    // Select all links with hashes
