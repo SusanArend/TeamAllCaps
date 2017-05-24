@@ -61,7 +61,7 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: false, save
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
-//Above should do same as:  app.use(express.static("./public")); process.cwd() reads current directory
+//Note: Above should do same as:  app.use(express.static("./public")); process.cwd() reads current directory
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -78,7 +78,7 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
-//DONT USE FORCE TRUE FOR PRODUCTION
+//IMPORTANT TODO:  DONT USE FORCE TRUE FOR PRODUCTION
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
