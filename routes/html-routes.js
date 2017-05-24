@@ -1,14 +1,67 @@
+// // *********************************************************************************
+// // html-routes.js - this file offers a set of routes for sending users to the various html pages
+// // *********************************************************************************
 
+// // Dependencies
+// // =============================================================
+var path = require("path");
 
+// // Routes
+// // =============================================================
+module.exports = function(app) {
 
+//IMPORTANT NOTE:  FOR ALL ROUTES OTHER THAN LOGIN/LOGOUT:  make sure to include connect-ensure-login as a parameter, as in the following example:
+// app.get('/profile',
+//   require('connect-ensure-login').ensureLoggedIn(),
+//   function(req, res){
+  //     res.render('profile', { user: req.user });
+//   });
 
+app.get('/login',
+  //IMPORTANT TODO:  Currently 'login' is not a handlebars view.  Seperate login page, or should this be /index for example?
+  function(req, res){
+    //TODO:  Adust the following line of code as needed to use handlebars viewing
+    // res.render('login');
+  });
+  
+app.post('/login', 
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+  
+app.get('/logout',
+  function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
 
+app.get('/profile',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+   //TODO:  Adust the following line of code as needed to use handlebars viewing 
+   //res.render('profile', { user: req.user });
+  });
 
+app.get('/feed',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+   //TODO:  Adust the following line of code as needed to use handlebars viewing 
+   //res.render('feed', { user: req.user });  });
+};
 
+app.get('/givebadge',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+   //TODO:  Adust the following line of code as needed to use handlebars viewing 
+   //res.render('givebadge', { user: req.user });  });
+};
 
-
-
-
+app.get('/faq',
+  function(req, res){
+    //TODO:  Adust the following line of code as needed to use handlebars viewing
+    // res.render('faq');
+});
 
 
 
@@ -33,7 +86,7 @@
 
 //   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-//   // index route loads view.html
+  // index route loads view.html
 //   app.get("/", function(req, res) {
 //     res.sendFile(path.join(__dirname, "../public/blog.html"));
 //   });
