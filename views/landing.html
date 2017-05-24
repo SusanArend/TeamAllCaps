@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="../public/assets/css/landing.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </head>
 
 <body class="yellow darken-1">
@@ -36,13 +38,13 @@
 			<form class="col s10 offset-s1 col m6 offset-m3">
 				<div class="row">
 					<div class="input-field col s12">
-					    <input id="email" type="email" class="validate" required>
+					    <input id="existing-email" type="email" class="validate" required>
 					    <label for="email">Email</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-					    <input id="password" type="password" class="validate" required>
+					    <input id="existing-password" type="password" class="validate" required>
 					    <label for="password">Password</label>
 					</div>
 				</div>
@@ -56,11 +58,30 @@
 			</form>
 			<div class="col s12 center-align" id="title">
 			    <span class="flow-text">
-			      		<a href="#">Forgot Password?</a> | 
+			      		<a href="#modal1">Forgot Password?</a> | 
 			      		New User? <a href="#newuser-link">Sign-up!</a>
 				</span>
 			</div>
 		</div>
+	</div>
+	<div class="container">
+		<div id="modal1" class="modal">
+    		<div class="modal-content">
+      		<h4>Forgotten Password</h4>
+      		<p>Please enter your email below, and an email will be sent with your password.</p>
+      		<form>
+				<div class="input-field">
+					<input id="new-email" type="email" class="validate" required>
+					<label for="email">Email</label>
+				</div>
+				<div class="input-field">
+					<button class="waves-effect waves-light cyan accent-3 btn" type="submit" id="recover-pw">SEND PASSWORD</button>
+				</div>
+      		<div id="confirm"></div>
+    	</div>
+    	<div class="modal-footer">
+      		<a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    	</div>
 	</div>
 
 	<div class="container" id="newuser-page">
@@ -74,7 +95,7 @@
 			<form class="col s10 offset-s1 col m6 offset-m3">
 				<div class="row">
 					<div class="input-field col s10">
-					    <input id="email-new search" type="email" class="validate" required>
+					    <input id="new-email" type="email" class="validate" required>
 					    <label for="email">Email</label>
 					</div>
 					<div class="input-field col s2">
@@ -134,15 +155,13 @@
 		    </div>
 		</div>
     </footer>
-
-
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 	<script src="../public/assets/js/DrawSVGPlugin.min.js"></script>
 	<script src="../public/assets/js/SplitText.min.js"></script>
 	<script>
 		$(document).ready(function(){
+
+			$('.modal').modal();
 
 			var tl = new TimelineLite, 
 		    mySplitText = new SplitText("#intro-text", {type:"words,chars"}), 
