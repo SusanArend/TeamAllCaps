@@ -17,9 +17,9 @@ module.exports = function(app){
 			},
 			include: [db.employ_option]
 		}).then(function(dbemploy_basic){
-			if (dbemploy_basic.password && req.params.email === dbemploy_basic.password){
+			if (dbemploy_basic.password && req.params.password === dbemploy_basic.password){
 				res.redirect("/app/profile/:email");
-			} else if(dbemploy_basic.password & req.params.email !== dbemploy_basic.password){
+			} else if(dbemploy_basic.password & req.params.password !== dbemploy_basic.password){
 				res.json(true);
 			}else if(!dbemploy_basic.password){
 				res.json(false);
