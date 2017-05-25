@@ -7,12 +7,13 @@ var records = [
 
 exports.findById = function(id, cb) {
   process.nextTick(function() {
-    var idx = id - 1;
-    if (records[idx]) {
-      cb(null, records[idx]);
-    } else {
-      cb(new Error('User ' + id + ' does not exist'));
-    }
+    //IMPOTANT TODO: REPLACE THIS WITH A MYSQL QUERY (search database for user with that id)
+    // var idx = id - 1;
+    // if (records[idx]) {
+    //   cb(null, records[idx]);
+    // } else {
+    //   cb(new Error('User ' + id + ' does not exist'));
+    // }
   });
 }
 
