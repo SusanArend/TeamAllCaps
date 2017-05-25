@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-  </head>
-  <body>
-  
-  </body>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+
+	<title>Profile</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+	<div class="container" id="user-profile">
+		<div class="row"> 
+			<div class="col s12 center-align" id="greeting">
+				<h1>Hello {{this.firstName}}!</h1>
+			</div>
+		</div>
+
+		<div class="row"> 
+			<div class="col s12 center-align" id="user-name">
+			<!-- need to update to link to user image -->
+			<img src="{{this.userImg}}" alt="" class="circle">
+		</div>
+
+	<!-- User Specific Feed -->
+		<div class="row"> 
+			<div class="col s12 center-align" id="badge-history">
+				<h2>Badge History</h2>
+			</div>
+		</div>
+
+		<div class="row"> 
+			<div class="col s12 center-align" id="greeting">
+				<ul>
+				  <!-- need to update to link to table in db-->
+				  {{#each badge}}
+				  	<li class="collection-item avatar">
+				      <!-- update to link to badge image -->
+				      <img src="{{this.badgeImg}}" alt="" class="circle">
+				      <!-- update to link to sender and recipient -->
+				      <span class="title">{{this.sender}} gave you a badge!</span>
+				      <!-- update to link to badge message -->
+				      <p>{{this.badgeMsg}}</p>
+				  	</li>
+				  {{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<footer class="container">
+		<div class="row">
+        	<div class="col s12">
+				<div class="footer-copyright center-align">
+		            © 2017 Copyright Plaudit!
+		        </div>
+		    </div>
+		</div>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+</body>
 </html>

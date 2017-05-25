@@ -14,6 +14,20 @@
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#recover-pw").click(function() {
+            var address = $("#recover-email").val();
+            $.get("http://localhost:3000/send", {
+                address: address
+            }, function(data) {
+                if (data == "sent") {
+                    $("#confirm").empty().html("A password reset button has been emailed to you. Please check your email to reset your password.");
+                }
+            });
+        });
+    });
+    </script>
 </head>
 
 <body class="yellow darken-1">
@@ -71,7 +85,7 @@
       		<p>Please enter your email below, and an email will be sent with your password.</p>
       		<form>
 				<div class="input-field">
-					<input id="new-email" type="email" class="validate" required>
+					<input id="recover-email" type="email" class="validate" required>
 					<label for="email">Email</label>
 				</div>
 				<div class="input-field">
