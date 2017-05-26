@@ -1,17 +1,43 @@
+/*color palette*/
+/* for header/footer/landing page BG - dark yellow - #ffde00*/
+/* for body BG - lighter yellow - #ffea5c */
+/* for text - lightest yellow - #fff8ca */
+/* for accents - teal - #6DDDB8  && charcoal - #767676*/
+.waves-effect.waves-meeshteal {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(109, 221, 184, 0.98);
+    }
+.btn {
+    background-color: #6DDDB8;
+}
 body {
-	background-color: #fff;
-	color: #fff8ca;
+	background-color: #ffde00;
+	color: #fff;
+}
+
+h1, p {
+    color: #fff8ca;
+}
+
+.flow-text {
+    font-size: 16px;
+    color: #767676;
+}
+
+a {
+    color: #fff8ca;
+}
+
+a:hover, a:active, a:visited {
+    color: #fff;
 }
 
 #greeting-page, #newuser-page {
 	height: 100vh;
 }
 
-button {
-	margin: 0 auto;
-}
-
-h1 {
+h1, h2, h3, h4 {
 	font-family: 'Lobster', cursive;
 }
 
@@ -23,10 +49,21 @@ h1 {
 #sign-in {
     opacity: 1;
 }
+/*MODAL*/
+.modal, .modal .modal-footer {
+    background-color: #ffde00;
+    color: #fff8ca;
+    
+}
+
+
 
 /*FORMS*/
 
 /* label color */
+.input-field {
+    margin-top: 0;
+}
 .input-field label {
     color: #fff8ca;
 }
@@ -56,4 +93,17 @@ input[type=text], input[type=password], input[type=email] {
 /* icon prefix focus color */
 .input-field .prefix.active {
     color: #fff8ca;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff8ca;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fff8ca;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #fff8ca;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #fff8ca;
 }
