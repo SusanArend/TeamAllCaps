@@ -1,4 +1,7 @@
+config/config.json
 node_modules
 .DS_Store
 config/config.json
 authentication.js
+
+

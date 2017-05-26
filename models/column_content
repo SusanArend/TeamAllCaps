@@ -1,0 +1,22 @@
+Import csv file into mysql table employ_basic
+contents of columns in employ_basic listed below:
+1. ID
+2. Name ("First name" + " " + "last name")
+3. Email address
+4. phone number
+5. linkedin_url
+6. title (position in the company)
+7. manager_id
+8. photo_address (photo path in the local server)
+
+contents of columns in employ_option listed below:
+1. Email address
+2. Password
+2. photo 
+3. favorite
+
+Check whether user is the first time user (check whether email address exist in employ_option table)
+
+In employ_option table, each employ's information is created when the user first use the app.
+
+Based on the user's email information, the path of the photo is extracted, and make function to convert the photo path to photo, insert into employ_option table.
