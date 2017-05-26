@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     password: {
-      type: DataTypes.Integer,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     favorite: {
