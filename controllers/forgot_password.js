@@ -33,6 +33,12 @@ var smtpTransport = nodemailer.createTransport({
 
 //------------------Routing Started ----------------------//
 
+app.use('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+ });
+
 app.get('/', function(req, res) {
     res.sendFile('forgot_password.html', { root: __dirname });
 });
@@ -44,19 +50,17 @@ app.get('/send', function(req, res) {
             subject: "Recover Your Plaudit Password",
             html: "Here is your Plaudit password: <p><b>" + result[0].employee_password + "</b></p><p><a href='#'>Log in to Plaudit now!</p>"
         }
-
         console.log(mailOptions);
         smtpTransport.sendMail(mailOptions, function(error, response) {
             if (error) {
                 console.log(error);
                 res.end("error");
             } else {
-                console.log("Message sent: " + response.message);
-                res.end("sent");
+            console.log("Message sent to: " + req.query.address);
+            res.end("sent");
             }
         });
     });
-
 });
 
 //--------------------Routing Over----------------------------//
