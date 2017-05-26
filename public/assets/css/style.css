@@ -1,15 +1,40 @@
-/*Sticky Footer*/
+/*color palette*/
+/* for header/footer BG - dark yellow - #ffde00*/
+/* for body BG - lighter yellow - #ffea5c */
+/* for text - lightest yellow - #fff8ca */
+/* for accents - teal - #6DDDB8  && charcoal - #767676*/
 
+
+/*GENERAL*/
 body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+	color: #fff8ca;
+	background-color: #ffea5c;
 }
 
-main {
+.brand-logo {
+	font-family: 'Lobster', cursive;
+}
+
+.main {
 	flex: 1 0 auto;
 }
 
 #github {
-	height: 50px;
+	height: 40px;
+}
+
+nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
+	background-color: #ffde00;
+	color: #fff8ca;
+}
+
+.material-icons {
+	color: #fff8ca;
+}
+
+.userView {
+	background-color: #6DDDB8;
 }

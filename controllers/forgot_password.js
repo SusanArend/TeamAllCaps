@@ -3,7 +3,7 @@ var nodemailer = require("nodemailer");
 var mysql = require("mysql");
 var app = express();
 var PORT = process.env.PORT || 3000;
-var authentication = require("./authentication.js");
+var authentication = require("../config/authentication.js");
 
 var connection = mysql.createConnection({
     host: "localhost",
