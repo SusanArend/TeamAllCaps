@@ -38,3 +38,13 @@ nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
 .userView {
 	background-color: #6DDDB8;
 }
+
+
+/*Additional Footer Styling*/
+.grey-text.text-lighten-4.right {
+	font-size: 20px;
+}
+
+footer.page-footer {
+	padding-top: 0px;
+}
