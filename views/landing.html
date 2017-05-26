@@ -8,25 +8,25 @@
 	<title>Plaudit!</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../public/assets/css/landing.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#recover-pw").click(function() {
-            var address = $("#recover-email").val();
-            $.get("http://localhost:3000/send", {
-                address: address
-            }, function(data) {
-                if (data == "sent") {
-                    $("#confirm").empty().html("A password reset button has been emailed to you. Please check your email to reset your password.");
-                }
-            });
-        });
-    });
+	<script>
+	    $(document).ready(function() {
+	        $("#recover-pw").click(function() {
+	            var address = $("#recover-email").val();
+	            $.get("http://localhost:3000/send", {
+	                address: address
+	            }, function(data) {
+	                if (data == "sent") {
+	                    $("#confirm").empty().html("A password reset button has been emailed to you. Please check your email to reset your password.");
+	                }
+	            });
+	        });
+	    });
     </script>
 </head>
 
@@ -108,13 +108,10 @@
 		<div class="row">
 			<form class="col s10 offset-s1 col m6 offset-m3">
 				<div class="row">
-					<div class="input-field col s10">
-					    <input id="new-email" type="email" class="validate" required>
-					    <label for="email">Email</label>
-					</div>
-					<div class="input-field col s2">
-    					<button class="btn waves-effect waves-light" type="search" id="email-search"><i class="material-icons">search</i></button>
-					</div>
+					<div class="input-field col s6 s12">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" placeholder="Email" required>
+                    </div>
 				</div>
 				<div class="row">
 					<div class="input-field col s6">
@@ -183,11 +180,11 @@
 
 			TweenLite.set("#intro-text", {perspective:400});
 
-			tl.staggerFrom(words, 1.0, {opacity:0, scale:3, x:20, rotationX:50, transformOrigin:"0% 100% 300",  ease:Back.easeOut}, 0.1, "+=0")
-			.to("#intro-text", 1.0, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=1.5")
+			tl.staggerFrom(words, 1.5, {opacity:0, scale:3, x:20, rotationX:50, transformOrigin:"0% 100% 300",  ease:Back.easeOut}, 0.1, "+=0")
+			.to("#intro-text", .8, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=1")
 			.to("#intro-text", .8, {display: "none", scale:1.75, ease:Back.easeOut}, "-=.75")
 
-			.from("#sign-in", .8, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=0");
+			.from("#sign-in", .6, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=0");
 
 
 			//---ONE PAGER SMOOTH SCROLL SCRIPT---//
