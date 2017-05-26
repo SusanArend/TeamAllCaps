@@ -63,10 +63,11 @@ module.exports = function(app) {
   });
 
   //  DELETE route for deleting a plaudit
-  app.delete("/api/plaudits/:id", function(req, res) {
-    db.Plaudit.destroy({
+  app.delete("/api/plaudits/", function(req, res) {
+    db.Plaudit.destroy(req.body,
+    {
       where: {
-        id: req.params.id
+        id: req.body.id
       }
     })
     .then(function(dbPlaudit) {
