@@ -24,6 +24,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("./public"));
+require("./routes/landing-routes.js")(app);
 
 // Routes =============================================================
 

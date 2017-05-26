@@ -18,14 +18,12 @@
   },
   "homepage": "https://github.com/SusanArend/TeamAllCaps#readme",
   "dependencies": {
-<<<<<<< HEAD
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mysql": "^2.13.0",
-    "sequelize": "^3.30.4"
-=======
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
->>>>>>> 03581fe625f67b19fc64997c21a09bfd03c89a51
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^3.30.4"
   }
 }
