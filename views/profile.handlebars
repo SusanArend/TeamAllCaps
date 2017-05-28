@@ -1,14 +1,14 @@
 	<div class="container" id="user-profile">
 		<div class="row"> 
 			<div class="col s12 center-align" id="greeting">
-				<h1>Hello {{this.firstName}}!</h1>
+				<h1>{{this.name}}</h1>
 			</div>
 		</div>
 
 		<div class="row"> 
 			<div class="col s12 center-align" id="user-name">
 			<!-- need to update to link to user image -->
-			<img src="{{this.userImg}}" alt="" class="circle">
+			<img src="{{this.img_url}}" alt="" class="circle">
 		</div>
 
 	<!-- User Specific Feed -->
@@ -22,14 +22,14 @@
 			<div class="col s12 center-align" id="greeting">
 				<ul>
 				  <!-- need to update to link to table in db-->
-				  {{#each badge}}
+				  {{#each badges}}
 				  	<li class="collection-item avatar">
 				      <!-- update to link to badge image -->
-				      <img src="{{this.badgeImg}}" alt="" class="circle">
+				      <img src="{{this.badgeurl}}" alt="" class="circle">
 				      <!-- update to link to sender and recipient -->
-				      <span class="title">{{this.sender}} gave you a badge!</span>
+				      <span class="title">{{this.sender_name}} gave a badge to {{this.recipient_name}}!</span>
 				      <!-- update to link to badge message -->
-				      <p>{{this.badgeMsg}}</p>
+				      <p>{{this.comment}}</p>
 				  	</li>
 				  {{/each}}
 				</ul>
