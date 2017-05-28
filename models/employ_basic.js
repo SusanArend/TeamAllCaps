@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     photo_path: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     }
   });
