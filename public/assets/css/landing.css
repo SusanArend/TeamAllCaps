@@ -1,17 +1,13 @@
-/*color palette*/
+/*COLOR PALETTE*/
 /* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
 /* for body BG - lighter yellow - #ffe97c */
 /* for text - lightest yellow - #fff8ca */
 /* for accents - teal - #6DDDB8  && charcoal - #767676*/
 
-.waves-effect.waves-meeshteal {
-     /* The alpha value allows the text and background color
-     of the button to still show through. */
-      background-color: rgba(109, 221, 184, 0.98);
-    }
-.btn {
-    background-color: #6DDDB8;
-}
+/*-----------------*/
+
+/*GENERAL*/
+
 body {
   background-color: #ffdf3e;
   color: #fff8ca;
@@ -21,6 +17,15 @@ h1, p {
     color: #fff8ca;
 }
 
+.waves-effect.waves-meeshteal {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(109, 221, 184, 0.98);
+    }
+.btn {
+    background-color: #6DDDB8;
+}
+
 .flow-text {
     font-size: 16px;
     color: #767676;
@@ -28,6 +33,7 @@ h1, p {
 
 a {
     color: #fff8ca;
+    cursor: pointer;
 }
 
 a:hover, a:active, a:visited {
@@ -38,7 +44,7 @@ a:hover, a:active, a:visited {
   height: 100vh;
 }
 
-h1, h2, h3, h4 {
+h1 {
   font-family: 'Lobster', cursive;
 }
 
@@ -50,14 +56,15 @@ h1, h2, h3, h4 {
 #sign-in {
     opacity: 1;
 }
+
+/*-----------------*/
+
 /*MODAL*/
 .modal, .modal .modal-footer {
-    background-color: #ffde00;
-    color: #fff8ca;
-    
+    background-color: #ffdf3e;
 }
 
-
+/*-----------------*/
 
 /*FORMS*/
 
