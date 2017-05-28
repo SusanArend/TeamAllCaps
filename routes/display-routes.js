@@ -11,16 +11,7 @@ module.exports = function(app){
 			}).then(function(data){
 				return data.name
 			}),
-			badge : db.employ_badge.findAll({order: 'createdAt DESC', limit: 10, 
-				include:[{
-					model: employ_basic,
-					where:{
-						id: Sequelize.col(senderid)
-					}
-				}]
-			})
-
-
+			badges : db.employ_badge.findAll({order: 'createdAt DESC', limit: 10})
 		};
 		res.render("index",hbsObject);
 	});
