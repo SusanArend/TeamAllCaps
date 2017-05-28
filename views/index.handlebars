@@ -1,20 +1,20 @@
 
 <h1>Welcome {{this.name}}!</h1>
 <!-- need to update to link to user image -->
-<img src="{{this.userImg}}" alt="" class="circle">
+<img src="{{this.img_url}}" alt="" class="circle">
 
 <h2>Activity Feed</h2>
 
 <ul>
   <!-- need to update to link to table in db-->
-  {{#each badge}}
+  {{#each badges}}
   	<li class="collection-item avatar">
       <!-- update to link to badge image -->
-      <img src="{{this.badgeImg}}" alt="" class="circle">
+      <img src="{{this.badgeurl}}" alt="" class="circle">
       <!-- update to link to sender and recipient -->
-      <span class="title">{{this.sender}} gave a badge to {{this.recipient}}!</span>
+      <span class="title">{{this.sender_name}} gave a badge to {{this.recipient_name}}!</span>
       <!-- update to link to badge message -->
-      <p>{{this.badgeMsg}}</p>
+      <p>{{this.comment}}</p>
   	</li>
   {{/each}}
 
