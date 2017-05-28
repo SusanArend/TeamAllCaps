@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var employ_badge = sequelize.define("employ_badge", {
-    give_id: {
+    sender_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         key: "id"
       }
     },
-    receive_id: { 
+    recipient_id: { 
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -19,29 +19,36 @@ module.exports = function(sequelize, DataTypes) {
     badge1: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0
     },
     badge2: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0
     },
     badge3: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0
     },
     badge4: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0
     },
     badge5: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0
     },
     badge6: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0
     },
     comment: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      allowNull: false,
     }
   });
   return employ_badge;
