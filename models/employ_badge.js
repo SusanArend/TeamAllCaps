@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     badgeurl: {
-      type: DataTypes.STRING.
+      type: DataTypes.STRING,
       allowNull: false
     }
     comment: {
