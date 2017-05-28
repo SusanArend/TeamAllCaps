@@ -18,10 +18,10 @@
 				<div class="col s12 m3">
 					<div class="card">
 						<div class="card-image">
-							<img src="../public/assets/images/badges/crown.svg">
+							<img src="../assets/images/badges/crown.svg">
 						</div>
 						<div class="card-content">
-							<input class="with-gap" name="crown" type="radio" id="badge1" />
+							<input class="with-gap" name="../assets/images/badges/crown.svg" type="radio" id="badge1" />
 							<label for="badge1">Workplace Royalty</label>
 						</div>
 					</div>
@@ -31,10 +31,10 @@
 				<div class="col s12 m3">
 					<div class="card">
 						<div class="card-image">
-							<img src="../public/assets/images/badges/lightbulb.svg">
+							<img src="../assets/images/badges/lightbulb.svg">
 						</div>
 						<div class="card-content">
-							<input class="with-gap" name="lightbulb" type="radio" id="badge2" data-url="../public/assets/images/badges/lightbulb.svg" />
+							<input class="with-gap" name="../assets/images/badges/lightbulb.svg" type="radio" id="badge2" />
 							<label for="badge2">Great Idea</label>
 						</div>
 					</div>
@@ -47,7 +47,7 @@
 							<img src="../public/assets/images/badges/star.svg">
 						</div>
 						<div class="card-content">
-							<input class="with-gap" name="star" type="radio" id="badge3" data-url="../public/assets/images/badges/star.svg" />
+							<input class="with-gap" name="../public/assets/images/badges/star.svg" type="radio" id="badge3" />
 							<label for="badge3">Superstar</label>
 						</div>
 					</div>
@@ -82,6 +82,7 @@
 		</form>
 	</div>
 	<script type="text/javascript">
+<<<<<<< HEAD
 		app.post("/badge/post", function(req, res) {
   			connection.query("INSERT INTO movies (movie) VALUES (?)", [req.body.movie], function(err, result) {
     		if (err) {
@@ -91,4 +92,52 @@
     		res.redirect("/index");
   		});
 });
+=======
+		$(document).ready(function() {
+			// Getting jQuery references to the post body, title, form, and author select
+			var recipient = $("#recipient");
+			var badge = $("#badge");
+			var comment = $("#comment");
+			var badgeForm = $("#badge-form");
+			// Adding an event listener for when the form is submitted
+			$(badgeForm).on("submit", handleFormSubmit);
+			// Gets the part of the url that comes after the "?" (which we have if we're updating a post)
+			var url = window.location.search;
+			var userID;
+			var recipientID;
+			var badgeID;
+			// Sets a flag for whether or not we're updating a post to be false initially
+			var updating = false;
+
+			// Otherwise if we have an author_id in our url, preset the author select box to be our Author
+			if (url.indexOf("?user_id=") !== -1) {
+				userId = url.split("=")[1];
+			}
+
+			// A function for handling what happens when the form to create a new post is submitted
+			function handleFormSubmit(event) {
+		    	event.preventDefault();
+		    	// Wont submit the post if we are missing a body, title, or author
+		    	if (!name.val().trim() || !badge.val() || !comment.val().trim()) {
+		      		return;
+		    	}
+		    	// Constructing a newPost object to hand to the database
+		    	var newBadge = {
+					sender_name: userId,
+			      	recipient_name: recipient.val().trim(),
+			    	badgeurl: badge.val(),
+			    	comment: comment.val().trim()
+		    	};
+		    	
+		    	submitBadge(newBadge);
+		  	};
+
+		  // Submits a new post and brings user to blog page upon completion
+		  function submitBadge(badge) {
+		    $.post("/badge/post", badge, function() {
+		      window.location.href = "/index";
+		    });
+		  }
+		});
+>>>>>>> updated givebadge handlbars file
 	</script>
