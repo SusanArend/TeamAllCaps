@@ -54,7 +54,8 @@ app.set("view engine", "handlebars");
 
 
 // Override with POST having ?_method=DELETE
-app.use(methodOverride("_method"));
+// app.use(methodOverride("_method"));
+//TODO: when we want/need to use this, will need to define methodOverride (look at older project)
 
 //Routes
 //======

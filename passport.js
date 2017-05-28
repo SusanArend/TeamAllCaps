@@ -2,7 +2,7 @@ var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     bcrypt = require('bcryptjs'),
     // EmployBasic = require('./models/employ_basic.js') may not need this at all
-    EmployOption = require('./models/employ_option.js')
+    db = require('./models')
 
 module.exports = function(app) {
   app.use(passport.initialize())
@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   passport.use(new LocalStrategy(
     function(email, password, done) {
-      EmployOption.findOne({
+      db.employ_option.findOne({
         where: {
           'email': email
         }
@@ -34,7 +34,6 @@ module.exports = function(app) {
         // }
         
         return done(null, false, { message: 'Incorrect credentials.' })
-          }
       })
     }
   ))
@@ -44,15 +43,15 @@ module.exports = function(app) {
   })
 
   passport.deserializeUser(function(id, done) {
-    EmployOption.findOne({
+    db.employ_option.findOne({
       where: {
         'id': id
-      }
+      },
+      include: [db.employ_option]
     }).then(function (user) {
       if (user == null) {
         done(new Error('Wrong user id.'))
-      }
-      
+      }      
       done(null, user)
     })
   })
