@@ -13,3 +13,4 @@ module.exports = function(app){
 		};
 		res.render("index",hbsObject);
 	});
+}
