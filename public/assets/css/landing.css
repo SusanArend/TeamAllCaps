@@ -11,6 +11,7 @@
 body {
   background-color: #ffdf3e;
   color: #fff8ca;
+  font-size: 16px;
 }
 
 h1, p {
@@ -77,7 +78,7 @@ h1 {
 }
 
 input[type=text], input[type=password], input[type=email] {
-    border-bottom: 1px solid #fff8ca
+    border-bottom: 1px solid #fff8ca;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
