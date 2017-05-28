@@ -1,8 +1,9 @@
 /*color palette*/
-/* for header/footer/landing page BG - dark yellow - #ffde00*/
-/* for body BG - lighter yellow - #ffea5c */
+/* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
+/* for body BG - lighter yellow - #ffe97c */
 /* for text - lightest yellow - #fff8ca */
 /* for accents - teal - #6DDDB8  && charcoal - #767676*/
+
 .waves-effect.waves-meeshteal {
      /* The alpha value allows the text and background color
      of the button to still show through. */
@@ -12,8 +13,8 @@
     background-color: #6DDDB8;
 }
 body {
-	background-color: #ffde00;
-	color: #fff;
+  background-color: #ffdf3e;
+  color: #fff8ca;
 }
 
 h1, p {
@@ -34,11 +35,11 @@ a:hover, a:active, a:visited {
 }
 
 #greeting-page, #newuser-page {
-	height: 100vh;
+  height: 100vh;
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Lobster', cursive;
+  font-family: 'Lobster', cursive;
 }
 
 #intro-text {
@@ -69,7 +70,7 @@ h1, h2, h3, h4 {
 }
 
 input[type=text], input[type=password], input[type=email] {
-   	border-bottom: 1px solid #fff8ca
+    border-bottom: 1px solid #fff8ca
 }
 /* label focus color */
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
