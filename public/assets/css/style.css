@@ -1,9 +1,10 @@
-/*color palette*/
-/* for header/footer BG - dark yellow - #ffde00*/
-/* for body BG - lighter yellow - #ffea5c */
+/*COLOR PALETTE*/
+/* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
+/* for body BG - lighter yellow - #ffe97c */
 /* for text - lightest yellow - #fff8ca */
 /* for accents - teal - #6DDDB8  && charcoal - #767676*/
 
+/*-----------------*/
 
 /*GENERAL*/
 body {
@@ -11,7 +12,7 @@ body {
 	min-height: 100vh;
 	flex-direction: column;
 	color: #fff8ca;
-	background-color: #ffea5c;
+	background-color: #ffe97c;
 }
 
 .brand-logo {
@@ -27,7 +28,7 @@ body {
 }
 
 nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
-	background-color: #ffde00;
+	background-color: #ffdf3e;
 	color: #fff8ca;
 }
 
