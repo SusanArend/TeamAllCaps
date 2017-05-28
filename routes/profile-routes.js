@@ -1,6 +1,6 @@
 var db = require("../models");
 
-moduel.exports =  function(app){
+module.exports =  function(app){
 	app.get("/profile/:name", function(req, res){
 		var hbsObject = {
 			name: req.params.name,
@@ -13,7 +13,7 @@ moduel.exports =  function(app){
 			}),
 			badges: db.employ_badge.findAll({
 				where: {
-					$or: [{sender.name: this.name}, {recipient_name: this.name}]
+					$or: [{sender_name: this.name}, {recipient_name: this.name}]
 				}, order: 'createdAt DESC', limit:10
 			})
 		}
