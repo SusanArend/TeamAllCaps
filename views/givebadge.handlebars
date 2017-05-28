@@ -82,17 +82,7 @@
 		</form>
 	</div>
 	<script type="text/javascript">
-<<<<<<< HEAD
-		app.post("/badge/post", function(req, res) {
-  			connection.query("INSERT INTO movies (movie) VALUES (?)", [req.body.movie], function(err, result) {
-    		if (err) {
-      			throw err;
-    		}
-    		alert ("Thanks! Your badge was submitted successfully.")
-    		res.redirect("/index");
-  		});
-});
-=======
+
 		$(document).ready(function() {
 			// Getting jQuery references to the post body, title, form, and author select
 			var recipient = $("#recipient");
