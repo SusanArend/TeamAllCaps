@@ -17,23 +17,25 @@ module.exports = function(app) {
   //     res.render('profile', { user: req.user });
 //   });
 
-app.get('/login',
-  //IMPORTANT TODO:  Currently 'login' is not a handlebars view.  Seperate login page, or should this be /index for example?
-  function(req, res){
-    //TODO:  Adust the following line of code as needed to use handlebars viewing
-    // res.render('login');
-  });
+//Think this isn't necessary, since not using a seperate login page.
+// app.get('/login', 
+//    function(req, res){
+//     //TODO:  Adust the following line of code as needed to use handlebars viewing
+//     res.render('landing');
+//   });
   
 app.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local', { failureRedirect: '/landing' }),
   function(req, res) {
-    res.redirect('/');
+    //TODO:  Adust the following line of code as needed to use handlebars viewing
+    res.redirect('/index');
   });
   
 app.get('/logout',
   function(req, res){
+    //TODO:  Adust the following line of code as needed to use handlebars viewing
     req.logout();
-    res.redirect('/');
+    res.redirect('/landing');
   });
 
 app.get('/profile',
@@ -43,7 +45,7 @@ app.get('/profile',
    //res.render('profile', { user: req.user });
   });
 
-app.get('/feed',
+app.get('/index',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
    //TODO:  Adust the following line of code as needed to use handlebars viewing 
