@@ -1,6 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app){
+
 	// Render landing.html at route "/"
 	app.get("/display/:email", 
 		require('connect-ensure-login').ensureLoggedIn(),
