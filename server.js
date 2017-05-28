@@ -48,7 +48,6 @@ require("./routes/landing-routes.js")(app);
 setupPassport(app);
 
 // Set Handlebars
-var exphbs = require("express-handlebars")
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -61,15 +60,11 @@ app.use(methodOverride("_method"));
 //======
 
 
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
-
-// Syncing our sequelize models and then starting our express app
-//IMPORTANT TODO:  DONT USE FORCE TRUE FOR PRODUCTION
-
-// require("./routes/html-routes.js")(app);
-// require("./routes/post-api-routes.js")(app);
-// require("./routes/author-api-routes.js")(app);
+require("./routes/display-routes.js")(app);
+require("./routes/givebadge-routes.js")(app);
+require("./routes/landing-routes.js")(app);
+require("./routes/faq-routes.js")(app);
+require("./routes/profile-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: false }).then(function() {
