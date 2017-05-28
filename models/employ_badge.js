@@ -13,9 +13,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     badgeurl: {
-      type: DataTypes.STRING.
-      allowNull: false
-    }
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     comment: {
       type: DataTypes.TEXT,
       allowNull: false,
