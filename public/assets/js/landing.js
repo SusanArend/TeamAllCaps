@@ -83,7 +83,9 @@ $(document).ready(function(){
 	    	}else if(data="invalid email"){
 	    		alert("invalid email");
 	    	};
-	    })
+	    });
+	    $("#recover-email").val("");
+	    $("#confirm").text("");
 	});
 
 
