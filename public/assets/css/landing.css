@@ -14,7 +14,10 @@ body {
   font-size: 16px;
 }
 
-#greeting-page, #newuser-page {
+#greeting-page {
+  height: 150vh;
+}
+#newuser-page {
   height: 100vh;
 }
 
@@ -24,6 +27,11 @@ h1, p {
 
 h1 {
   font-family: 'Lobster', cursive;
+  padding: 15px;
+}
+
+h3 {
+  font-size: 18px;
 }
 
 .flow-text {
@@ -49,6 +57,10 @@ a:hover, a:active, a:visited {
     opacity: 1;
 }
 
+.row {
+  margin-bottom: 5px;
+}
+
 /*buttons*/
 .waves-effect.waves-meeshteal {
      /* The alpha value allows the text and background color
@@ -59,8 +71,8 @@ a:hover, a:active, a:visited {
     background-color: #6DDDB8;
 }
 
-#newuser-submit, #login-btn {
-  margin-bottom: 30px;
+#newuser-submit, #user-login {
+  margin: 20px 0 30px 0;
 }
 
 :focus {
@@ -78,6 +90,16 @@ a:hover, a:active, a:visited {
 .header {
   margin-bottom: 0;
 }
+
+.modal .modal-close {
+  background-color: transparent;
+  color: #fff8ca;
+}
+
+.modal .modal-close:hover {
+  color: #fff;
+}
+
 /*-----------------*/
 
 /*MODAL*/
