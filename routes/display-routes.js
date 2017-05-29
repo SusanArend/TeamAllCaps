@@ -9,7 +9,8 @@ module.exports = function(app){
 		var hbsObject= {
 			name  : req.user.name,
 			img_url: req.user.photo_path,
-			badges : db.employ_badge.findAll({order: 'createdAt DESC', limit: 10})
+			badges : db.employ_badge.findAll({order: 'createdAt DESC', limit: 10}),
+			user : req.user //feed info into main.handlebars
 		};
 		res.render("index",hbsObject);
 	});

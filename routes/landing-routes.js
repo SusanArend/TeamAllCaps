@@ -1,7 +1,6 @@
 var path = require("path");
 var db = require("../models");
 var passport = require('passport');
-// var signup = require('../controllers/signup.js') //TODO REmove this, merging here.
 
 module.exports = function(app){
 	// Render landing.html at route "/"
