@@ -1,6 +1,13 @@
 var path = require("path");
 var db = require("../models");
 var passport = require('passport');
+var nodemailer = require("nodemailer");
+var authentication = require("../config/authentication.js");
+var smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: authentication
+});
 
 module.exports = function(app){
 	// Render landing.html at route "/"
@@ -26,6 +33,40 @@ module.exports = function(app){
 				res.send("invalid email");
 			};
 			
+		})
+	});
+
+	app.post('/sendemail',function(req.res){
+		db.employ_basic.findAll({attributes:['email']}).then(function(data){
+			var valid_email=[];
+			for (key in data){
+				valid_email.push(data[key].dataValues.email)
+			};
+			if(valid_email.indexOf(req.body.email)!==-1){
+				db.employ_option.findOne({
+			        where:{
+			            email: req.body.email
+			        }
+				}).then(function(data){
+			        var mailOptions= {
+			            to: req.body.email,
+			            subject: "Recover Your Plaudit Password",
+			            text: "Here is your Plaudit password: " + data.dataValues.password,
+			            html: "<body style='background-color:#ffea5c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #fff8ca;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + data.dataValues.password + "</b></p><p><a href='#'>Log in to Plaudit now!</p></body>"
+			        };
+			        smtpTransport.sendMail(mailOptions, function(error, response) {
+			            if (error) {
+			                console.log(error);
+			                res.send("error");
+			            } else {
+			            console.log("Message sent to: " + req.body.email);
+			            res.send("sent");
+			            }
+			        });
+			    });
+			}else{
+				res.send("invalid email")
+			};
 		})
 	});
 	//If the user email is valid and the user hasn't registed before, 

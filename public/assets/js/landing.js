@@ -71,6 +71,22 @@ $(document).ready(function(){
 		})
 	});
 
+	$("#recover-pw").click(function() {
+	    var user ={email:$("#recover-email").val().trim()};
+	    $("#confirm").text("Sending E-mail ... Please wait");
+	    $.post("/sendemail",user,function(data){
+	    	if(data = "sent"){
+	    		$("#confirm").empty().html(
+	           		"Thank you. Your Plaudit account password has been emailed to "
+	           		+ address + "."
+	           	);
+	    	}else if(data="invalid email"){
+	    		alert("invalid email");
+	    	};
+	    })
+	});
+
+
 	$("#newuser-submit").on("click", function(event){
 		event.preventDefault();
 		var newuser = {
