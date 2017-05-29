@@ -1,6 +1,6 @@
 var path = require("path");
 var db = require("../models");
-var passport = require('passport');.
+var passport = require('passport');
 
 module.exports = function(app){
 	// Render landing.html at route "/"
