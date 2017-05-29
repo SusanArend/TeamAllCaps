@@ -87,9 +87,16 @@ module.exports = function(app){
 						exist_email.push(data[key].dataValues.email);
 					};
 					if(exist_email.indexOf(req.body.email)===-1){
+						// var hashedPassword;
+						//  bcrypt.genSalt(10, function(err, salt) {
+						//     bcrypt.hash(req.body.password, salt, function(err, hash) {
+						//     	hashedPassword = hash;
+						//     });
+						// })
 						db.employ_option.create({
 							email: req.body.email,
 							password: req.body.password,
+							// password: hashedPassword,
 							favorite: req.body.favorite
 						}).then(function(){
 							res.send(true);
@@ -124,24 +131,24 @@ module.exports = function(app){
 //     res.redirect('landing')
 //   }
   
-//   bcrypt.genSalt(10, function(err, salt) {
-//     bcrypt.hash(password, salt, function(err, hash) {
-//         // Store hash in your password DB. 
-//       var newUser = {
-//         email: email,
-//         password: hash,
-//         favorite: favorite,
-//         id: id
-//       } 
-//             //TODO:  CUrrently this CREATES a user in the employ option table.  Is this correct, and then we fill in the id field as well?
-//   EmployOption.create(newUser).then(function() {
-//     res.redirect('/')
-//   }).catch(function(error) {
-//     //TODO:  Can delete or update the following line.  
-//     // This cactches an error in signup, could use flash middleware or similar to display it
-//      // req.flash('error', "Please, choose a different username.")
-//     res.redirect('/landing')
-//   })
+  // bcrypt.genSalt(10, function(err, salt) {
+  //   bcrypt.hash(password, salt, function(err, hash) {
+  //       // Store hash in your password DB. 
+  //     var newUser = {
+  //       email: email,
+  //       password: hash,
+  //       favorite: favorite,
+  //       id: id
+  //     } 
+  //           //TODO:  CUrrently this CREATES a user in the employ option table.  Is this correct, and then we fill in the id field as well?
+  // EmployOption.create(newUser).then(function() {
+  //   res.redirect('/')
+  // }).catch(function(error) {
+  //   //TODO:  Can delete or update the following line.  
+  //   // This cactches an error in signup, could use flash middleware or similar to display it
+  //    // req.flash('error', "Please, choose a different username.")
+  //   res.redirect('/landing')
+  // })
 
 //     });
 // });

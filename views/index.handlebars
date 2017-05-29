@@ -1,7 +1,7 @@
 
-<h1>Welcome {{this.name}}!</h1>
+<h1>Welcome {{user.name}}!</h1>
 <!-- need to update to link to user image -->
-<img src="{{this.img_url}}" alt="" class="circle">
+<img src="{{user.img_url}}" alt="" class="circle">
 
 <h2>Activity Feed</h2>
 
@@ -10,11 +10,11 @@
   {{#each badges}}
   	<li class="collection-item avatar">
       <!-- update to link to badge image -->
-      <img src="{{this.badgeurl}}" alt="" class="circle">
+      <img src="{{badgeurl}}" alt="" class="circle">
       <!-- update to link to sender and recipient -->
-      <span class="title">{{this.sender_name}} gave a badge to {{this.recipient_name}}!</span>
+      <span class="title">{{sender_name}} gave a badge to {{recipient_name}}!</span>
       <!-- update to link to badge message -->
-      <p>{{this.comment}}</p>
+      <p>{{comment}}</p>
   	</li>
   {{/each}}
 

@@ -19,7 +19,6 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var exphbs = require("express-handlebars");
 
-
 // Requiring our models for syncing
 var db = require("./models");
 
@@ -36,7 +35,6 @@ app.use(session({ secret: 'friedbanana', resave: false, saveUninitialized: false
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
-require("./routes/landing-routes.js")(app);
 //Note: Above should do same as:  app.use(express.static("./public")); process.cwd() reads current directory
 
 
