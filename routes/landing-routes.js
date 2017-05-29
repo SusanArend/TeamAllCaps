@@ -36,7 +36,7 @@ module.exports = function(app){
 		})
 	});
 
-	app.post('/sendemail',function(req.res){
+	app.post('/sendemail',function(req,res){
 		db.employ_basic.findAll({attributes:['email']}).then(function(data){
 			var valid_email=[];
 			for (key in data){
