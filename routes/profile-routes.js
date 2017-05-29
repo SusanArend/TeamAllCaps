@@ -1,10 +1,13 @@
 var db = require("../models");
 
 module.exports =  function(app){
-	app.get("/profile/:name", function(req, res){
+	app.get("/profile/:name", 
+		require('connect-ensure-login').ensureLoggedIn(),
+		function(req, res){
 		var valid_names = db.employ_basic.findAll({attributes:name});
 		if(valid_names.indexOf(req.params.name)!==-1){
 			var hbsObject = {
+				user : req.user, //feed logged in user info into main.handlebars
 				name: req.params.name,
 				img_url : db.employ_basic.findOne({
 					where: {
