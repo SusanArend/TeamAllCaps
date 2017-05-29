@@ -44,7 +44,7 @@ $(document).ready(function(){
 		            var $target = $(target);
 		            $target.focus();
 		            if ($target.is(":focus")) { // Checking if the target was focused
-		                return false;
+		                res.json(true);
 		            } else {
 		                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
 		                $target.focus(); // Set focus again
@@ -53,4 +53,27 @@ $(document).ready(function(){
 		    };
 		};
 	});
+
+	$("#newuser-submit").on("click", function(event){
+		event.preventDefault();
+		var newuser = {
+			email: $("#newuser-email").val().trim(),
+			password: $("#pw-new").val().trim(),
+			favorite: $("#fact").val().trim()
+		};
+		$.post("/newuser/post", newuser, function(data){
+			if (data===true){
+				console.log(data);
+				alert("successfully regist, please log in");
+			}else if(data === "exist user"){
+				alert("you already registed before, please log in")
+			}else if(data === "invalid email"){
+				alert("invalid email");
+			};
+			$("#newuser-email").val("");
+			$("#pw-new").val("");
+			$("#pw-new-valid").val("");
+			$("#fact").val("");
+		});
+	})
 });

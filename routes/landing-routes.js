@@ -16,19 +16,19 @@ module.exports = function(app){
 
 
 
-	app.post("/:email/:password", function(req,res){
+	app.post("/login/posst", function(req,res){
 		db.employ_basic.findOne({
 			where: {
-				email: req.params.email
+				email: req.body.email
 			},
 			include: [db.employ_option]
 		}).then(function(dbemploy_basic){
-			if (dbemploy_basic.password && req.params.password === dbemploy_basic.password){
-				res.redirect("/app/profile/:email");
-			} else if(dbemploy_basic.password & req.params.password !== dbemploy_basic.password){
-				res.json(true);
+			if (dbemploy_basic.password && req.body.password === dbemploy_basic.password){
+				res.redirect("/profile/:email");
+			} else if(dbemploy_basic.password & req.body.password !== dbemploy_basic.password){
+				res.send("wrong password");
 			}else if(!dbemploy_basic.password){
-				res.json(false);
+				res.send("invalid email");
 			};
 			
 		})
@@ -38,21 +38,35 @@ module.exports = function(app){
 	//If the user has been registed before, reture exist to the frontend
 	//If the user is not in employ_baisc table, the user is not valid, returen 
 	//not valid to frontend
-	app.post("/:email/:password/:favorite", function(req,res){
-		var valid_email = db.employ_basic.findAll({attributes:email});
-		var exist_email = db.employ_option.findAll({attributes:email});
-		if(valid_email.indexOf(req.params.email)!==-1 && exist_email.indexOf(req.params.email)===-1){
-			db.employ_option.create({
-				email:req.params.email,
-				password: req.params.password,
-				favorite: req.params.favorite
-			});
-		}else if(exist_email.indexOf(req.params.email)!==-1){
-			res.json("exist");
-		}else if(valid_email.indexOf(req.params.email)===-1){
-			res.json("not valid");
-		};
-		
+	app.post("/newuser/post", function(req,res){
+		db.employ_basic.findAll({attributes: ['email']}).then(function(data){
+			var valid_email=[];
+			for (key in data){
+				valid_email.push(data[key].dataValues.email)
+			};
+			if(valid_email.indexOf(req.body.email)!==-1){
+				db.employ_option.findAll({attributes:['email']}).then(function(data){
+					var exist_email = [];
+					for (key in data){
+						exist_email.push(data[key].dataValues.email);
+					};
+					if(exist_email.indexOf(req.body.email)===-1){
+						db.employ_option.create({
+							email: req.body.email,
+							password: req.body.password,
+							favorite: req.body.favorite
+						}).then(function(){
+							res.send(true);
+						});
+					}else{
+						res.send('exist user');
+					}
+				});	
+			}else{
+				res.send('invalid email');
+			};	
+		});
+
 	});
 };
 
