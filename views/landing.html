@@ -16,7 +16,7 @@
 
 <body>
 	<div class="container" id="greeting-page">
-		<div class="row">
+		<div class="row header">
 			<div class="col s12 center-align" id="title">
 				<a id="greeting-link" class="smooth"></a>
 			    <h1>Plaudit!</h1>
@@ -33,18 +33,20 @@
 			</div>
 		</div>
 		<div class="row" id="sign-in">
-			<form class="col s10 offset-s1 col m6 offset-m3">
-				<div class="row">
-					<p class="center-align">Please log in.</p>
-					<div class="input-field col s12">
-					    <input id="existing-email" type="email" class="validate" required>
-					    <label for="email">Email</label>
+			<div class="col s10 offset-s1 col m6 offset-m3">
+				<form>
+					<div class="row">
+						<p class="center-align">Log in to Plaudit.</p>
+						<div class="input-field col s12">
+						    <input id="existing-email" type="email" class="validate" required>
+						    <label for="email">Email</label>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <input id="existing-password" type="password" class="validate" required>
-					    <label for="password">Password</label>
+					<div class="row">
+						<div class="input-field col s12">
+						    <input id="existing-password" type="password" class="validate" required>
+						    <label for="password">Password</label>
+						</div>
 					</div>
 				</div>
 				<div class="row">
@@ -53,9 +55,9 @@
 					      	SUBMIT
 					    </button>
 					</div>
-				</div>
-			</form>
-			<div class="col s12 center-align" id="title">
+				</form>
+			</div>
+			<div class="col s12 center-align">
 			    <span class="flow-text">
 			      		<a href="#modal1">Forgot Password?</a> | 
 			      		New User? <a href="#newuser-link">Sign-up!</a>
@@ -66,84 +68,92 @@
 	<div class="container">
 		<div id="modal1" class="modal">
     		<div class="modal-content">
-    		<a href="#" class="modal-action modal-close btn btn-flat right-align">X</a><br>
-      		<h4 class="center-align">Password Retrieval</h4>
-      		<form>
-				<div class="input-field">
-					<input id="recover-email" type="email" class="validate" required>
-					<label for="email">Enter your email</label>
-				</div>
-				<div class="input-field">
-					<button class="waves-effect waves-meeshteal btn center-align" type="submit" id="recover-pw">SEND PASSWORD</button>
-				</div>
-      		<div id="confirm"></div>
-    	</div>
+    			<a href="#" class="modal-action modal-close btn btn-flat right-align">X</a><br>
+      			<h4 class="center-align">Password Retrieval</h4>
+      			<form>
+					<div class="input-field">
+						<input id="recover-email" type="email" class="validate" required>
+						<label for="email">Enter your email</label>
+					</div>
+					<div class="input-field">
+						<button class="waves-effect waves-meeshteal btn center-align" type="submit" id="recover-pw">SEND PASSWORD</button>
+					</div>
+				</form>
+      			<div id="confirm"></div>
+    		</div>
+    	</div>	
 	</div>
 
 	<div class="container" id="newuser-page">
 		<a id="newuser-link" class="smooth"></a>
 		<div class="row">
 			<div class="col s12 center-align" id="title">
-			    <h1>Welcome to Plaudit!</h1>
+			    <h1 class="header">Plaudit!</h1>
 			</div>
 		</div>
+		<div class="row"></div>
 		<div class="row">
-			<form class="col s10 offset-s1 col m6 offset-m3">
-				<div class="row">
-					<div class="input-field col s12">
-						<div class="row">
-							<div class="input-field col s10">
-                        		<input type="text" id="newuser-email" placeholder="Email Search" class="validate" required>
-                        	</div>
-							<div class="input-field col s2">
-					    		<button class="waves-effect waves-light btn" type="submit" id="email-search"><i class="material-icons prefix" id="search-icon">search</i></button>
-					    	</div>
-					    </div>
-                    </div>
-				</div>
-				<div class="row">
-					<div class="input-field col s6">
-					   	<input disabled id="first-name" type="text" class="validate" required>
-					    <label for="first-name">First Name</label>
-  					</div>
-					<div class="input-field col s6">
-					    <input disabled id="last-name" type="text" class="validate" required>
-					    <label for="last-name">Last Name</label>
+			<div class="col s10 offset-s1 col m6 offset-m3">
+				<form>
+					<div class="row">
+						<p class="center-align">Create an account.</p>
+						<div class="input-field col s12">
+							<div class="row">
+								<div class="input-field col s10">
+	                        		<input type="text" id="newuser-email" placeholder="Email Search" class="validate" required>
+	                        	</div>
+								<div class="input-field col s2">
+						    		<button class="waves-effect waves-light btn" type="submit" id="email-search"><i class="material-icons prefix" id="search-icon">search</i></button>
+						    	</div>
+						    </div>
+	                    </div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <input id="pw-new" type="password" class="validate" required>
-					    <label for="password">Password</label>
+					<div class="row">
+						<div class="input-field col s6">
+						   	<input disabled id="first-name" type="text" class="validate" required>
+						    <label for="first-name">First Name</label>
+	  					</div>
+						<div class="input-field col s6">
+						    <input disabled id="last-name" type="text" class="validate" required>
+						    <label for="last-name">Last Name</label>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <input id="pw-new-valid" type="password" class="validate" required>
-					    <label for="password">Re-enter Password</label>
+					<div class="row">
+						<div class="input-field col s12">
+						    <input id="pw-new" type="password" class="validate" required>
+						    <label for="password">Password</label>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-					    <input id="fact" type="text" class="validate" required>
-					    <label for="fact">Fun Fact</label>
+					<div class="row">
+						<div class="input-field col s12">
+						    <input id="pw-new-valid" type="password" class="validate" required>
+						    <label for="password">Re-enter Password</label>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 center-align">
-					    <button class="waves-effect waves-meeshteal btn" type="submit" id="newuser-submit">
-					      	SUBMIT
-					    </button>
+					<div class="row">
+						<div class="input-field col s12">
+						    <input id="fact" type="text" class="validate" required>
+						    <label for="fact">Fun Fact</label>
+						</div>
 					</div>
-				</div>
-			</form>
-
-			<div class="row">
-				<div class="col s12 center-align" id="title">
-			    	<a href="#greeting-link">Back to Top</a>
-				</div>
+					<div class="row">
+						<div class="input-field col s12 center-align">
+						    <button class="waves-effect waves-meeshteal btn" type="submit" id="newuser-submit">
+						      	SUBMIT
+						    </button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col s12 center-align">
+			    <span class="flow-text">
+			    	Already have an account? <a href="#title">Sign in!</a>
+				</span>
+			</div>
+		</div>	
 	</div>
 
 	<footer class="container">

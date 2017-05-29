@@ -14,17 +14,16 @@ body {
   font-size: 16px;
 }
 
+#greeting-page, #newuser-page {
+  height: 100vh;
+}
+
 h1, p {
     color: #fff8ca;
 }
 
-.waves-effect.waves-meeshteal {
-     /* The alpha value allows the text and background color
-     of the button to still show through. */
-      background-color: rgba(109, 221, 184, 0.98);
-    }
-.btn {
-    background-color: #6DDDB8;
+h1 {
+  font-family: 'Lobster', cursive;
 }
 
 .flow-text {
@@ -41,14 +40,6 @@ a:hover, a:active, a:visited {
     color: #fff;
 }
 
-#greeting-page, #newuser-page {
-  height: 100vh;
-}
-
-h1 {
-  font-family: 'Lobster', cursive;
-}
-
 #intro-text {
     letter-spacing: 0.15em;\
     margin: 0 auto;
@@ -58,6 +49,35 @@ h1 {
     opacity: 1;
 }
 
+/*buttons*/
+.waves-effect.waves-meeshteal {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(109, 221, 184, 0.98);
+    }
+.btn {
+    background-color: #6DDDB8;
+}
+
+#newuser-submit, #login-btn {
+  margin-bottom: 30px;
+}
+
+:focus {
+  outline: none;
+}
+
+.input-field .prefix {
+  position: relative;
+}
+
+#email-search {
+    padding: 0;
+}
+
+.header {
+  margin-bottom: 0;
+}
 /*-----------------*/
 
 /*MODAL*/
