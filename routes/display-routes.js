@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function(app){
 
 	// Render landing.html at route "/"
-	app.get("/display/:email", 
-		require('connect-ensure-login').ensureLoggedIn(),
+	app.get("/display", 
+		require('connect-ensure-login').ensureLoggedIn("/login"),
 		function(req,res){
 		var hbsObject= {
 			name  : req.user.name,
@@ -12,6 +12,7 @@ module.exports = function(app){
 			badges : db.employ_badge.findAll({order: 'createdAt DESC', limit: 10}),
 			user : req.user //feed info into main.handlebars
 		};
+		console.log(hbsObject);
 		res.render("index",hbsObject);
 	});
 }

@@ -54,6 +54,23 @@ $(document).ready(function(){
 		};
 	});
 
+	$("#user-login").on("click", function(event){
+		event.preventDefault();
+		var user = {
+			email: $("#existing-email").val().trim(),
+			password: $("#existing-password").val().trim()
+		};
+		$.post("/login/post", user, function(data){
+			if(data==="wrong password"){
+				alert("you entered wrong password");
+			}else if(data ==="invalid email"){
+				alert("you entered invalid email");
+			};
+			$("#existing-email").val("");
+			$("#existing-password").val("");
+		})
+	});
+
 	$("#newuser-submit").on("click", function(event){
 		event.preventDefault();
 		var newuser = {

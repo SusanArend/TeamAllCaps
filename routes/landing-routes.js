@@ -12,21 +12,17 @@ module.exports = function(app){
 	//If email exist, but password doesn't match, return ture, alert user password is wrong in frontend.
 	//If email doesn't exist, alert the client that the user is not registered in frontend.
 	
-
-
-
-	app.post("/login/posst", function(req,res){
-		db.employ_basic.findOne({
+	app.post("/login/post", function(req,res){
+		db.employ_option.findOne({
 			where: {
 				email: req.body.email
 			},
-			include: [db.employ_option]
-		}).then(function(dbemploy_basic){
-			if (dbemploy_basic.password && req.body.password === dbemploy_basic.password){
-				res.redirect("/profile/:email");
-			} else if(dbemploy_basic.password & req.body.password !== dbemploy_basic.password){
+		}).then(function(data){
+			if (data.dataValues.password && parseInt(req.body.password) === data.dataValues.password){
+				res.redirect("/display");
+			} else if(data.dataValues.password && parseInt(req.body.password)!== data.dataValues.password){
 				res.send("wrong password");
-			}else if(!dbemploy_basic.password){
+			}else if(!data.dataValues.password){
 				res.send("invalid email");
 			};
 			
