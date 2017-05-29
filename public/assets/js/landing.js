@@ -54,22 +54,28 @@ $(document).ready(function(){
 		};
 	});
 
-	$("#user-login").on("click", function(event){
-		event.preventDefault();
-		var user = {
-			email: $("#existing-email").val().trim(),
-			password: $("#existing-password").val().trim()
-		};
-		$.post("/login/post", user, function(data){
-			if(data==="wrong password"){
-				alert("you entered wrong password");
-			}else if(data ==="invalid email"){
-				alert("you entered invalid email");
-			};
-			$("#existing-email").val("");
-			$("#existing-password").val("");
-		})
-	});
+	//TODO:  Had to comment out this function for now, having trouble getting passport to work without reading 'form' action in landing view.
+	//Currently most of this happens automatically even without the jquery call.
+
+	// $("#user-login").on("click", function(event){
+	// 	event.preventDefault();
+	// 	var user = {
+	// 		username: $("#existing-email").val().trim(),
+	//  		password: $("#existing-password").val().trim()
+	//  	};
+	//  	console.log(user)
+	// 	$.post("/login/post", user, function(data){
+	// 		// if(data==="wrong password"){
+	// 		// 	alert("you entered wrong password");
+	// 		// }else if(data ==="invalid email"){
+	// 		// 	alert("you entered invalid email");
+	// 		// };
+	// 		// $("#existing-email").val("");
+	// 		// $("#existing-password").val("");
+	// 	})
+	// 	// console.log("this button did something")
+	// });
+
 
 	$("#recover-pw").click(function() {
 	    var user ={email:$("#recover-email").val().trim()};

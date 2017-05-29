@@ -19,22 +19,41 @@ module.exports = function(app){
 	//If email exist, but password doesn't match, return ture, alert user password is wrong in frontend.
 	//If email doesn't exist, alert the client that the user is not registered in frontend.
 	
-	app.post("/login/post", function(req,res){
-		db.employ_option.findOne({
-			where: {
-				email: req.body.email
-			},
-		}).then(function(data){
-			if (data.dataValues.password && parseInt(req.body.password) === data.dataValues.password){
-				res.redirect("/display");
-			} else if(data.dataValues.password && parseInt(req.body.password)!== data.dataValues.password){
-				res.send("wrong password");
-			}else if(!data.dataValues.password){
-				res.send("invalid email");
-			};
+
+
+
+app.post('/login', 
+  passport.authenticate('local', { failureRedirect: '/' }),
+  function(req, res) {
+    res.redirect('/index');
+  });
+
+//TODO:  Can delete most of following, it is covered in server.js and passport.js module in main folder.
+	// app.post("/login/post", function(req,res){
+	// 	db.employ_option.findOne({
+	// 		where: {
+	// 			email: req.body.email
+	// 		},
+	// 	}).then(function(data){
+	// 		passport.authenticate('local', {
+ //      			successRedirect: '/index',
+ //      			failureRedirect: '/' 
+ //  			})
+
+	// 		console.log("checking password now")
+	// 	})
+	// })
+
+			// if (data.dataValues.password && parseInt(req.body.password) === data.dataValues.password){
+			// 	res.redirect("/display");
+			// } else if(data.dataValues.password && parseInt(req.body.password)!== data.dataValues.password){
+			// 	res.send("wrong password");
+			// 	}else if(!data.dataValues.password){
+			// 		res.send("invalid email");
+			// };
 			
-		})
-	});
+	// 	})
+	// });
 
 	app.post('/sendemail',function(req,res){
 		db.employ_basic.findAll({attributes:['email']}).then(function(data){

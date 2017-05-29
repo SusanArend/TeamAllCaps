@@ -33,7 +33,29 @@
 			</div>
 		</div>
 		<div class="row" id="sign-in">
-			<form class="col s10 offset-s1 col m6 offset-m3">
+			<form action="/login" method="post" class="col s10 offset-s1 col m6 offset-m3">
+				<div class="row">
+					<p class="center-align">Please log in.</p>
+					<div class="input-field col s12">
+					    <input id="existing-email" name="username" type="text" class="validate" required>
+					    <label for="email">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+					    <input id="existing-password" name="password" type="password" class="validate" required>
+					    <label for="password">Password</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 center-align">
+					    <button class="waves-effect waves-meeshteal btn" type="submit" id="user-login">
+					      	SUBMIT
+					    </button>
+					</div>
+				</div>
+			</form>
+<!-- 			<form class="col s10 offset-s1 col m6 offset-m3">
 				<div class="row">
 					<p class="center-align">Please log in.</p>
 					<div class="input-field col s12">
@@ -54,7 +76,7 @@
 					    </button>
 					</div>
 				</div>
-			</form>
+			</form> -->
 			<div class="col s12 center-align" id="title">
 			    <span class="flow-text">
 			      		<a href="#modal1">Forgot Password?</a> | 
