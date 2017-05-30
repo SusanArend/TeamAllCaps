@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  		<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
   		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
 	</head>
@@ -74,15 +74,19 @@
 		{{{ body }}}
 		
 		</div>
-
+		
 		<footer class="page-footer">
-			<div class="footer-copyright">
-		      <div class="container">
-		          	<span class="copyright"><strong>© 2017 Copyright Plaudit!</strong></span>
-		        	<a class="grey-text text-lighten-4 right" href="https://github.com/SusanArend/TeamAllCaps/tree/layout"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
-		      </div>   
-		    </div>
-		</footer>
+			<div class="container">
+            	<div class="row valign-wrapper">
+              		<div class="col s6">
+              				<span class="copyright"><strong>© 2017 Copyright Plaudit!</strong></span>
+              		</div>
+              		<div class="col s6">
+                		<a class="grey-text text-lighten-4 right" href="https://github.com/SusanArend/TeamAllCaps/tree/layout"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+              		</div>
+            	</div>
+          	</div>
+        </footer>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
@@ -90,12 +94,11 @@
 	  	<script>
 
 		    $('.button-collapse').sideNav({
-		      menuWidth: 400, // Default is 300
-		      edge: 'left', // Choose the horizontal origin
-		      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-		      draggable: true // Choose whether you can drag to open on touch screens
-		      }
-		    );  
+		    	menuWidth: 400, // Default is 300
+		    	edge: 'left', // Choose the horizontal origin
+		    	closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+		    	draggable: true // Choose whether you can drag to open on touch screens
+		    });  
 	  
 	  	</script>
 	</body>
