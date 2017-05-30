@@ -28,10 +28,17 @@
 			          					<img src="../assets/images/ocean.jpeg">
 			        				</div>
 
+
+									{{#if user}}
+										<a href="#!user"><img class="circle" src="{{user.photo_path}}"></a>
+										<a href="#!name"><span class="white-text name">{{user.name}}</span></a>
+										<a href="#!email"><span class="white-text email">{{user.email}}</span></a>
+									{{/if}}
+									
 								<!-- Add user's profile link to profile picture -->
-			        				<a href="#!user"><img class="circle" src="../assets/images/profilePictures/Susan.png"></a>
+{{!-- 			        			<a href="#!user"><img class="circle" src="../assets/images/profilePictures/Susan.png"></a>
 			        				<a href="#!name"><span class="white-text name">USER NAME HERE</span></a>
-			        				<a href="#!email"><span class="white-text email">USER EMAIL HERE</span></a>
+			        				<a href="#!email"><span class="white-text email">USER EMAIL HERE</span></a> --}}
 			      				</div>
 			    			</li>
 			    
