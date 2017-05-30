@@ -49,10 +49,12 @@ module.exports = function(app) {
     function(username, password, done) {
       // process.nextTick(function() {
       // console.log("hitting passport")
-      db.employ_option.findOne({
+      console.log(username)
+      db.employ_basic.findOne({ 
         where: {
-          'email': username
-        }
+          email: username
+        },
+      include: [db.employ_option]
       }).then(function (user) {
         if (user == null) { 
           console.log("no user")

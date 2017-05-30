@@ -99,6 +99,7 @@ app.post('/login',
 			for (key in data){
 				valid_email.push(data[key].dataValues.email)
 			};
+			console.log(valid_email[0]);
 			if(valid_email.indexOf(req.body.email)!==-1){
 				db.employ_option.findAll({attributes:['email']}).then(function(data){
 					var exist_email = [];
