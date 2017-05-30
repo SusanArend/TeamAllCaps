@@ -57,6 +57,9 @@ nav .brand-logo {
 	background-color: transparent;
 	box-shadow: none;
 }
+:focus {
+	outline: none;
+}
 
 /*-----------------*/
 
@@ -70,7 +73,7 @@ nav .brand-logo {
     color: #fff8ca;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], textarea.materialize-textarea {
     border-bottom: 1px solid #fff8ca;
 }
 /* label focus color */
@@ -78,9 +81,10 @@ input[type=text], input[type=password], input[type=email] {
     color: #fff8ca;
 }
 /* label underline focus color */
-.input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
+.input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus, textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #fff8ca;
     box-shadow: 0 1px 0 0 #fff8ca;
+    color: #fff8ca;
 }
 /* valid color */
 .input-field input[type=text].valid, .input-field input[type=email].valid, .input-field input[type=password].valid {
@@ -93,7 +97,7 @@ input[type=text], input[type=password], input[type=email] {
     box-shadow: 0 1px 0 0 #fff8ca;
 }
 /* icon prefix focus color */
-.input-field .prefix.active {
+.input-field .prefix.active, textarea.materialize-textarea:focus:not([readonly])+label {
     color: #fff8ca;
 }
 
