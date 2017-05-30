@@ -50,18 +50,17 @@ module.exports = function(app) {
       // process.nextTick(function() {
       // console.log("hitting passport")
       console.log(username)
-      db.employ_basic.findOne({ 
+      db.employ_option.findOne({ 
         where: {
           email: username
-        },
-      include: [db.employ_option]
+        }
       }).then(function (user) {
         if (user == null) { 
           console.log("no user")
           return done(null, false, { message: 'Incorrect credentials.' })
         }
         //TODO:  delete these 2 lines and uncomment the bcrypt lines once using bcrypt
-        if (user.password === password) {
+        if (user.password == password) {
           console.log("logged in")
           return done(null, user)
         }
@@ -89,15 +88,14 @@ module.exports = function(app) {
 
 
   passport.serializeUser(function(user, done) {
-    done(null, user.id)
-  })
+    done(null, user.email)
+  });
 
-  passport.deserializeUser(function(id, done) {
+  passport.deserializeUser(function(email, done) {
     db.employ_basic.findOne({
       where: {
-        'id': id
-      },
-      include: [db.employ_option]
+        email: email
+      }
     }).then(function (user) {
       if (user == null) {
         done(new Error('Wrong user id.'))
