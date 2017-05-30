@@ -19,22 +19,41 @@ module.exports = function(app){
 	//If email exist, but password doesn't match, return ture, alert user password is wrong in frontend.
 	//If email doesn't exist, alert the client that the user is not registered in frontend.
 	
-	app.post("/login/post", function(req,res){
-		db.employ_option.findOne({
-			where: {
-				email: req.body.email
-			},
-		}).then(function(data){
-			if (data.dataValues.password && parseInt(req.body.password) === data.dataValues.password){
-				res.redirect("/display");
-			} else if(data.dataValues.password && parseInt(req.body.password)!== data.dataValues.password){
-				res.send("wrong password");
-			}else if(!data.dataValues.password){
-				res.send("invalid email");
-			};
+
+
+
+app.post('/login', 
+  passport.authenticate('local', { failureRedirect: '/' }),
+  function(req, res) {
+    res.redirect('/index');
+  });
+
+//TODO:  Can delete most of following, it is covered in server.js and passport.js module in main folder.
+	// app.post("/login/post", function(req,res){
+	// 	db.employ_option.findOne({
+	// 		where: {
+	// 			email: req.body.email
+	// 		},
+	// 	}).then(function(data){
+	// 		passport.authenticate('local', {
+ //      			successRedirect: '/index',
+ //      			failureRedirect: '/' 
+ //  			})
+
+	// 		console.log("checking password now")
+	// 	})
+	// })
+
+			// if (data.dataValues.password && parseInt(req.body.password) === data.dataValues.password){
+			// 	res.redirect("/display");
+			// } else if(data.dataValues.password && parseInt(req.body.password)!== data.dataValues.password){
+			// 	res.send("wrong password");
+			// 	}else if(!data.dataValues.password){
+			// 		res.send("invalid email");
+			// };
 			
-		})
-	});
+	// 	})
+	// });
 
 	app.post('/sendemail',function(req,res){
 		db.employ_basic.findAll({attributes:['email']}).then(function(data){
@@ -80,6 +99,7 @@ module.exports = function(app){
 			for (key in data){
 				valid_email.push(data[key].dataValues.email)
 			};
+			console.log(valid_email[0]);
 			if(valid_email.indexOf(req.body.email)!==-1){
 				db.employ_option.findAll({attributes:['email']}).then(function(data){
 					var exist_email = [];
@@ -87,9 +107,16 @@ module.exports = function(app){
 						exist_email.push(data[key].dataValues.email);
 					};
 					if(exist_email.indexOf(req.body.email)===-1){
+						// var hashedPassword;
+						//  bcrypt.genSalt(10, function(err, salt) {
+						//     bcrypt.hash(req.body.password, salt, function(err, hash) {
+						//     	hashedPassword = hash;
+						//     });
+						// })
 						db.employ_option.create({
 							email: req.body.email,
 							password: req.body.password,
+							// password: hashedPassword,
 							favorite: req.body.favorite
 						}).then(function(){
 							res.send(true);
@@ -124,24 +151,24 @@ module.exports = function(app){
 //     res.redirect('landing')
 //   }
   
-//   bcrypt.genSalt(10, function(err, salt) {
-//     bcrypt.hash(password, salt, function(err, hash) {
-//         // Store hash in your password DB. 
-//       var newUser = {
-//         email: email,
-//         password: hash,
-//         favorite: favorite,
-//         id: id
-//       } 
-//             //TODO:  CUrrently this CREATES a user in the employ option table.  Is this correct, and then we fill in the id field as well?
-//   EmployOption.create(newUser).then(function() {
-//     res.redirect('/')
-//   }).catch(function(error) {
-//     //TODO:  Can delete or update the following line.  
-//     // This cactches an error in signup, could use flash middleware or similar to display it
-//      // req.flash('error', "Please, choose a different username.")
-//     res.redirect('/landing')
-//   })
+  // bcrypt.genSalt(10, function(err, salt) {
+  //   bcrypt.hash(password, salt, function(err, hash) {
+  //       // Store hash in your password DB. 
+  //     var newUser = {
+  //       email: email,
+  //       password: hash,
+  //       favorite: favorite,
+  //       id: id
+  //     } 
+  //           //TODO:  CUrrently this CREATES a user in the employ option table.  Is this correct, and then we fill in the id field as well?
+  // EmployOption.create(newUser).then(function() {
+  //   res.redirect('/')
+  // }).catch(function(error) {
+  //   //TODO:  Can delete or update the following line.  
+  //   // This cactches an error in signup, could use flash middleware or similar to display it
+  //    // req.flash('error', "Please, choose a different username.")
+  //   res.redirect('/landing')
+  // })
 
 //     });
 // });
