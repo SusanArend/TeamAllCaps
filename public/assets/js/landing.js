@@ -44,7 +44,7 @@ $(document).ready(function(){
 		            var $target = $(target);
 		            $target.focus();
 		            if ($target.is(":focus")) { // Checking if the target was focused
-		                res.json(true);
+		                // res.json(true);
 		            } else {
 		                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
 		                $target.focus(); // Set focus again
@@ -65,6 +65,8 @@ $(document).ready(function(){
 				alert("you entered wrong password");
 			}else if(data ==="invalid email"){
 				alert("you entered invalid email");
+			}else if (data === true){
+				alert("successfully log in");
 			};
 			$("#existing-email").val("");
 			$("#existing-password").val("");
@@ -75,12 +77,12 @@ $(document).ready(function(){
 	    var user ={email:$("#recover-email").val().trim()};
 	    $("#confirm").text("Sending E-mail ... Please wait");
 	    $.post("/sendemail",user,function(data){
-	    	if(data = "sent"){
+	    	if(data ==="sent"){
 	    		$("#confirm").empty().html(
 	           		"Thank you. Your Plaudit account password has been emailed to "
-	           		+ address + "."
+	           		+ user.email + "."
 	           	);
-	    	}else if(data="invalid email"){
+	    	}else if(data==="invalid email"){
 	    		alert("invalid email");
 	    	};
 	    });
