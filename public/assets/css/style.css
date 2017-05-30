@@ -61,6 +61,10 @@ nav .brand-logo {
 	outline: none;
 }
 
+.material-icons, i {
+    color: #fff;
+}
+
 /*-----------------*/
 
 /*FORMS*/
