@@ -4,24 +4,24 @@
 
 $(document).ready(function() {
   // Gets an optional query string from our url (i.e. ?badge_id=23)
-  var url = window.location.search;
-  var postId;
-  // Sets a flag for whether or not we're updating a post to be false initially
-  var updating = false;
+  // var url = window.location.search;
+  // var postId;
+  // // Sets a flag for whether or not we're updating a post to be false initially
+  // var updating = false;
 
-  // 
-  // If we have this section in our url, we pull out the post id from the url
-  // In localhost:8080/cms?post_id=1, postId is 1
-  if (url.indexOf("?badge_id=") !== -1) {
-    badgeId = url.split("=")[1];
-    getBadgeData(BadgeId);
-  }
+  // // 
+  // // If we have this section in our url, we pull out the post id from the url
+  // // In localhost:8080/cms?post_id=1, postId is 1
+  // if (url.indexOf("?badge_id=") !== -1) {
+  //   badgeId = url.split("=")[1];
+  //   getBadgeData(BadgeId);
+  // }
 
-  $(':radio[name=badge-group]').change(function() {
-    //In Case we want to add animations or anything when different badge selected
-    // alert(this.value);
-  });
-
+  // $(':radio[name=badge-group]').change(function() {
+  //   //In Case we want to add animations or anything when different badge selected
+  //   // alert(this.value);
+  // });
+  console.log("js file loaded");
   // Getting jQuery references to the post commenty, badgeId and recipient
   var badgeComment = $("#comment");
   var badgeType = $(':radio[name=badge-group]:checked').val();
@@ -36,38 +36,49 @@ $(document).ready(function() {
   // Adding an event listener for when the form is submitted
   $(badgeSubmitForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
-
     // Wont submit the badge if we are missing a body or a title
     if (!badgeComment.val().trim() || !badgeType || badgeRecipient.val().trim()) {
       return;
     }
+
     // Constructing a newBadge object to hand to the database
-    var newBadge = {
-      recipient_name: badgeRecipient.val().trim(),
-      badgeid: badgeType,
-      //badgeurl: TODO:  Could do if 6 cases here and assign, or just use badgeid and load badge
-      badgeurl: "fakeURL".
-      comment: badgeComment.val().trim()
-    };
-
-    console.log(newBadge)
-
+    db.employ_basic.findOne({
+      where:{
+        name: badgeRecipient.val().trim()
+      }
+    }).then(function(data){
+      if(data){
+        var newBadge = {
+          recipient_name: badgeRecipient.val().trim(),
+          badgeid: badgeType,
+          //badgeurl: TODO:  Could do if 6 cases here and assign, or just use badgeid and load badge
+          badgeurl: "/public/assets/images/badges/" + badgeType + ".svg",
+          comment: badgeComment.val().trim()
+        };
+        console.log(newBadge);
+        submitBadge(newBadge);
+      }else{
+        alert("recipient not found");
+      };
+    })
+    
     //TODO:  Add a query to check if recipient_name exists as a user
 
     // If we're updating a badge run updateBadge.  Currently not implemented
     // Otherwise run submitBadge to create a whole new post
-    if (updating) {
-      newBadge.id = badgeId;
-      updateBadge(newBadge);
-    }
-    else {
-      submitBadge(newBadge);
-    }
-  });
+  //   if (updating) {
+  //     newBadge.id = badgeId;
+  //     updateBadge(newBadge);
+  //   }
+  //   else {
+  //     submitBadge(newBadge);
+  //   }
+  // });
 
   // Submits a new badge and brings user to feed page upon completion
   function submitBadge(Badge) {
-    $.post("/badge/post/", Badge, function() {
+    $.post("/badge/post", Badge, function(req,res) {
+      console.log("sucess");
       window.location.href = "/index";
     });
   }

@@ -6,13 +6,18 @@ module.exports = function(app){
 	app.get("/index", 
 		require('connect-ensure-login').ensureLoggedIn("/login"),
 		function(req,res){
-		var hbsObject= {
-			name  : req.user.name,
-			img_url: req.user.photo_path,
-			badges : db.employ_badge.findAll({order: 'createdAt DESC', limit: 10}),
-			user : req.user //feed info into main.handlebars
-		};
-		console.log(db.employ_badge.findAll({order: 'createdAt DESC', limit: 10}))
-		res.render("index",hbsObject);
+			db.employ_badge.findAll({order: 'createdAt DESC', limit:10}).then(function(data){
+				var badges = [];
+				for (key in data){
+					badges.push(key);
+				};
+				var hbsObject= {
+					name  : req.user.name,
+					img_url: req.user.photo_path,
+					badges: badges,
+					user : req.user
+				};
+				res.render("index",hbsObject);
+			})
 	});
 }

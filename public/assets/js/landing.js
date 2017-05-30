@@ -123,7 +123,6 @@ $(document).ready(function(){
 		};
 		$.post("/newuser/post", newuser, function(data){
 			if (data===true){
-				console.log(data);
 				alert("successfully regist, please log in");
 			}else if(data === "exist user"){
 				alert("you already registed before, please log in")
