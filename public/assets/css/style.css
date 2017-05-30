@@ -53,11 +53,79 @@ nav .brand-logo {
     position: relative;
 }
 
-/*Additional Footer Styling*/
+.card {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+/*-----------------*/
+
+/*FORMS*/
+
+/* label color */
+.input-field {
+    margin-top: 0;
+}
+.input-field label {
+    color: #fff8ca;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    border-bottom: 1px solid #fff8ca;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+    color: #fff8ca;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
+    border-bottom: 1px solid #fff8ca;
+    box-shadow: 0 1px 0 0 #fff8ca;
+}
+/* valid color */
+.input-field input[type=text].valid, .input-field input[type=email].valid, .input-field input[type=password].valid {
+    border-bottom: 1px solid #fff8ca;
+    box-shadow: 0 1px 0 0 #fff8ca;
+}
+/* invalid color */
+.input-field input[type=text].invalid, .input-field input[type=email].invalid, .input-field input[type=password].invalid {
+    border-bottom: 1px solid #fff8ca;
+    box-shadow: 0 1px 0 0 #fff8ca;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #fff8ca;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff8ca;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fff8ca;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #fff8ca;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #fff8ca;
+}
+
+/*-----------------*/
+
+/*FOOTER*/
 .grey-text.text-lighten-4.right {
 	font-size: 20px;
 }
 
 footer.page-footer {
 	padding-top: 20px;
+}
+
+.waves-effect.waves-meeshteal {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(109, 221, 184, 0.98);
+    }
+.btn {
+    background-color: #6DDDB8;
 }
