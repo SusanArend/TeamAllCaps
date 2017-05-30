@@ -113,6 +113,22 @@ $(document).ready(function(){
 	    $("#confirm").text("");
 	});
 
+// Adding feedback message to front-end on "sign up" section.
+// Great if we can replace USER.EMAIL with NAME -- don't know how to do it.
+$("#email-search").on("click", function(event) {
+    event.preventDefault();
+    var user = { email: $("#newuser-email").val().trim() };
+    $.post("/checkemail", user, function(data) {
+        if (data === true) {
+            $("#replace-name").empty().html("Welcome " + user.email + "! Please complete the sign-up process below.");
+        } else if (data === "invalid email") {
+            $("#replace-name").empty().html("You are not registered for Plaudit with this email. Please try again.");
+        };
+
+    });
+
+});
+
 
 	$("#newuser-submit").on("click", function(event){
 		event.preventDefault();

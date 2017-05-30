@@ -2,7 +2,7 @@
 /* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
 /* for body BG - lighter yellow - #ffe97c */
 /* for text - lightest yellow - #fff8ca */
-/* for accents - teal - #6DDDB8  && charcoal - #767676*/
+/* for accents - light/dark teal - #6DDDB8/#00CB88  && charcoal - #767676*/
 
 /*-----------------*/
 
@@ -11,7 +11,7 @@
 body {
   background-color: #ffdf3e;
   color: #fff8ca;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 #greeting-page {
@@ -31,12 +31,12 @@ h1 {
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .flow-text {
     font-size: 16px;
-    color: #767676;
+    color: #00CB88;
 }
 
 a {
@@ -44,7 +44,7 @@ a {
     cursor: pointer;
 }
 
-a:hover, a:active, a:visited {
+a:hover, a:active {
     color: #fff;
 }
 
@@ -61,7 +61,9 @@ a:hover, a:active, a:visited {
   margin-bottom: 5px;
 }
 
-/*buttons*/
+
+
+/*BUTTONS*/
 .waves-effect.waves-meeshteal {
      /* The alpha value allows the text and background color
      of the button to still show through. */
@@ -111,6 +113,10 @@ a:hover, a:active, a:visited {
 
 /*FORMS*/
 
+#replace-name {
+  font-size: 16px;
+  color: #00cb88;
+}
 /* label color */
 .input-field {
     margin-top: 0;
@@ -144,6 +150,10 @@ input[type=text], input[type=password], input[type=email] {
 /* icon prefix focus color */
 .input-field .prefix.active {
     color: #fff8ca;
+}
+
+.input-field label, input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  font-size: 1.2rem;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

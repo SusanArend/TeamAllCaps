@@ -113,7 +113,8 @@
 						<div class="input-field col s12">
 							<div class="row">
 								<div class="input-field col s10">
-	                        		<input type="text" id="newuser-email" placeholder="Email Search" class="validate" required>
+	                        		<input type="text" id="newuser-email" class="validate" required>
+	                        		<label for="email">Email</label>
 	                        	</div>
 								<div class="input-field col s2">
 						    		<button class="waves-effect waves-light btn" type="submit" id="email-search"><i class="material-icons prefix" id="search-icon">search</i></button>
@@ -123,8 +124,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-						   	<input disabled id="first-name" type="text" class="validate" required>
-						    <label for="first-name">Name</label>
+						   	<div id="replace-name"></div>
 						</div>
 					</div>
 					<div class="row">
@@ -169,7 +169,6 @@
 	<script src="../assets/js/DrawSVGPlugin.min.js"></script>
 	<script src="../assets/js/SplitText.min.js"></script>
 	<script src="../assets/js/landing.js"></script>
-	<script src="../assets/js/recoverpw.js"></script>
 	
 </body>
 </html>

@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  		<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
+  		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
 	</head>
@@ -24,11 +24,7 @@
 				    	<ul id="slide-out" class="side-nav">
 			    			<li>
 			      				<div class="userView">
-			        				<div class="background">
-			          					<img src="../assets/images/ocean.jpeg">
-			        				</div>
-
-								<!-- Add user's profile link to profile picture -->
+								<!-- Customized view for user in side nav -->
 								{{#if user}}
 			        				<a href="#!user"><img class="circle" src="{{user.photo_path}}"></a>
 			        				<a href="#!name"><span class="white-text name">{{user.name}}</span></a>
@@ -37,11 +33,19 @@
 			      				</div>
 			    			</li>
 			    
+<<<<<<< HEAD
 			    			<li><a href="#!">Activity Feed</a></li>
 			    			<li><a href="#!">Profile</a></li>
 			    			<li><a href="/givebadge">Give a Badge!</a></li>
 			    			<li><a href="#!">Frequently Asked Questions</a></li>
 			    			<li><a href="#!">Log Out</a></li>
+=======
+			    			<li><a href="/index">Activity Feed</a></li>
+			    			<li><a href="/profile">Profile</a></li>
+			    			<li><a href="/givebadge">Give a Badge!</a></li>
+			    			<li><a href="/faq">Frequently Asked Questions</a></li>
+			    			<li><a href="/logout">Log Out</a></li>
+>>>>>>> ccbfbcb8c1728901b9f4836e53f230c4adbd283f
 		  				</ul>
 					</div>
 				</div>	
@@ -75,7 +79,7 @@
 			<div class="container">
             	<div class="row valign-wrapper">
               		<div class="col s6">
-              				<span class="copyright"><strong>© 2017 Copyright Plaudit!</strong></span>
+              			<span class="copyright"><strong>© 2017 Copyright Plaudit!</strong></span>
               		</div>
               		<div class="col s6">
                 		<a class="grey-text text-lighten-4 right" href="https://github.com/SusanArend/TeamAllCaps/tree/layout"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
@@ -86,7 +90,7 @@
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-		<script src="../public/assets/js/givebadge.js"></script>
+		<script src="../assets/js/givebadge.js" type="text/javascript"></script>
 
 	  	<script>
 
