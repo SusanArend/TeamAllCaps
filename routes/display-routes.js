@@ -8,7 +8,8 @@ module.exports = function(app){
 		function(req,res){
 			db.employ_badge.findAll({order: 'createdAt DESC', limit:10}).then(function(data){
 				var badges = [];
-				console.log(data[0].dataValues);
+				// line below was throwing error at login
+				// console.log(data[0].dataValues);
 				for (key in data){
 					var badge = {
 						sender_name:data[key].dataValues["sender_name"],
