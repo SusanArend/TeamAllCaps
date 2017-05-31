@@ -30,23 +30,19 @@
 
 
 									{{#if user}}
-										<a href="#!user"><img class="circle" src="{{user.photo_path}}"></a>
-										<a href="#!name"><span class="white-text name">{{user.name}}</span></a>
-										<a href="#!email"><span class="white-text email">{{user.email}}</span></a>
+										<img class="circle" src="{{user.photo_path}}">
+										<span class="white-text name">{{user.name}}</span>
 									{{/if}}
 									
-								<!-- Add user's profile link to profile picture -->
-{{!-- 			        			<a href="#!user"><img class="circle" src="../assets/images/profilePictures/Susan.png"></a>
-			        				<a href="#!name"><span class="white-text name">USER NAME HERE</span></a>
-			        				<a href="#!email"><span class="white-text email">USER EMAIL HERE</span></a> --}}
 			      				</div>
 			    			</li>
 			    
 			    			<li><a href="#!">Activity Feed</a></li>
-			    			<li><a href="#!">Profile</a></li>
+			    			<li><a href="/profile/{{user.name}}">Profile</a></li>
 			    			<li><a href="#!">Give a Badge!</a></li>
 			    			<li><a href="#!">Frequently Asked Questions</a></li>
 			    			<li><a href="#!">Log Out</a></li>
+			    			
 		  				</ul>
 					</div>
 				</div>	
