@@ -19,7 +19,9 @@ module.exports = function(app) {
     //If email exist, but password doesn't match, return ture, alert user password is wrong in frontend.
     //If email doesn't exist, alert the client that the user is not registered in frontend.
 
-
+    app.get("/login", function(req, res) {
+        res.sendFile(path.join(__dirname, "../views/landing.html"));
+    });
 
 
     app.post('/login',
@@ -27,6 +29,12 @@ module.exports = function(app) {
         function(req, res) {
             res.redirect('/index');
         });
+
+
+    app.get('/logout', function(req, res){
+        req.logout();
+        res.redirect('/');
+    });
 
     //TODO:  Can delete most of following, it is covered in server.js and passport.js module in main folder.
     // app.post("/login/post", function(req,res){
