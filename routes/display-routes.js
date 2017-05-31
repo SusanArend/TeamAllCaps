@@ -13,8 +13,8 @@ module.exports = function(app){
 					var badge = {
 						sender_name:data[key].dataValues["sender_name"],
 						recipient_name: data[key].dataValues["recipient_name"],
-						badge_id: data[key].dataValues["badge_id"],
-						badge_url:data[key].dataValues["badge_url"],
+						badge_id: data[key].dataValues["badgeid"],
+						badge_url:data[key].dataValues["badgeurl"],
 						comment: data[key].dataValues["comment"]
 					}
 					badges.push(badge);	
