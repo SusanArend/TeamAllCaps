@@ -13,7 +13,7 @@ module.exports = function(app){
 			recipient_name: req.body.recipient_name,
 			badgeid: req.body.badgeid,
 			//TODO: get badgeurl, implement case switch here or @ givebadge.js
-			badgeurl: "fakeurl",
+			badgeurl: req.body.badgeurl,
 			comment: req.body.comment
 		}).then(function(){
 			res.redirect("/index");

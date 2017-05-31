@@ -22,6 +22,7 @@ $(document).ready(function() {
   //   //In Case we want to add animations or anything when different badge selected
   //   // alert(this.value);
   // });
+  console.log("js file loaded");
   // Getting jQuery references to the post commenty, badgeId and recipient
       var badgeRecipient = $("#recipient");
       var badgeSubmitForm = $("#badge-form");
@@ -50,7 +51,7 @@ $(document).ready(function() {
           recipient_name: badgeRecipient.val().trim(),
           badgeid: badgeType,
           //badgeurl: TODO:  Could do if 6 cases here and assign, or just use badgeid and load badge
-          badgeurl: "/public/assets/images/badges/" + badgeType + ".svg",
+          badgeurl: "/assets/images/badges/" + badgeType + ".svg",
           comment: badgeComment.val().trim()
     }
     console.log(newBadge);
