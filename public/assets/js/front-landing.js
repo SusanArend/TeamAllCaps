@@ -57,14 +57,4 @@ $(document).ready(function(){
 		};
 	});
 
-
-
-
-
-
-
-
-
-
-
 });
