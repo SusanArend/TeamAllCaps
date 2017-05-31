@@ -6,6 +6,7 @@ module.exports = function(app){
 		require('connect-ensure-login').ensureLoggedIn("/login"),
 		function(req,res){
 		//TODO: implement an if/else check to make sure all data exists - including a read query to check for recipient name? unless its done beforehand.
+		// SEE NOTE BELOW AT /checkname ROUTE.
 		db.employ_badge.create({
 			sender_name: req.user.name,
 			recipient_name: req.body.recipient_name,
@@ -26,25 +27,28 @@ module.exports = function(app){
 			}
 			res.render("givebadge",hbsObject);
 		})
+};
 
-
-   app.post('/checkname', function(req, res) {
-        db.employ_basic.findAll({
-            attributes: ['name'],
-            where: {
-                name: req.body.name
-            }
-        }).then(function(data) {
-            var valid_email = [];
-            for (key in data) {
-                valid_email.push(data[key].dataValues.email)
-            };
-            if (valid_email.indexOf(req.body.email) !== -1) {
-                res.send(true)
-            } else {
-                res.send("invalid");
-            }
-        });
-    });
- };
+// Having trouble validating user name because can't read name input in givebadge.js
+// Maybe this can be integrated into app.post("/badge/post") route?
+ //   app.post('/checkname', function(req, res) {
+ //        db.employ_basic.findOne({
+ //            attributes: ['name'],
+ //            where: {
+ //                name: // how to collect badgeRecipient???
+ //            }
+ //        }).then(function(data) {
+ //   			// can we use this type of validation for name check???
+ //            var valid_email = [];
+ //            for (key in data) {
+ //                valid_email.push(data[key].dataValues.email)
+ //            };
+ //            if (valid_email.indexOf(req.body.email) !== -1) {
+ //                res.send(true)
+ //            } else {
+ //                res.send("invalid");
+ //            }
+ //        });
+ //    });
+ // };
 
