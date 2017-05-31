@@ -26,4 +26,25 @@ module.exports = function(app){
 			}
 			res.render("givebadge",hbsObject);
 		})
-};
+
+
+   app.post('/checkname', function(req, res) {
+        db.employ_basic.findAll({
+            attributes: ['name'],
+            where: {
+                name: req.body.name
+            }
+        }).then(function(data) {
+            var valid_email = [];
+            for (key in data) {
+                valid_email.push(data[key].dataValues.email)
+            };
+            if (valid_email.indexOf(req.body.email) !== -1) {
+                res.send(true)
+            } else {
+                res.send("invalid");
+            }
+        });
+    });
+ };
+

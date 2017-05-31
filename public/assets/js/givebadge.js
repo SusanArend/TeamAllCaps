@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 
 
-// TESTING MATERIALIZE AUTOCOMPLETE
+// Autocomplete helps user find recipient; although it does not prevent user from sending badge to random people. Names and images are hard-coded, which is not ideal, but for now it works. Is there a Sequelize statement to add?
 
   $("input.autocomplete").autocomplete({
     data: {
@@ -46,6 +46,22 @@ $(document).ready(function() {
     minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
   });
 
+// Validate recipient is in database. Alert user if they are not, and clear out recipient name field.
+
+$(badgeRecipient).on("change", function(event) {
+    event.preventDefault();
+   $.post("/checkname", badgeRecipient, function(data) {
+        if (data === true) {
+          console.log("Great!");
+        } else if (data === "invalid") {
+          console.log("Shucks!");
+          alert("There is no Plaudit user with that name. Please try again.")
+          $(badgeRecipient).val("");
+        };
+
+    });
+
+});
 
 //TODO DELETE IF NOT NEEDED:
   // var postCategorySelect = $("#category");
@@ -56,8 +72,6 @@ $(document).ready(function() {
   $(badgeSubmitForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
     var badgeType = $(':radio[name=badge-group]:checked').val();
-
-    console.log(badgeRecipient);
 
     // Wont submit the badge if we are missing a body or a title
     if (!badgeComment.val().trim() || !badgeType || !badgeRecipient.val().trim()) {
