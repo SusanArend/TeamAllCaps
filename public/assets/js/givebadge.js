@@ -22,7 +22,6 @@ $(document).ready(function() {
   //   //In Case we want to add animations or anything when different badge selected
   //   // alert(this.value);
   // });
-  console.log("js file loaded");
   // Getting jQuery references to the post commenty, badgeId and recipient
       var badgeRecipient = $("#recipient");
       var badgeSubmitForm = $("#badge-form");

@@ -2,10 +2,6 @@ var db = require("../models");
 
 module.exports = function(app){
 	// Render landing.html at route "/"
-	app.get("/givebadge", function(req, res){
-		res.render("givebadge");
-	})
-
 	app.post("/badge/post", 
 		require('connect-ensure-login').ensureLoggedIn("/login"),
 		function(req,res){
