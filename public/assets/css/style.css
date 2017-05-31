@@ -14,6 +14,14 @@ body {
 	color: #fff8ca;
 	background-color: #ffe97c;
 }
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
 nav {
 	float: none;
 }
@@ -78,13 +86,31 @@ nav .brand-logo {
 
 /*-----------------*/
 
+/*GIVE BADGE*/
+
+/*image radio buttons*/
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img {
+  border: 6px solid #6DDDB8;
+  border-radius: 50%;
+}
+
+/*-----------------*/
+
 /*FORMS*/
 
 /* label color */
 .input-field {
     margin-top: 0;
 }
-.input-field label {
+.input-field label, .input-field label:active, .input-field label:hover {
     color: #fff8ca;
 }
 
@@ -92,7 +118,7 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
     border-bottom: 1px solid #fff8ca;
 }
 /* label focus color */
-.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=textarea]:focus + label{
     color: #fff8ca;
 }
 /* label underline focus color */
@@ -112,8 +138,12 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
     box-shadow: 0 1px 0 0 #fff8ca;
 }
 /* icon prefix focus color */
-.input-field .prefix.active, textarea.materialize-textarea:focus:not([readonly])+label {
+.input-field .prefix.active {
     color: #fff8ca;
+}
+
+.input-field label, input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  font-size: 1.2rem;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -140,6 +170,13 @@ footer.page-footer {
 	padding-top: 20px;
 }
 
+:focus {
+  outline: none;
+}
+
+.input-field .prefix {
+  position: relative;
+}
 .waves-effect.waves-meeshteal {
      /* The alpha value allows the text and background color
      of the button to still show through. */

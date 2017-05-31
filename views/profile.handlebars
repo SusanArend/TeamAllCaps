@@ -1,7 +1,7 @@
 	<div class="container" id="user-profile">
 		<div class="row"> 
 			<div class="col s12 center-align" id="greeting">
-				<h1>{{this.name}}</h1>
+				<h4>{{this.name}}</h4>
 			</div>
 		</div>
 
@@ -14,25 +14,26 @@
 	<!-- User Specific Feed -->
 		<div class="row"> 
 			<div class="col s12 center-align" id="badge-history">
-				<h2>Badge History</h2>
+				<h5>Badge History</h5>
 			</div>
 		</div>
 
 		<div class="row"> 
-			<div class="col s12 center-align" id="greeting">
-				<ul>
+			<div class="col s12" id="greeting">
+				<ul class="collection">
 				  <!-- need to update to link to table in db-->
 				  {{#each badges}}
 				  	<li class="collection-item avatar">
 				      <!-- update to link to badge image -->
-				      <img src="{{this.badgeurl}}" alt="" class="circle">
+				     	<img src="{{this.badgeurl}}" alt="" class="circle">
 				      <!-- update to link to sender and recipient -->
-				      <span class="title">{{this.sender_name}} gave a badge to {{this.recipient_name}}!</span>
+				    	<span class="title"><a href="/profile/{{this.sender_name}}" class="profile-link">{{this.sender_name}}</a> gave a badge to <a href="/profile/{{this.recipient_name}}" class="profile-link">{{this.recipient_name}}</a>!</span>
 				      <!-- update to link to badge message -->
-				      <p>{{this.comment}}</p>
+				    	<p>{{this.comment}}</p>
 				  	</li>
-				  {{/each}}
+				  	{{/each}}
 				</ul>
 			</div>
 		</div>
 	</div>
+</div>

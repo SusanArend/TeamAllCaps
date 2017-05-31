@@ -1,85 +1,106 @@
 <div class="container" id="give-badge-page">
 		<div class="row">
 			<div class="col s12 center-align" id="title">
-			    <h1>Give a Badge!</h1>
+			    <h4>Give a Badge!</h4>
 			</div>
 		</div>
 
-		<form id="badge-form">
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="recipient" type="text" class="validate">
-					<label for="recipient">Recipient's Name</label>
+		<div class="row">
+			<form id="badge-form" class="col s12">
+				<div class="row">
+					<div class="input-field col s12 m10">
+						<input id="recipient" type="text" class="validate">
+						<label for="recipient">Recipient's Name</label>
+					</div>
+					<div class="input-field col s4 offset-s4 m2">
+						<button class="waves-effect waves-light btn" type="submit" id="recipient-search">SEARCH</button>
+					</div>
 				</div>
-				<button class="waves-effect waves-light btn" type="submit" id="recipient-search"><i class="material-icons prefix" id="search-icon">search</i></button>
-			</div>
 
-			<div class="row">
 
-				<div class="col s12 m3">
-					<div class="card">
-						<div class="card-image">
+				<div class="row">
+					<div class="col s5 offset-s1 m3">
+						<!-- <div class="card">
+							<div class="card-image">
+								<img src="../assets/images/badges/crown.svg">
+							</div>
+							<div class="card-content">
+								<input class="with-gap" name ="badge-group" value="crown" type="radio" id="badge1" />
+								<label for="badge1"></label>
+							</div>
+						</div> -->
+						<label>
+							<input class="with-gap" name ="badge-group" value="crown" type="radio" id="badge4"/>
 							<img src="../assets/images/badges/crown.svg">
-						</div>
-						<div class="card-content">
-							<input class="with-gap" name ="badge-group" value="crown" type="radio" id="badge1" />
-							<label for="badge1"></label>
-						</div>
+						</label>
 					</div>
-				</div>
 
 
-				<div class="col s12 m3">
-					<div class="card">
-						<div class="card-image">
+					<div class="col s5 m3">
+						<!-- <div class="card">
+							<div class="card-image">
+								<img src="../assets/images/badges/lightbulb.svg">
+							</div>
+							<div class="card-content">
+								<input class="with-gap" name ="badge-group" value="lightbulb" type="radio" id="badge2" />
+								<label for="badge2"></label>
+							</div>
+						</div> -->
+						<label>
+							<input class="with-gap" name ="badge-group" value="lightbulb" type="radio" id="badge4"/>
 							<img src="../assets/images/badges/lightbulb.svg">
-						</div>
-						<div class="card-content">
-							<input class="with-gap" name ="badge-group" value="lightbulb" type="radio" id="badge2" />
-							<label for="badge2"></label>
-						</div>
+						</label>
 					</div>
-				</div>
 
-	
-				<div class="col s12 m3">
-					<div class="card">
-						<div class="card-image">
+		
+					<div class="col s5 offset-s1 m3">
+					<!-- <div class="card">
+							<div class="card-image">
+								<img src="../assets/images/badges/star.svg">
+							</div>
+							<div class="card-content">
+								<input class="with-gap" name ="badge-group" value="star" type="radio" id="badge3" />
+								<label for="badge3"></label>
+							</div>
+						</div> -->
+						<label>
+							<input class="with-gap" name ="badge-group" value="star" type="radio" id="badge3"/>
 							<img src="../assets/images/badges/star.svg">
-						</div>
-						<div class="card-content">
-							<input class="with-gap" name ="badge-group" value="star" type="radio" id="badge3" />
-							<label for="badge3"></label>
-						</div>
+						</label>
 					</div>
-				</div>
 
 
-				<div class="col s12 m3">
-					<div class="card">
-						<div class="card-image">
+					<div class="col s5 m3">
+						<!-- <div class="card">
+							<div class="card-image">
+								<img src="../assets/images/badges/trophy.svg">
+							</div>
+							<div class="card-content">
+								<input class="with-gap" name ="badge-group" value="trophy" type="radio" id="badge4" />
+								<label for="badge4"></label>
+							</div>
+						</div> -->
+					<!-- </div> -->
+						<label>
+							<input class="with-gap" name ="badge-group" value="trophy" type="radio" id="badge4"/>
 							<img src="../assets/images/badges/trophy.svg">
-						</div>
-						<div class="card-content">
-							<input class="with-gap" name ="badge-group" value="trophy" type="radio" id="badge4" />
-							<label for="badge4"></label>
-						</div>
+						</label>
 					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="input-field col s12">
-					<textarea id="comment" class="materialize-textarea" name="comment"></textarea>
-					<label for="textarea">Write a Nice Message!</label>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea id="comment" class="materialize-textarea" name="comment"></textarea>
+						<label for="textarea">Write a Nice Message!</label>
+					</div>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="input-field col s12 center-align">
-					<button class="waves-effect waves-light btn" type="submit" id="give-badge-submit">SEND</button>
+				<div class="row">
+					<div class="input-field col s4 offset-s4 center-align">
+						<button class="waves-effect waves-light btn" type="submit" id="give-badge-submit">SEND</button>
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>	
 	</div>
 	
