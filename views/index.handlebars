@@ -1,21 +1,32 @@
+    <div class="row">
+      <div class="col s12">
+        <h3 class="center-align">Welcome {{user.name}}!</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <img src="{{user.photo_path}}" alt="" class="circle">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col s12">
+        <h4 class="center-align">Activity Feed</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <ul class="collection">
+          {{#each badges}}
+          	<li class="collection-item avatar">
 
-<h1>Welcome {{user.name}}!</h1>
-<!-- need to update to link to user image -->
-<img src="{{user.img_url}}" alt="" class="circle">
+              <img src="{{badgeurl}}" alt="" class="circle">
 
-<h2>Activity Feed</h2>
+              <span class="title">{{sender_name}} gave a badge to {{recipient_name}}!</span>
 
-<ul>
-  <!-- need to update to link to table in db-->
-  {{#each badges}}
-  	<li class="collection-item avatar">
-      <!-- update to link to badge image -->
-      <img src="{{badgeurl}}" alt="" class="circle">
-      <!-- update to link to sender and recipient -->
-      <span class="title">{{sender_name}} gave a badge to {{recipient_name}}!</span>
-      <!-- update to link to badge message -->
-      <p>{{comment}}</p>
-  	</li>
-  {{/each}}
-
-</ul>
+              <p>{{comment}}</p>
+          	</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>

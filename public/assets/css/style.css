@@ -65,6 +65,17 @@ nav .brand-logo {
     color: #fff;
 }
 
+/*BADGE FEED*/
+.collection {
+  border: none;
+}
+
+.collection .collection-item {
+  color: #767676;
+  margin: 10px;
+  border-bottom: none;
+}
+
 /*-----------------*/
 
 /*FORMS*/
