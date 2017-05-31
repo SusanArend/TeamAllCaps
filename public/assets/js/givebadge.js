@@ -3,6 +3,7 @@
 // ***HEAVY EDITS NEEDED***
 
 $(document).ready(function() {
+
   // Gets an optional query string from our url (i.e. ?badge_id=23)
   // var url = window.location.search;
   // var postId;
@@ -23,10 +24,10 @@ $(document).ready(function() {
   // });
   console.log("js file loaded");
   // Getting jQuery references to the post commenty, badgeId and recipient
-  var badgeComment = $("#comment");
-  var badgeType = $(':radio[name=badge-group]:checked').val();
-  var badgeRecipient = $("#recipient");
-  var badgeSubmitForm = $("#badge-form");
+      var badgeRecipient = $("#recipient");
+      var badgeSubmitForm = $("#badge-form");
+      var badgeComment = $("#comment");
+
 
 //TODO DELETE IF NOT NEEDED:
   // var postCategorySelect = $("#category");
@@ -36,30 +37,36 @@ $(document).ready(function() {
   // Adding an event listener for when the form is submitted
   $(badgeSubmitForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
+    var badgeType = $(':radio[name=badge-group]:checked').val();
+    console.log("button pushed");
+    console.log(badgeComment.val().trim())
+    console.log(badgeType)
+    console.log(badgeRecipient.val().trim())
     // Wont submit the badge if we are missing a body or a title
-    if (!badgeComment.val().trim() || !badgeType || badgeRecipient.val().trim()) {
+    if (!badgeComment.val().trim() || !badgeType || !badgeRecipient.val().trim()) {
+      console.log("error in comment / type / recipient")
       return;
-    }
-
-    // Constructing a newBadge object to hand to the database
-    db.employ_basic.findOne({
-      where:{
-        name: badgeRecipient.val().trim()
-      }
-    }).then(function(data){
-      if(data){
-        var newBadge = {
+    }    
+    var newBadge = {
           recipient_name: badgeRecipient.val().trim(),
           badgeid: badgeType,
           //badgeurl: TODO:  Could do if 6 cases here and assign, or just use badgeid and load badge
           badgeurl: "/public/assets/images/badges/" + badgeType + ".svg",
           comment: badgeComment.val().trim()
-        };
-        console.log(newBadge);
-        submitBadge(newBadge);
-      }else{
-        alert("recipient not found");
-      };
+    }
+    console.log(newBadge);
+    submitBadge(newBadge);
+    // Constructing a newBadge object to hand to the database
+
+    // db.employ_basic.findOne({
+    //   where:{
+    //     name: badgeRecipient.val().trim()
+    //   }
+    // }).then(function(data){   
+    //   (if data){
+    //   }else{
+    //     alert("recipient not found");
+    //   };
     })
     
     //TODO:  Add a query to check if recipient_name exists as a user
@@ -109,4 +116,5 @@ $(document).ready(function() {
   //     window.location.href = "/index";
   //   });
   // }
+// });
 });
