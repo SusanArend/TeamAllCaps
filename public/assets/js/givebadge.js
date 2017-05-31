@@ -23,9 +23,28 @@ $(document).ready(function() {
   //   // alert(this.value);
   // });
   // Getting jQuery references to the post commenty, badgeId and recipient
-      var badgeRecipient = $("#recipient");
+      var badgeRecipient = $("#autocomplete-input");
       var badgeSubmitForm = $("#badge-form");
       var badgeComment = $("#comment");
+
+
+
+// TESTING MATERIALIZE AUTOCOMPLETE
+
+  $("input.autocomplete").autocomplete({
+    data: {
+        "Adam McNerney": "./images/profilePictures/Adam.png",
+        "Michelle Didier": "./images/profilePictures/Michelle.png",
+        "Rebecca Palmore": "./images/profilePictures/Rebecca.png",
+        "Susan Heiniger": "./images/profilePictures/Susan.png",
+        "Yilin Xu": "./images/profilePictures/Yilin.png"
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    onAutocomplete: function(val) {
+      // Callback function when value is autcompleted.
+    },
+    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+  });
 
 
 //TODO DELETE IF NOT NEEDED:
@@ -37,6 +56,9 @@ $(document).ready(function() {
   $(badgeSubmitForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
     var badgeType = $(':radio[name=badge-group]:checked').val();
+
+    console.log(badgeRecipient);
+
     // Wont submit the badge if we are missing a body or a title
     if (!badgeComment.val().trim() || !badgeType || !badgeRecipient.val().trim()) {
       return;

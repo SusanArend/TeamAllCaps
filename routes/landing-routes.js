@@ -2,12 +2,12 @@ var path = require("path");
 var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
-// var authentication = require("../config/authentication.js");
-// var smtpTransport = nodemailer.createTransport({
-//     service: "gmail",
-//     host: "smtp.gmail.com",
-//     auth: authentication
-// });
+var authentication = require("../config/authentication.js");
+var smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: authentication
+});
 
 module.exports = function(app) {
     // Render landing.html at route "/"
