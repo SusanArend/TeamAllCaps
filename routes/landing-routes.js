@@ -27,13 +27,13 @@ module.exports = function(app) {
     app.post('/login',
         passport.authenticate('local', { failureRedirect: '/' }),
         function(req, res) {
-            res.redirect('/landing');
+            res.redirect('/index');
         });
 
 
     app.get('/logout', function(req, res){
         req.logout();
-        res.redirect('/landing');
+        res.redirect('/');
     });
 
     //TODO:  Can delete most of following, it is covered in server.js and passport.js module in main folder.
