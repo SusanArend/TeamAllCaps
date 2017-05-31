@@ -5,8 +5,6 @@ module.exports = function(app){
 	app.post("/badge/post", 
 		require('connect-ensure-login').ensureLoggedIn("/login"),
 		function(req,res){
-			console.log(req)
-			console.log(res)
 		//TODO: implement an if/else check to make sure all data exists - including a read query to check for recipient name?  unless its done beforehand.
 		db.employ_badge.create({
 			sender_name: req.user.name,

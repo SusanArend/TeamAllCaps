@@ -22,7 +22,6 @@ $(document).ready(function() {
   //   //In Case we want to add animations or anything when different badge selected
   //   // alert(this.value);
   // });
-  console.log("js file loaded");
   // Getting jQuery references to the post commenty, badgeId and recipient
       var badgeRecipient = $("#recipient");
       var badgeSubmitForm = $("#badge-form");
@@ -38,13 +37,8 @@ $(document).ready(function() {
   $(badgeSubmitForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
     var badgeType = $(':radio[name=badge-group]:checked').val();
-    console.log("button pushed");
-    console.log(badgeComment.val().trim())
-    console.log(badgeType)
-    console.log(badgeRecipient.val().trim())
     // Wont submit the badge if we are missing a body or a title
     if (!badgeComment.val().trim() || !badgeType || !badgeRecipient.val().trim()) {
-      console.log("error in comment / type / recipient")
       return;
     }    
     var newBadge = {
@@ -54,7 +48,6 @@ $(document).ready(function() {
           badgeurl: "/assets/images/badges/" + badgeType + ".svg",
           comment: badgeComment.val().trim()
     }
-    console.log(newBadge);
     submitBadge(newBadge);
     // Constructing a newBadge object to hand to the database
 
