@@ -1,6 +1,7 @@
 // // // Set up MySQL connection.
 var mysql = require("mysql");
 var connection;
+var mysqlPassword = require("../config/mysqlPassword.js");
 
 // Set up JawsDB
 if (process.env.JAWSDB_URL) {
