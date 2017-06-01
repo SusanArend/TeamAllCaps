@@ -23,12 +23,12 @@ h5 {
   font-size: 20px;
 }
 nav {
-	float: none;
+	/*float: none;*/
 }
 nav .brand-logo {
 	font-family: 'Lobster', cursive;
 	color: #fff8ca;
-	font-size: 2.9rem;
+	font-size: 2.6rem;
 }
 
 nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
@@ -49,7 +49,7 @@ nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
 	box-shadow: none;
 }
 
-.material-icons, i {
+.material-icons, i, nav .input-field label.active i {
 	color: #fff8ca;
 }
 
@@ -58,13 +58,14 @@ nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
 }
 
 nav .brand-logo {
-    position: relative;
+  position: relative;
 }
 
 .card {
 	background-color: transparent;
 	box-shadow: none;
 }
+
 :focus {
 	outline: none;
 }
@@ -73,12 +74,13 @@ nav .brand-logo {
     color: #fff8ca;
 }
 
+#search-icon, #nav-search {
+  display: inline-block;
+}
+
 /*-----------------*/
 
 /*BUTTONS*/
-.input-field .prefix {
-  position: relative;
-}
 .waves-effect.waves-meeshteal {
      /* The alpha value allows the text and background color
      of the button to still show through. */
@@ -129,7 +131,10 @@ label > input:checked + img {
 /*-----------------*/
 
 /*FORMS*/
-
+input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:hover, input:-webkit-autofill:visited {
+    -webkit-box-shadow: 0 0 0px 1000px #ffe97c inset !important;
+    -webkit-text-fill-color: #fff8ca !important;
+}
 /* label color */
 .input-field {
     margin-top: 0;

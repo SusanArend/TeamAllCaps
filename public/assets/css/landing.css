@@ -113,6 +113,11 @@ a:hover, a:active {
 
 /*FORMS*/
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ffdf3e inset;
+    -webkit-text-fill-color: #fff8ca !important;
+}
+
 #replace-name {
   font-size: 16px;
   color: #00cb88;
