@@ -113,8 +113,8 @@ a:hover, a:active {
 
 /*FORMS*/
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #ffdf3e inset;
+input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:hover, input:-webkit-autofill:visited {
+    -webkit-box-shadow: 0 0 0px 1000px #ffdf3e inset !important;
     -webkit-text-fill-color: #fff8ca !important;
 }
 
