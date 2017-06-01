@@ -3,7 +3,7 @@ var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
 var bcrypt = require('bcryptjs')
-// var mysqlPassword = require("../config/mysqlPassword.js");
+var mysqlPassword = require("../config/mysqlPassword.js");
 var authentication = require("../config/authentication.js");
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -145,7 +145,7 @@ module.exports = function(app) {
                         to: email,
                         subject: "Your Plaudit Password Reset Request",
                         text: "Here is your new Plaudit password: " + newPassword,
-                        html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + newPassword + "</b></p><p><a href='#'>Log in to Plaudit now!</p></body>"
+                        html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + newPassword + "</b></p><p><a href='https://plaudit.herokuapp.com/' target='blank'>Log in to Plaudit now!</p></body>"
                     };
                     smtpTransport.sendMail(mailOptions, function(error, response) {
                         if (error) {
