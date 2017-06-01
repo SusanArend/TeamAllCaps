@@ -15,11 +15,17 @@ body {
 	background-color: #ffe97c;
 }
 
-h4 {
+.header-border {
+  margin: 0 auto;
+  width: 25%;
+  height: 3px;
+  background-color: #fff8ca;
+}
+h2 {
   font-size: 24px;
 }
 
-h5 {
+h3 {
   font-size: 20px;
 }
 nav {
