@@ -3,7 +3,6 @@ var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
 var bcrypt = require('bcryptjs')
-var mysqlPassword = require("../config/mysqlPassword.js");
 var authentication = require("../config/authentication.js");
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
