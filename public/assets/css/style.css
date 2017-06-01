@@ -87,10 +87,17 @@ nav .brand-logo {
 #nav-search {
   padding-bottom: 5px;
   border-bottom: 1px solid #fff8ca;
-  /*margin-left: 2rem;*/
 }
+
 #search-col{
   padding: 0 3rem;
+}
+
+#search-mobile {
+  background-color: #ffdf3e;
+  margin: 0 auto;
+  width: 90%;
+  padding-right: 2rem;
 }
 /*-----------------*/
 
