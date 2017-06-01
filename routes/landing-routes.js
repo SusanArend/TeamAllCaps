@@ -2,14 +2,16 @@ var path = require("path");
 var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
+var bcrypt = require('bcryptjs')
+// var mysqlPassword = require("../config/mysqlPassword.js");
 var authentication = require("../config/authentication.js");
-var mysqlPassword = require("../config/mysqlPassword.js");
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
     auth: authentication
 });
-
+var randomstring = require("randomstring"); 
+    
 module.exports = function(app) {
     // Render landing.html at route "/"
     app.get("/", function(req, res) {
@@ -39,48 +41,111 @@ module.exports = function(app) {
 
     //TODO:  Can delete most of following, it is covered in server.js and passport.js module in main folder.
     // app.post("/login/post", function(req,res){
-    // 	db.employ_option.findOne({
-    // 		where: {
-    // 			email: req.body.email
-    // 		},
-    // 	}).then(function(data){
-    // 		passport.authenticate('local', {
-    //      			successRedirect: '/index',
-    //      			failureRedirect: '/' 
-    //  			})
+    //  db.employ_option.findOne({
+    //      where: {
+    //          email: req.body.email
+    //      },
+    //  }).then(function(data){
+    //      passport.authenticate('local', {
+    //                  successRedirect: '/index',
+    //                  failureRedirect: '/' 
+    //              })
 
-    // 		console.log("checking password now")
-    // 	})
+    //      console.log("checking password now")
+    //  })
     // })
 
     // if (data.dataValues.password && parseInt(req.body.password) === data.dataValues.password){
-    // 	res.redirect("/display");
+    //  res.redirect("/display");
     // } else if(data.dataValues.password && parseInt(req.body.password)!== data.dataValues.password){
-    // 	res.send("wrong password");
-    // 	}else if(!data.dataValues.password){
-    // 		res.send("invalid email");
+    //  res.send("wrong password");
+    //  }else if(!data.dataValues.password){
+    //      res.send("invalid email");
     // };
 
-    // 	})
+    //  })
     // });
 
-    app.post('/sendemail', function(req, res) {
+    // app.post('/sendemail', function(req, res) {
+    //     var newPassword = randomstring.generate(8);
+    //     db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
+    //         var valid_email = [];
+    //         for (key in data) {
+    //             valid_email.push(data[key].dataValues.email)
+    //         };
+    //         if (valid_email.indexOf(req.body.email) !== -1) {
+
+    //             db.employ_option.findOne({
+    //                 where: {
+    //                     email: req.body.email
+    //                 }
+    //             }).then(function(data) {
+    //                 var mailOptions = {
+    //                     to: req.body.email,
+    //                     subject: "Your Plaudit Password Reset Request",
+    //                     text: "Here is your new Plaudit password: " + data.dataValues.password,
+    //                     html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + data.dataValues.password + "</b></p><p><a href='#'>Log in to Plaudit now!</p></body>"
+    //                 };
+    //                 smtpTransport.sendMail(mailOptions, function(error, response) {
+    //                     if (error) {
+    //                         console.log(error);
+    //                         res.send("error");
+    //                     } else {
+    //                         console.log("Message sent to: " + req.body.email);
+    //                         res.send("sent");
+    //                     }
+    //                 });
+    //             });
+    //         } else {
+    //             res.send("invalid email")
+    //         };
+    //     })
+    // });
+
+        app.put('/api/updatePassword', function(req, res) {
+            // var newPassword = randomstring.generate(8);
+            // console.log("req", req);
+            console.log("body", req.body.password);
+        //     var newPassword = req.body.password; 
+        //     var email = req.body.email;
+        //     console.log(newPassword, email);
+        //     var hashedPassword;
+        //     bcrypt.genSalt(10, function(err, salt) {
+        //         bcrypt.hash(newPassword, salt, function(err, hash) {
+        //             hashedPassword = hash;
+        //             });
+        //    }).then(function(data){db.employ_option.update({
+        //                 password: hashedPassword
+        //             }, {
+        //                 where: {
+        //                     email: email
+        //                 }
+        //             })
+        //     })
+        });
+
+        app.post('/sendemail', function(req, res) {
+        var email;          
+        var newPassword = randomstring.generate(8);
+        // var newPassword = 'apple';
         db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
             var valid_email = [];
             for (key in data) {
                 valid_email.push(data[key].dataValues.email)
             };
             if (valid_email.indexOf(req.body.email) !== -1) {
+                email = req.body.email;
                 db.employ_option.findOne({
                     where: {
                         email: req.body.email
                     }
+
                 }).then(function(data) {
                     var mailOptions = {
-                        to: req.body.email,
-                        subject: "Recover Your Plaudit Password",
-                        text: "Here is your Plaudit password: " + data.dataValues.password,
-                        html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + data.dataValues.password + "</b></p><p><a href='#'>Log in to Plaudit now!</p></body>"
+                        to: email,
+                        subject: "Your Plaudit Password Reset Request",
+                        text: "Here is your new Plaudit password: " + newPassword,
+                        html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + newPassword + "</b></p><p><a href='#'>Log in to Plaudit now!</p></body>"
                     };
                     smtpTransport.sendMail(mailOptions, function(error, response) {
                         if (error) {
@@ -88,7 +153,10 @@ module.exports = function(app) {
                             res.send("error");
                         } else {
                             console.log("Message sent to: " + req.body.email);
-                            res.send("sent");
+                            var sendObject = {status: "sent", password: newPassword};
+                            console.log("sendObject: ", sendObject)
+                            res.send(sendObject);
+                            // res.send("sent")
                         }
                     });
                 });
@@ -97,6 +165,8 @@ module.exports = function(app) {
             };
         })
     });
+
+
     //If the user email is valid and the user hasn't registed before, 
     //user information will updated in employ_option table based on form information
     //If the user has been registed before, reture exist to the frontend
@@ -104,6 +174,12 @@ module.exports = function(app) {
     //not valid to frontend
     app.post("/newuser/post", function(req, res) {
         db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
+            var hashedPassword;
+            bcrypt.genSalt(10, function(err, salt) {
+                bcrypt.hash(req.body.password, salt, function(err, hash) {
+                    hashedPassword = hash;
+                });
+            });
             var valid_email = [];
             for (key in data) {
                 valid_email.push(data[key].dataValues.email)
@@ -116,17 +192,10 @@ module.exports = function(app) {
                         exist_email.push(data[key].dataValues.email);
                     };
                     if (exist_email.indexOf(req.body.email) === -1) {
-
-                        // var hashedPassword;
-                        //  bcrypt.genSalt(10, function(err, salt) {
-                        //     bcrypt.hash(req.body.password, salt, function(err, hash) {
-                        //     	hashedPassword = hash;
-                        //     });
-                        // })
                         db.employ_option.create({
                             email: req.body.email,
-                            password: req.body.password,
-                            // password: hashedPassword,
+                            // password: req.body.password,
+                            password: hashedPassword,
                             favorite: req.body.favorite
                         }).then(function() {
                             res.send(true);

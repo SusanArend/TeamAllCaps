@@ -18,7 +18,7 @@ function updatePassword(email, password){
 	    var user ={email:$("#recover-email").val().trim()};
 	    $("#confirm").text("Sending E-mail ... Please wait");
 	    $.post("/sendemail",user,function(data){
-	    	if(data ==="sent"){
+	    	if(data.status ==="sent"){
 	    	// if(data === "sent"){
 	    		// updatePassword(user);
 	    		$("#confirm").empty().html(
