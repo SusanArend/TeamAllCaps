@@ -79,6 +79,7 @@ module.exports = function(app) {
             console.log("logged in")
             return done(null, user)
           }
+        })
         }).then(function(data){
 
         //TODO: THE FOLLOWING is the sync version for bcrypt can remove once async works.
@@ -90,10 +91,8 @@ module.exports = function(app) {
         console.log("wrong password")
         return done(null, false, { message: 'Incorrect credentials.' })
         })
-      })
-    // })
+      }))
     }
-  ))
 
 
 
@@ -112,5 +111,4 @@ module.exports = function(app) {
       }      
       done(null, user)
     })
-  })
-}
+  });
