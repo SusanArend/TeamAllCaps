@@ -1,4 +1,31 @@
-#profile-img {
-	width: 20%;
-	height: auto;
+/*COLOR PALETTE*/
+/* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
+/* for body BG - lighter yellow - #ffe97c */
+/* for text - lightest yellow - #fff8ca */
+/* for accents - light/dark teal - #6DDDB8/#00CB88  && charcoal - #767676*/
+
+/*-----------------*/
+
+/*FAQ*/
+
+.collapsible, .collapsible-body, .collapsible-header, .faq-icon {
+	background-color: #ffdf3e;
+	color: #fff8ca;
+	box-shadow: none;
+	font-size: 20px;
+}
+
+.collapsible-header {
+    border-bottom: 3px solid #ffe97c;
+}
+
+.collapsible {
+    border-top: 1px solid #ffe97c;
+    border-right: none;
+    border-left: none;
+}
+
+.collapsible-body {
+	border-bottom: 3px solid #ffe97c;
+	background-color: rgb(244, 213, 59);
 }
