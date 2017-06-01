@@ -60,17 +60,26 @@ module.exports = function(app) {
           return done(null, false, { message: 'Incorrect credentials.' })
         }
         //TODO:  delete these 2 lines and uncomment the bcrypt lines once using bcrypt
-        if (user.password == password) {
-          console.log("logged in")
-          return done(null, user)
-        }
+        // if (user.password == password) {
+        //   console.log("logged in")
+        //   return done(null, user)
+        // }
 
         // bcrypt.compare(password, user.password, function(err, res) {
         //   console.log(res);
         //   if (res){
+        //     console.log("logged in")
         //     return done(null, user)
         //   }
         // });
+
+        bcrypt.compare(password, user.password, function(err, res) {
+          console.log(res);
+          if (res){
+            console.log("logged in")
+            return done(null, user)
+          }
+        }).then(function(data){
 
         //TODO: THE FOLLOWING is the sync version for bcrypt can remove once async works.
         // var hashedPassword = bcrypt.hashSync(password, user.salt)
@@ -80,6 +89,7 @@ module.exports = function(app) {
         // }
         console.log("wrong password")
         return done(null, false, { message: 'Incorrect credentials.' })
+        })
       })
     // })
     }

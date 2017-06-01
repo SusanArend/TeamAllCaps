@@ -1,14 +1,32 @@
 $(document).ready(function(){
 
+function updatePassword(email, password){
+	console.log("email", email)
+	console.log("password", password)	
+	var dataObject = {email: email, password : password}
+	$.ajax({
+	   		method: "PUT",
+	   		url: "/api/updatePassword",
+	   		data: dataObject
+	   	})
+	   	// .done(function(){
+
+	   	// })
+};
+
 	$("#recover-pw").click(function() {
 	    var user ={email:$("#recover-email").val().trim()};
 	    $("#confirm").text("Sending E-mail ... Please wait");
 	    $.post("/sendemail",user,function(data){
-	    	if(data ==="sent"){
+	    	if(data.status ==="sent"){
+	    	// if(data === "sent"){
+	    		// updatePassword(user);
 	    		$("#confirm").empty().html(
 	           		"Thank you. Your Plaudit account password has been emailed to "
 	           		+ user.email + "."
 	           	);
+	           	console.log("passwordfirst", data.password);	
+	           	updatePassword(user.email, data.password);
 	    	}else if(data==="invalid email"){
 	    		alert("invalid email");
 	    	};
