@@ -33,6 +33,7 @@ module.exports =  function(app){
 
 		}else{
 			res.send("Invalid name.");
+			res.redirect("/index");
 		}
 		
 		});
