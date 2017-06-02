@@ -1,5 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
   var employ_badge = sequelize.define("employ_badge", {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
     sender_name: {
       type: DataTypes.STRING,
       allowNull: false

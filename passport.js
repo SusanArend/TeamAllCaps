@@ -49,43 +49,31 @@ module.exports = function(app) {
     function(username, password, done) {
       // process.nextTick(function() {
       // console.log("hitting passport")
-      console.log(username)
-      db.employ_option.findOne({ 
+      db.employ_basic.findOne({ 
         where: {
           email: username
-        }
-      }).then(function (user) {
-        if (user == null) { 
-          console.log("no user")
-          return done(null, false, { message: 'Incorrect credentials.' })
-        }
-        //TODO:  delete these 2 lines and uncomment the bcrypt lines once using bcrypt
-        // if (user.password == password) {
-        //   console.log("logged in")
-        //   return done(null, user)
-        // }
-
-        // bcrypt.compare(password, user.password, function(err, res) {
-        //   console.log(res);
-        //   if (res){
-        //     console.log("logged in")
-        //     return done(null, user)
-        //   }
-        // });
-
-        bcrypt.compare(password, user.password, function(err, res) {
-          console.log(res);
+        },
+        include:[db.employ_option]
+      }).then(function (data) {
+          if (!data) { 
+            console.log("no user")
+            return done(null, false, { message: 'Incorrect credentials. please check your email!' })
+          }
+        var user = data.dataValues;
+        var userpassword = user.employ_option.dataValues.password
+        bcrypt.compare(password,userpassword, function(err, res) {
           if (err)
               throw err;
           if (res){
             console.log("logged in")
             return done(null, user)
+          }else{
+            console.log("wrong password")
+            return done(null, false, { message: 'Incorrect credentials. please login' })
           }
-          console.log("wrong password")
-        return done(null, false, { message: 'Incorrect credentials.' })
         })
         // .then(function(data){
-
+        
         
 
         //TODO: THE FOLLOWING is the sync version for bcrypt can remove once async works.
@@ -103,16 +91,17 @@ module.exports = function(app) {
 
 
 
-  passport.serializeUser(function(user, done) {
-    done(null, user.email)
+  passport.serializeUser(function(user, done){
+    done(null, user.id)
   });
 
-  passport.deserializeUser(function(email, done) {
+  passport.deserializeUser(function(id, done) {
     db.employ_basic.findOne({
       where: {
-        email: email
+        id: id
       }
-    }).then(function (user) {
+    },{include:[{model:db.employ_options}]
+  }).then(function (user) {
       if (user == null) {
         done(new Error('Wrong user id.'))
       }      

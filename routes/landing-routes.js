@@ -15,20 +15,17 @@ var randomstring = require("randomstring");
 module.exports = function(app) {
     // Render landing.html at route "/"
     app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../views/landing.html"));
+        res.render("landing", {layout:false, message: req.flash("error")});
     });
     //By submitting email,password, email and password value in employ_option table are checked.
     //If email and password matches, redirec to another page.
     //If email exist, but password doesn't match, return ture, alert user password is wrong in frontend.
     //If email doesn't exist, alert the client that the user is not registered in frontend.
 
-    app.get("/login", function(req, res) {
-        res.sendFile(path.join(__dirname, "../views/landing.html"));
-    });
-
-
     app.post('/login',
-        passport.authenticate('local', { failureRedirect: '/' }),
+        passport.authenticate('local', 
+            {failureRedirect: '/',
+            failureFlash: true}),
         function(req, res) {
             res.redirect('/index');
         });
@@ -39,131 +36,60 @@ module.exports = function(app) {
         res.redirect('/');
     });
 
-    //TODO:  Can delete most of following, it is covered in server.js and passport.js module in main folder.
-    // app.post("/login/post", function(req,res){
-    //  db.employ_option.findOne({
-    //      where: {
-    //          email: req.body.email
-    //      },
-    //  }).then(function(data){
-    //      passport.authenticate('local', {
-    //                  successRedirect: '/index',
-    //                  failureRedirect: '/' 
-    //              })
-
-    //      console.log("checking password now")
-    //  })
-    // })
-
-    // if (data.dataValues.password && parseInt(req.body.password) === data.dataValues.password){
-    //  res.redirect("/display");
-    // } else if(data.dataValues.password && parseInt(req.body.password)!== data.dataValues.password){
-    //  res.send("wrong password");
-    //  }else if(!data.dataValues.password){
-    //      res.send("invalid email");
-    // };
-
-    //  })
-    // });
-
-    // app.post('/sendemail', function(req, res) {
-    //     var newPassword = randomstring.generate(8);
-    //     db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
-    //         var valid_email = [];
-    //         for (key in data) {
-    //             valid_email.push(data[key].dataValues.email)
-    //         };
-    //         if (valid_email.indexOf(req.body.email) !== -1) {
-
-    //             db.employ_option.findOne({
+    // app.put('/api/updatePassword', function(req, res) {
+    //     console.log("body", req.body.password);
+    //     var newPassword = req.body.password; 
+    //     var email = req.body.email;
+    //     console.log(newPassword, email);
+    //     var hashedPassword;
+    //     var salt = bcrypt.genSaltSync(10);
+    //     hashedPassword = bcrypt.hashSync(req.body.password, salt);
+    //    //  bcrypt.genSalt(10, function(err, salt) {
+    //    //      bcrypt.hash(newPassword, salt, function(err, hash) {
+    //    //          hashedPassword = hash;
+    //    //          });
+    //    // })
+    //     db.employ_option.update({
+    //                 password: hashedPassword
+    //             }, {
     //                 where: {
-    //                     email: req.body.email
+    //                     email: email
     //                 }
-    //             }).then(function(data) {
-    //                 var mailOptions = {
-    //                     to: req.body.email,
-    //                     subject: "Your Plaudit Password Reset Request",
-    //                     text: "Here is your new Plaudit password: " + data.dataValues.password,
-    //                     html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + data.dataValues.password + "</b></p><p><a href='#'>Log in to Plaudit now!</p></body>"
-    //                 };
-    //                 smtpTransport.sendMail(mailOptions, function(error, response) {
-    //                     if (error) {
-    //                         console.log(error);
-    //                         res.send("error");
-    //                     } else {
-    //                         console.log("Message sent to: " + req.body.email);
-    //                         res.send("sent");
-    //                     }
-    //                 });
-    //             });
-    //         } else {
-    //             res.send("invalid email")
-    //         };
-    //     })
+    //     });
     // });
 
-        app.put('/api/updatePassword', function(req, res) {
-            // var newPassword = randomstring.generate(8);
-            // console.log("req", req);
-            console.log("body", req.body.password);
-        //     var newPassword = req.body.password; 
-        //     var email = req.body.email;
-        //     console.log(newPassword, email);
-        //     var hashedPassword;
-        //     bcrypt.genSalt(10, function(err, salt) {
-        //         bcrypt.hash(newPassword, salt, function(err, hash) {
-        //             hashedPassword = hash;
-        //             });
-        //    }).then(function(data){db.employ_option.update({
-        //                 password: hashedPassword
-        //             }, {
-        //                 where: {
-        //                     email: email
-        //                 }
-        //             })
-        //     })
-        });
-
-        app.post('/sendemail', function(req, res) {
-        var email;          
-        var newPassword = randomstring.generate(8);
-        // var newPassword = 'apple';
-        db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
-            var valid_email = [];
-            for (key in data) {
-                valid_email.push(data[key].dataValues.email)
+    app.post('/sendemail', function(req, res) {        
+    var newPassword = randomstring.generate(8);
+    // var newPassword = 'apple';
+    var email = req.body.email;
+    db.employ_option.findOne({
+        where: {
+            email:email
+        }
+    }).then(function(data) {
+        if(data){
+            var mailOptions = {
+            to: email,
+            subject: "Your Plaudit Password Reset Request",
+            text: "Here is your new Plaudit password: " + newPassword,
+            html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + newPassword + "</b></p><p><a href='https://plaudit.herokuapp.com/' target='blank'>Log in to Plaudit now!</p></body>"
             };
-            if (valid_email.indexOf(req.body.email) !== -1) {
-                email = req.body.email;
-                db.employ_option.findOne({
-                    where: {
-                        email: req.body.email
+            smtpTransport.sendMail(mailOptions, function(error, response) {
+                if (error){
+                    console.log(error);
+                    res.send("error");
+                }else{
+                    console.log("Message sent to: " + req.body.email);
+                    var sendObject = {status: "sent", password: newPassword};
+                    console.log("sendObject: ", sendObject)
+                    res.send(sendObject);
+                    // res.send("sent")
                     }
-
-                }).then(function(data) {
-                    var mailOptions = {
-                        to: email,
-                        subject: "Your Plaudit Password Reset Request",
-                        text: "Here is your new Plaudit password: " + newPassword,
-                        html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + newPassword + "</b></p><p><a href='https://plaudit.herokuapp.com/' target='blank'>Log in to Plaudit now!</p></body>"
-                    };
-                    smtpTransport.sendMail(mailOptions, function(error, response) {
-                        if (error) {
-                            console.log(error);
-                            res.send("error");
-                        } else {
-                            console.log("Message sent to: " + req.body.email);
-                            var sendObject = {status: "sent", password: newPassword};
-                            console.log("sendObject: ", sendObject)
-                            res.send(sendObject);
-                            // res.send("sent")
-                        }
-                    });
-                });
-            } else {
-                res.send("invalid email")
+            });
+        }else{
+            res.send("invalid email")
             };
-        })
+        });
     });
 
 
@@ -172,61 +98,54 @@ module.exports = function(app) {
     //If the user has been registed before, reture exist to the frontend
     //If the user is not in employ_baisc table, the user is not valid, returen 
     //not valid to frontend
-    app.post("/newuser/post", function(req, res) {
-        db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
-            var hashedPassword;
-            bcrypt.genSalt(10, function(err, salt) {
-                bcrypt.hash(req.body.password, salt, function(err, hash) {
-                    hashedPassword = hash;
-                });
+    app.post("/newuser/post", function(req, res){
+        var hashedPassword;
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(req.body.password, salt, function(err, hash) {
+                hashedPassword = hash;
             });
-            var valid_email = [];
-            for (key in data) {
-                valid_email.push(data[key].dataValues.email)
-            };
-            console.log(valid_email[0]);
-            if (valid_email.indexOf(req.body.email) !== -1) {
-                db.employ_option.findAll({ attributes: ['email'] }).then(function(data) {
-                    var exist_email = [];
-                    for (key in data) {
-                        exist_email.push(data[key].dataValues.email);
-                    };
-                    if (exist_email.indexOf(req.body.email) === -1) {
+        });           
+        db.employ_basic.findOne({
+            where:{
+                email:req.body.email
+            }
+        }).then(function(data){
+            if(data){
+                var employ_id = data.dataValues.id;
+                db.employ_option.findOne({
+                    where:{
+                        employBasicId :employ_id
+                    }
+                }).then(function(data){
+                    if(!data){
+                        console.log(employ_id);
                         db.employ_option.create({
-                            email: req.body.email,
-                            // password: req.body.password,
+                            employBasicId:employ_id,
                             password: hashedPassword,
                             favorite: req.body.favorite
                         }).then(function() {
                             res.send(true);
-                        });
-                    } else {
-                        res.send('exist user');
+                            });
+                    }else{
+                        res.send("exist user");
                     }
-                });
-            } else {
+                })
+            }else{
                 res.send('invalid email');
-            };
-        });
-
+            }
+        })
     });
 
-
-    // ADDING SMALL FEATURE TO PROVIDE USER FEEDBACK ON SIGN-UP SECTION
-    app.post('/checkemail', function(req, res) {
+// ADDING SMALL FEATURE TO PROVIDE USER FEEDBACK ON SIGN-UP SECTION
+    app.post('/checkemail', function(req, res){
         db.employ_basic.findAll({
-            attributes: ['email'],
             where: {
                 email: req.body.email
             }
-        }).then(function(data) {
-            var valid_email = [];
-            for (key in data) {
-                valid_email.push(data[key].dataValues.email)
-            };
-            if (valid_email.indexOf(req.body.email) !== -1) {
+        }).then(function(data){
+            if(data){
                 res.send(true)
-            } else {
+            }else{
                 res.send("invalid email");
             }
         });

@@ -43,7 +43,16 @@ module.exports = function(sequelize, DataTypes) {
     photo_path: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+      }
+    },
+    {
+      classMethods: {
+        associate:function(models){
+          employ_basic.hasOne(models.employ_option, {
+            onDelete:"cascade"
+          })
+        }
+      }
   });
   return employ_basic;
 };

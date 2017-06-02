@@ -18,6 +18,7 @@ var setupPassport = require('./passport.js');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var exphbs = require("express-handlebars");
+var flash=require("connect-flash");
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -29,9 +30,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
+
 //Setting up login session
 app.use(cookieParser())
 app.use(session({ secret: 'friedbanana', resave: false, saveUninitialized: false }))
+app.use(flash());
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));

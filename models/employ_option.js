@@ -6,14 +6,11 @@
 
 module.exports = function(sequelize, DataTypes) {
   var employ_option = sequelize.define("employ_option", {
-    email: {
-      type: DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
-      references: {
-        model: "employ_basics",
-        key: "email"
-      }
+      autoIncrement: true,
+      primaryKey: true
     },
     password: {
       type: DataTypes.STRING,
@@ -23,6 +20,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
-  });
+  },
+    {
+      classMethods:{
+        associate:function(models){
+          employ_option.belongsTo(models.employ_basic, {foreignKey:{
+            allowNull:false
+          }
+        });
+      }
+    }
+  })
   return employ_option;
 };
