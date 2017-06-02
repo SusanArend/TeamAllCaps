@@ -192,7 +192,7 @@ label > input:checked + img {
 /*FORMS*/
 input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:hover, input:-webkit-autofill:visited {
     -webkit-box-shadow: 0 0 0px 1000px #ffe97c inset !important;
-    -webkit-text-fill-color: #fff8ca !important;
+    -webkit-text-fill-color: #fffbe4 !important;
 }
 /* label color */
 .input-field {
