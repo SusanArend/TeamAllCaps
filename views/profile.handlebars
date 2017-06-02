@@ -1,4 +1,6 @@
 	<div class="container" id="user-profile">
+		
+	<div id="profile-wrapper" class="">
 		<div class="row"> 
 			<div class="col s12 center-align" id="greeting">
 				<h2>{{this.name}}'s Profile</h2>
@@ -6,17 +8,26 @@
 		</div>
 
 		<div class="row"> 
-			<div class="col s12 center-align" id="user-name">
+			<div class="col s12" id="user-name">
 			<!-- need to update to link to user image -->
-			<img src="{{this.img_url}}" alt="" class="circle profile-photo">
-			<ul>
-				<li>Title: {{this.title}}</li>
-				<li>Phone Number: {{this.phone}}</li>
-				<li>Email: {{this.email}}</li>
-				<li>LinkedIn: <a href="{{this.linkedin_url}}">{{this.linkedin_url}}</a></li>
-			</ul>
+				<div class="row">
+					<div class="col m3 offset-m2 s6 offset-s3">
+						<img src="{{this.img_url}}" alt="" class="circle profile-photo">
+					</div>
+					<div class="col m7 s10 offset-s1">
+						<ul>
+							<li><strong>Position:</strong> {{this.title}}</li>
+							<li><strong>Phone Number:</strong> {{this.phone}}</li>
+							<li><strong>Email:</strong> {{this.email}}</li>
+							<li>
+								<a href="{{this.linkedin_url}}" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-
+	</div>
 
 
 	<!-- User Specific Feed -->
@@ -28,7 +39,7 @@
 		</div>
 
 		<div class="row"> 
-			<div class="col s12" id="greeting">
+			<div class="col s12">
 				<ul class="collection">
 				  <!-- need to update to link to table in db-->
 				  {{#each badges}}
@@ -36,9 +47,9 @@
 				      <!-- update to link to badge image -->
 				     	<img src="{{this.badgeurl}}" alt="" class="circle">
 				      <!-- update to link to sender and recipient -->
-				    	<span class="title"><a href="/profile/{{this.sender_name}}" class="profile-link">{{this.sender_name}}</a> gave a badge to <a href="/profile/{{this.recipient_name}}" class="profile-link">{{this.recipient_name}}</a>!</span>
+				    	<span class="title badge-title"><a href="/profile/{{this.sender_name}}" class="profile-link">{{this.sender_name}}</a> gave a badge to <a href="/profile/{{this.recipient_name}}" class="profile-link">{{this.recipient_name}}</a>!</span>
 				      <!-- update to link to badge message -->
-				    	<p>{{this.comment}}</p>
+				    	<p class="badge-comment">{{this.comment}}</p>
 				  	</li>
 				  	{{/each}}
 				</ul>

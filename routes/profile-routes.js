@@ -22,6 +22,7 @@ module.exports =  function(app){
 						name: employee.name,
 						title: employee.title,
 						phone: employee.phone,
+						email: employee.email,
 						linkedin_url: employee.linkedin_url,
 						img_url : employee.photo_path,
 						badges: badges

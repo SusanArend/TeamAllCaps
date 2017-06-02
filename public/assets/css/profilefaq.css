@@ -8,7 +8,7 @@
 
 /*FAQ*/
 .profile-photo {
-	width: 40%;
+	width: 100%;
 	height: auto;
 }
 .collapsible, .collapsible-body, .collapsible-header, .faq-icon {
@@ -31,4 +31,36 @@
 .collapsible-body {
 	border-bottom: 3px solid #ffe97c;
 	background-color: rgb(246, 215, 59);
+}
+
+@media only screen and (max-width: 500px)  {
+	li {
+		font-size: 16px;
+	}
+	.row {
+		margin-bottom: 5px;
+	}
+
+	.row .collapsible {
+		margin-top: 15px;
+	}
+	
+	.badge-comment, .collection .collection-item.avatar .title {
+		font-size: 14px;
+	}
+	.collection .collection-item.avatar .circle {
+    	width: 45px;
+    	height: 45px;
+    	left: 10px;
+    	padding-right: 0px;
+	}
+}
+
+@media only screen and (max-width: 320px)  {
+	li {
+		font-size: 14px;
+	}
+	.badge-comment, .collection .collection-item.avatar .title {
+		font-size: 12px;
+	}
 }
