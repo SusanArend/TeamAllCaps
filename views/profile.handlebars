@@ -8,13 +8,22 @@
 		<div class="row"> 
 			<div class="col s12 center-align" id="user-name">
 			<!-- need to update to link to user image -->
-			<img src="{{this.img_url}}" alt="" class="circle">
+			<img src="{{this.img_url}}" alt="" class="circle profile-photo">
+			<ul>
+				<li>Title: {{this.title}}</li>
+				<li>Phone Number: {{this.phone}}</li>
+				<li>Email: {{this.email}}</li>
+				<li>LinkedIn: <a href="{{this.linkedin_url}}">{{this.linkedin_url}}</a></li>
+			</ul>
 		</div>
+
+
 
 	<!-- User Specific Feed -->
 		<div class="row"> 
 			<div class="col s12 center-align" id="badge-history">
 				<h3>Badge History</h3>
+				<div class="header-border"></div>
 			</div>
 		</div>
 

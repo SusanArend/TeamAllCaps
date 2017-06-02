@@ -5,14 +5,13 @@
 /* for accents - teal - #6DDDB8  && charcoal - #767676*/
 
 /*-----------------*/
-
 /*GENERAL*/
 body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	color: #fff8ca;
-	background-color: #ffe97c;
+	color: #fff9d6;
+	background-color: #fee771;
 }
 
 .header-border {
@@ -51,7 +50,7 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
 
 nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
 	background-color: #ffdf3e;
-	color: #fff8ca;
+	color: #fff9d6;
 	box-shadow: none;
 }
 
@@ -219,4 +218,11 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
 footer.page-footer {
 	padding: 10px 30px 0px 30px;
 
+}
+
+@media only screen and (max-width: 400px) {
+
+  footer.page-footer {
+    font-size: 11px;
+  }
 }
