@@ -32,7 +32,7 @@ module.exports =  function(app){
 				});
 
 		}else{
-			res.send("invalid name");
+			res.send("Invalid name.");
 		}
 		
 		});
