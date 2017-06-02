@@ -8,42 +8,7 @@ module.exports = function(app) {
   app.use(passport.initialize())
   app.use(passport.session())
 
-  // passport.use(new LocalStrategy(
-  //   function(email, password, done) {
-  //     console.log("hitting passport")
-  //     db.employ_option.findOne({
-  //       where: {
-  //         'email': email
-  //       }
-  //     }).then(function (user) {
-  //       if (user == null) {
-  //         console.log("no user")
-  //         return done(null, false, { message: 'Incorrect credentials.' })
-  //       }
-  //       //TODO:  delete these 2 lines and uncomment the bcrypt lines once using bcrypt
-  //       if (user.password === password) {
-  //         console.log("logged in")
-  //         return done(null, user)
-  //       }
 
-  //       // bcrypt.compare(password, user.password, function(err, res) {
-  //       //   console.log(res);
-  //       //   if (res){
-  //       //     return done(null, user)
-  //       //   }
-  //       // });
-
-  //       //TODO: THE FOLLOWING is the sync version for bcrypt can remove once async works.
-  //       // var hashedPassword = bcrypt.hashSync(password, user.salt)
-        
-  //       // if (user.password === hashedPassword) {
-  //       //   return done(null, user)
-  //       // }
-  //       console.log("wrong password")
-  //       return done(null, false, { message: 'Incorrect credentials.' })
-  //     })
-  //   }
-  // ))
 
   passport.use(new LocalStrategy(
     function(username, password, done) {
@@ -75,20 +40,8 @@ module.exports = function(app) {
             })
         }else{return done(null, false, { message: "You didn't register before, please sign up" })}
      
-        // .then(function(data){
-        
-        
 
-        //TODO: THE FOLLOWING is the sync version for bcrypt can remove once async works.
-        // var hashedPassword = bcrypt.hashSync(password, user.salt)
-        
-        // if (user.password === hashedPassword) {
-        //   return done(null, user)
-        // }
-        // })
         })
-
-    // })
     }
   ))
 
