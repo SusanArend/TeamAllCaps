@@ -44,10 +44,6 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
 	flex: 1 0 auto;
 }
 
-#github {
-	height: 30px;
-}
-
 nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
 	background-color: #ffdf3e;
 	color: #fff9d6;
@@ -220,9 +216,11 @@ footer.page-footer {
 
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
 
   footer.page-footer {
-    font-size: 11px;
+    font-size: 9px;
   }
 }
+
+
