@@ -1,6 +1,6 @@
-Plaudit! by TEAM ALL CAPS
+# Plaudit! by TEAM ALL CAPS
 
-Description
+## Description
 
 Plaudit! is a workplace application that focuses on encouraging a supportive and uplifting work environment through positive peer feedback and recognition.  Co-workers are enabled to commend one another for their hard work with company-wide visibility.
 
@@ -8,7 +8,7 @@ Users
 
 While the Plaudit! app has a bright and cheery theme by deisgn, styling can be customized based on client preference or corporate branding.
 
-Screen Shots
+## Screen Shots
 
 Landing Page
 INSERT SCREEN GRAB
@@ -33,30 +33,36 @@ Prerequisites
 
 Users will need Google Chrome web browser for testing the web page, and Sublime (or another tool) for viewing/editing the code.  Users will also need to install the npm packages via the terminal and use MySQL Workbench in order to establish the star_power database.
 
-Languages and Libraries Used
+## Technologies Used
 
-Technologies Used
+### NPM Packages:
+* bcrypt
+* body-parser
+* connect-ensure-login
+* cookie-parser
+* express-session
+* nodemailer
+* passport
+* random-string
+* sequelize
+* session-store
 
-NPM Packages:
-bcrypt
-body-parser
-connect-ensure-login
-cookie-parser
-express-session
-nodemailer
-passport
-random-string
-sequelize
-session-store
+### Database Management:
+* mySQL
 
-Database Management:
-mySQL
+### Languages and Libraries:
+* CSS
+* Handlebars
+* HTML
+* Google Fonts
+* Javascript
+* jQuery
+* Materialize
 
-Front End Technologies and Libraries:
-Handlebars
-Google Fonts
-jQuery
-Materialize
+### Deployment
+* Heroku
+
+
 
 
 
@@ -77,29 +83,23 @@ PLEASE NOTE: Currently the food delivery option part of the site runs best if us
 
 Explain what these tests test and why
 
-Give an example
 Deployment
 
 Add additional notes about how to deploy this on a live system
 
-Built With
+## Authors
+* **Michelle Didier** [meeshyd](https://github.com/meeshyd)
+* **Susan Heiniger** [SusanArend](https://github.com/SusanArend)
+* **Adam McNerney** [NorthNern](https://github.com/NorthNern)
+* **Rebecca Palmore** [rpalmore](https://github.com/rpalmore)
+* **Yilin Xu** [yilinxu](https://github.com/yilinxu)
 
-Materialize - The web framework used
-
-Authors
-Michelle Didier
-Susan Heiniger
-Adam McNerney
-Rebecca Palmore
-Yilin Xu
-
-Acknowledgments
-
+## Acknowledgments
 Hat tip for help, inspiration, and patience to:
 
-Steven Daoud
-Nate Johnson
-Ethan Romba
-Chris Mendoza
-Liz Wylie
-Kurt Schlueter
+* Steven Daoud
+* Nate Johnson
+* Ethan Romba
+* Chris Mendoza
+* Liz Wylie
+* Kurt Schlueter
