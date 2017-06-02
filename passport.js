@@ -60,18 +60,21 @@ module.exports = function(app) {
             return done(null, false, { message: 'Incorrect credentials. please check your email!' })
           }
         var user = data.dataValues;
-        var userpassword = user.employ_option.dataValues.password
-        bcrypt.compare(password,userpassword, function(err, res) {
-          if (err)
-              throw err;
-          if (res){
-            console.log("logged in")
-            return done(null, user)
-          }else{
-            console.log("wrong password")
-            return done(null, false, { message: 'Incorrect credentials. please login' })
-          }
-        })
+        if(user.employ_option){
+            var userpassword = user.employ_option.dataValues.password
+            bcrypt.compare(password,userpassword, function(err, res) {
+              if (err)
+                  throw err;
+              if (res){
+                console.log("logged in")
+                return done(null, user)
+              }else{
+                console.log("wrong password")
+                return done(null, false, { message: 'Incorrect credentials. please login' })
+              }
+            })
+        }else{return done(null, false, { message: "You didn't register before, please sign up" })}
+     
         // .then(function(data){
         
         

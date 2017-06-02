@@ -12,7 +12,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     recipient_name: { 
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: "employ_basics",
+        key: "name"
+      }
     },
     badgeid: {
       type: DataTypes.STRING,

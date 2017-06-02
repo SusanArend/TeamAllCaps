@@ -69,6 +69,7 @@ $("#email-search").on("click", function(event) {
 			$("#pw-new").val("");
 			$("#pw-new-valid").val("");
 			$("#fact").val("");
+	
 		});
 	})
 });

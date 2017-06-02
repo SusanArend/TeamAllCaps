@@ -140,8 +140,7 @@ $(document).ready(function() {
 
   // Submits a new badge and brings user to feed page upon completion
   function submitBadge(Badge) {
-    $.post("/badge/post", Badge, function(req,res) {
-      console.log("sucess");
+    $.post("/badge/post", Badge, function(req,res){
       window.location.href = "/index";
     });
   }
