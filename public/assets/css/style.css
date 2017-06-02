@@ -1,6 +1,6 @@
 /*COLOR PALETTE*/
-/* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
-/* for body BG - lighter yellow - #ffe97c */
+/* for header/footer BG/landing BG - dark yellow - #ffda21*/
+/* for body BG - lighter yellow - #ffe354 */
 /* for text - lightest yellow - #fffbe4 */
 /* for accents - light/dark teal - #6DDDB8/#00CB88  && charcoal - #767676*/
 
@@ -16,28 +16,22 @@ body {
   letter-spacing: 0.1em;
 }
 
-.header-border {
-  margin: 0 auto;
-  width: 25%;
-  height: 3px;
-  background-color: #fffbe4;
-}
 h2 {
-  font-size: 24px;
+  font-size: 26px;
+  margin: 2.5rem 0 1rem 0;
 }
 
 h3 {
   font-size: 20px;
+  margin: 0.5rem 0 1rem 0;
+  color: #00CB88;
 }
 
-nav .brand-logo {
-	font-family: 'Lobster', cursive;
-	color: #fffbe4;
-	font-size: 2.6rem;
-}
-
-nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
-	font-size: 36px;
+.header-border {
+  margin: 0 auto;
+  width: 20%;
+  height: 3px;
+  background-color: #00CB88;
 }
 
 .main {
@@ -45,7 +39,7 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
 }
 
 nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
-	background-color: #fdda29;
+	background-color: #ffda21;
 	color: #fffbe4;
 	box-shadow: none;
 }
@@ -56,10 +50,6 @@ nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
 
 .userView {
 	background-color: #6DDDB8;
-}
-
-nav .brand-logo {
-  position: relative;
 }
 
 .card {
@@ -74,6 +64,22 @@ nav .brand-logo {
 .material-icons, i {
     color: #fffbe4;
 }
+/*-----------------*/
+
+/*NAVBAR*/
+nav .brand-logo {
+  font-family: 'Lobster', cursive;
+  color: #fffbe4;
+  font-size: 2.6rem;
+  letter-spacing: 0;
+}
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+  font-size: 36px;
+}
+
+nav .brand-logo {
+  position: relative;
+}
 
 #search-icon, #nav-search {
   display: inline-block;
@@ -81,7 +87,6 @@ nav .brand-logo {
 
 #nav-search {
   padding-bottom: 5px;
-  /*border-bottom: 1px solid #fff8ca;*/
 }
 
 #search-col{
@@ -114,6 +119,25 @@ nav .input-field label {
 }
 /*-----------------*/
 
+/*SCROLL BARS FOR BADGE FEEDS*/
+.scroll{
+  overflow : auto;
+  height: 50vh;
+}
+.scroll::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+.scroll::-webkit-scrollbar-track {
+    background-color: #00CB88;
+}
+ 
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #6DDDB8;
+}
+
+/*-----------------*/
+
 /*BUTTONS*/
 .waves-effect.waves-meeshteal {
      /* The alpha value allows the text and background color
@@ -135,6 +159,7 @@ nav .input-field label {
   margin: 10px;
   border-bottom: none;
   border-radius: 8px;
+  background-color: #fffbe4;
 }
 
 .collection .collection-item.avatar .circle {

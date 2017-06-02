@@ -1,6 +1,6 @@
 /*COLOR PALETTE*/
-/* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
-/* for body BG - lighter yellow - #ffe97c */
+/* for header/footer BG/landing BG - dark yellow - #ffda21*/
+/* for body BG - lighter yellow - #ffe354 */
 /* for text - lightest yellow - #fffbe4 */
 /* for accents - light/dark teal - #6DDDB8/#00CB88  && charcoal - #767676*/
 
@@ -9,9 +9,11 @@
 /*GENERAL*/
 
 body {
-  background-color: #fdda29;
+  background-color: #ffda21;
   color: #fffbe4;
-  font-size: 20px;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.1em;
 }
 
 #greeting-page {
@@ -28,6 +30,7 @@ h1, p {
 h1 {
   font-family: 'Lobster', cursive;
   padding: 15px;
+  letter-spacing: 0;
 }
 
 h3 {
@@ -97,11 +100,11 @@ a:hover, a:active {
 
 /*MODAL*/
 .modal, .modal .modal-footer {
-    background-color: #ffdf3e;
+    background-color: #ffda21;
 }
 
 .modal .modal-close {
-  background-color: #ffdf3e;
+  background-color: #ffda21;
   color: #fffbe4;
 }
 

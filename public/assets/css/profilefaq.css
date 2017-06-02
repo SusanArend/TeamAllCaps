@@ -1,8 +1,9 @@
 /*COLOR PALETTE*/
-/* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
-/* for body BG - lighter yellow - #ffe97c */
-/* for text - lightest yellow - #fff8ca */
+/* for header/footer BG/landing BG - dark yellow - #ffda21*/
+/* for body BG - lighter yellow - #ffe354 */
+/* for text - lightest yellow - #fffbe4 */
 /* for accents - light/dark teal - #6DDDB8/#00CB88  && charcoal - #767676*/
+
 
 /*-----------------*/
 
@@ -12,31 +13,47 @@
 	height: auto;
 }
 .collapsible, .collapsible-body, .collapsible-header, .faq-icon {
-	background-color: #fee771;
+	background-color: #ffda21;
 	color: #fffbe4;
 	box-shadow: none;
 	font-size: 20px;
 }
 
 .collapsible-header {
-    border-bottom: 3px solid #ffe97c;
+    border-bottom: 3px solid #ffe354;
 }
 
 .collapsible {
-    border-top: 1px solid #ffe97c;
+    border-top: 1px solid #ffe354;
     border-right: none;
     border-left: none;
 }
 
 .collapsible-body {
-	border-bottom: 3px solid #ffe97c;
-	background-color: rgb(246, 215, 59);
+	border-bottom: 3px solid #ffe354;
+	background-color: #00CB88;
 }
 
 #position {
 	font-size: 22px;
 }
+/*-----------------*/
 
+/*PROFILE*/
+#profile-info-wrap {
+  margin-bottom: 0;
+}
+
+#profile-header {
+  margin-bottom: 10px;
+}
+
+#prof-badge-row {
+	margin-bottom: 2px;
+}
+/*-----------------*/
+
+/*MEDIA QUERIES*/
 @media only screen and (max-width: 500px)  {
 	#position {
 		font-size: 18px;
