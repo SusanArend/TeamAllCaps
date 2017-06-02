@@ -3,7 +3,6 @@ var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
 var bcrypt = require('bcryptjs')
-var mysqlPassword = require("../config/mysqlPassword.js");
 var authentication = require("../config/authentication.js");
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -175,11 +174,13 @@ module.exports = function(app) {
     app.post("/newuser/post", function(req, res) {
         db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
             var hashedPassword;
-            bcrypt.genSalt(10, function(err, salt) {
-                bcrypt.hash(req.body.password, salt, function(err, hash) {
-                    hashedPassword = hash;
-                });
-            });
+            var salt = bcrypt.genSaltSync(10);
+            var hashedPassword = bcrypt.hashSync(req.body.password, salt);
+            // bcrypt.genSaltSync(10, function(err, salt) {
+            //     bcrypt.hash(req.body.password, salt, function(err, hash) {
+            //         hashedPassword = hash;
+            //     });
+            // });
             var valid_email = [];
             for (key in data) {
                 valid_email.push(data[key].dataValues.email)
