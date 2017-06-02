@@ -7,7 +7,10 @@
 /*-----------------*/
 
 /*FAQ*/
-
+.profile-photo {
+	width: 40%;
+	height: auto;
+}
 .collapsible, .collapsible-body, .collapsible-header, .faq-icon {
 	background-color: #ffdf3e;
 	color: #fff8ca;

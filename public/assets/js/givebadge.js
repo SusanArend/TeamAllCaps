@@ -31,11 +31,11 @@ $(document).ready(function() {
 
   $("input.autocomplete").autocomplete({
     data: {
-        "Adam McNerney": "./images/profilePictures/Adam.png",
-        "Michelle Didier": "./images/profilePictures/Michelle.png",
-        "Rebecca Palmore": "./images/profilePictures/Rebecca.png",
-        "Susan Heiniger": "./images/profilePictures/Susan.png",
-        "Yilin Xu": "./images/profilePictures/Yilin.png"
+        "Adam McNerney": "/assets/images/profilePictures/Adam.png",
+        "Michelle Didier": "/assets/images/profilePictures/Michelle.png",
+        "Rebecca Palmore": "/assets/images/profilePictures/Rebecca.png",
+        "Susan Heiniger": "/assets/images/profilePictures/Susan.png",
+        "Yilin Xu": "/assets/images/profilePictures/Yilin.png",
     },
     limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
     onAutocomplete: function(val) {
