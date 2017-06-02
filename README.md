@@ -25,13 +25,19 @@ INSERT SCREEN GRAB
 Frequently Asked Questions Page
 INSERT SCREEN GRAB
 
-### Getting Started and Prerequisites
+## Getting Started and Prerequisites
 
 Clone or download the repository to your desktop.
 
 Users will need Google Chrome web browser for testing the web page, and Sublime (or another tool) for viewing/editing the code.  Users will also need to install the npm packages via the terminal and use MySQL Workbench in order to establish the star_power database.
 
 ## Technologies Used
+
+### Database Management:
+* mySQL
+
+### Deployment
+* Heroku
 
 ### NPM Packages:
 * bcrypt
@@ -45,9 +51,6 @@ Users will need Google Chrome web browser for testing the web page, and Sublime 
 * sequelize
 * session-store
 
-### Database Management:
-* mySQL
-
 ### Languages and Libraries:
 * CSS
 * Handlebars
@@ -56,9 +59,6 @@ Users will need Google Chrome web browser for testing the web page, and Sublime 
 * Javascript
 * jQuery
 * Materialize
-
-### Deployment
-* Heroku
 
 ## Testing the Website
 
