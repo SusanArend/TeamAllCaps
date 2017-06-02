@@ -25,11 +25,9 @@ INSERT SCREEN GRAB
 Frequently Asked Questions Page
 INSERT SCREEN GRAB
 
-Getting Started
+### Getting Started and Prerequisites
 
 Clone or download the repository to your desktop.
-
-Prerequisites
 
 Users will need Google Chrome web browser for testing the web page, and Sublime (or another tool) for viewing/editing the code.  Users will also need to install the npm packages via the terminal and use MySQL Workbench in order to establish the star_power database.
 
@@ -62,11 +60,7 @@ Users will need Google Chrome web browser for testing the web page, and Sublime 
 ### Deployment
 * Heroku
 
-
-
-
-
-Testing the Website
+## Testing the Website
 
 Run index.html to open up the website.
 Enable location services (if requested), in order to allow address autofill to complete based on your current location.
@@ -75,17 +69,6 @@ Click the 'see your options' button to get your movie/dinner results. Five movie
 Hover over a movie for more information, and click on any of the map markers for additional restaurant details, including rating, phone number, and website (or a google page for the restaurant if they haven't listed a website).
 Click the 'try again' button to get a new set of movies and food delivery options.
 PLEASE NOTE: Currently the food delivery option part of the site runs best if user limits testing to urban areas, where plenty of restaurants for various food types are marked with delivery available through the Google Maps API. In the future, we would consider adding results for more generic deliveries as well as restaurants offering carryout or a larger search in order to better include rural/suburban users.
-
-
-
-
-
-
-Explain what these tests test and why
-
-Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Authors
 * **Michelle Didier** [meeshyd](https://github.com/meeshyd)
