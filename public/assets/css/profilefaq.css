@@ -78,6 +78,10 @@
     	left: 10px;
     	padding-right: 0px;
 	}
+
+	#profile-info-list {
+		text-align: center;
+	}
 }
 
 @media only screen and (max-width: 320px)  {
@@ -87,4 +91,8 @@
 	.badge-comment, .collection .collection-item.avatar .title {
 		font-size: 12px;
 	}
+	.profile-photo {
+	width: 100%;
+	height: auto;
+}
 }

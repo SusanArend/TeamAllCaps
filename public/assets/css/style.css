@@ -94,7 +94,7 @@ nav .brand-logo {
 }
 
 #search-mobile {
-  background-color: #ffdf3e;
+  background-color: #ffda21;
   margin: 0 auto;
   width: 90%;
   padding-right: 2rem;
@@ -262,9 +262,28 @@ footer.page-footer {
 }
 
 @media only screen and (max-width: 500px) {
+  
+  h2 {
+    font-size: 20px;
+  }
 
   footer.page-footer {
     font-size: 9px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin: 0.5rem 0 1rem 0;
+    color: #00CB88;
+  }
+
+  .header-border {
+    width: 40%;
+  }
+
+  .with-gap img {
+    width: 30%;
+    height: auto;
   }
 }
 

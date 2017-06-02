@@ -6,14 +6,16 @@
 			</div>
 		</div>
 		<div class="row" id="profile-info-wrap">
-			<div class="col m3 offset-m2 s6 offset-s3">
+			<div class="col m3 offset-m2 s4 offset-s4">
 				<img src="{{this.img_url}}" alt="" class="circle profile-photo">
 			</div>
 			<div class="col m7 s10 offset-s1">
-				<ul>
+				<ul id="profile-info-list">
 					<li id="position">{{this.title}}</li>
 					<li>{{this.phone}}</li>
-					<li>{{this.email}}</li>
+					<li>
+						<a href="mailto:{{this.email}}" target="_top">Send E-Mail</a>
+					</li>
 					<li>
 						<a href="{{this.linkedin_url}}" target="_blank">
 							<i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
