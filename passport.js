@@ -57,7 +57,7 @@ module.exports = function(app) {
       }).then(function (data) {
           if (!data) { 
             console.log("no user")
-            return done(null, false, { message: 'Incorrect credentials. please check your email!' })
+            return done(null, false, { message: 'This email is not in internal system' })
           }
         var user = data.dataValues;
         if(user.employ_option){
@@ -70,7 +70,7 @@ module.exports = function(app) {
                 return done(null, user)
               }else{
                 console.log("wrong password")
-                return done(null, false, { message: 'Incorrect credentials. please login' })
+                return done(null, false, { message: 'Incorrect credentials. please login again' })
               }
             })
         }else{return done(null, false, { message: "You didn't register before, please sign up" })}
