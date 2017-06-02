@@ -7,11 +7,9 @@ function updatePassword(email, password){
 	$.ajax({
 	   		method: "PUT",
 	   		url: "/api/updatePassword",
+	   		dataType: json,
 	   		data: dataObject
 	   	})
-	   	// .done(function(){
-
-	   	// })
 };
 
 	$("#recover-pw").click(function() {
