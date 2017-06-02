@@ -1,7 +1,7 @@
 /*COLOR PALETTE*/
 /* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
 /* for body BG - lighter yellow - #ffe97c */
-/* for text - lightest yellow - #fff8ca */
+/* for text - lightest yellow - #fffbe4 */
 /* for accents - light/dark teal - #6DDDB8/#00CB88  && charcoal - #767676*/
 
 /*-----------------*/
@@ -9,8 +9,8 @@
 /*GENERAL*/
 
 body {
-  background-color: #ffdf3e;
-  color: #fff8ca;
+  background-color: #fdda29;
+  color: #fffbe4;
   font-size: 20px;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 h1, p {
-    color: #fff8ca;
+    color: #fffbe4;
 }
 
 h1 {
@@ -40,7 +40,7 @@ h3 {
 }
 
 a {
-    color: #fff8ca;
+    color: #fffbe4;
     cursor: pointer;
 }
 
@@ -61,7 +61,7 @@ a:hover, a:active {
   margin-bottom: 5px;
 }
 
-
+/*-----------------*/
 
 /*BUTTONS*/
 .waves-effect.waves-meeshteal {
@@ -93,9 +93,16 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
+/*-----------------*/
+
+/*MODAL*/
+.modal, .modal .modal-footer {
+    background-color: #ffdf3e;
+}
+
 .modal .modal-close {
-  background-color: transparent;
-  color: #fff8ca;
+  background-color: #ffdf3e;
+  color: #fffbe4;
 }
 
 .modal .modal-close:hover {
@@ -104,18 +111,11 @@ a:hover, a:active {
 
 /*-----------------*/
 
-/*MODAL*/
-.modal, .modal .modal-footer {
-    background-color: #ffdf3e;
-}
-
-/*-----------------*/
-
 /*FORMS*/
 
 input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:hover, input:-webkit-autofill:visited {
-    -webkit-box-shadow: 0 0 0px 1000px #ffdf3e inset !important;
-    -webkit-text-fill-color: #fff8ca !important;
+    -webkit-box-shadow: 0 0 0px 1000px #fdda29 inset !important;
+    -webkit-text-fill-color: #fdda29 !important;
 }
 
 #replace-name {
@@ -127,34 +127,34 @@ input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:ho
     margin-top: 0;
 }
 .input-field label {
-    color: #fff8ca;
+    color: #fffbe4;
 }
 
 input[type=text], input[type=password], input[type=email] {
-    border-bottom: 1px solid #fff8ca;
+    border-bottom: 1px solid #fffbe4;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
-    color: #fff8ca;
+    color: #fffbe4;
 }
 /* label underline focus color */
 .input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
-    border-bottom: 1px solid #fff8ca;
-    box-shadow: 0 1px 0 0 #fff8ca;
+    border-bottom: 1px solid #fffbe4;
+    box-shadow: 0 1px 0 0 #fffbe4;
 }
 /* valid color */
 .input-field input[type=text].valid, .input-field input[type=email].valid, .input-field input[type=password].valid {
-    border-bottom: 1px solid #fff8ca;
-    box-shadow: 0 1px 0 0 #fff8ca;
+    border-bottom: 1px solid #fffbe4;
+    box-shadow: 0 1px 0 0 #fffbe4;
 }
 /* invalid color */
 .input-field input[type=text].invalid, .input-field input[type=email].invalid, .input-field input[type=password].invalid {
-    border-bottom: 1px solid #fff8ca;
-    box-shadow: 0 1px 0 0 #fff8ca;
+    border-bottom: 1px solid #fffbe4;
+    box-shadow: 0 1px 0 0 #fffbe4;
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color: #fff8ca;
+    color: #fffbe4;
 }
 
 .input-field label, input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
@@ -162,14 +162,14 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #fff8ca;
+  color: #fdda29;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #fff8ca;
+  color: #fdda29;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #fff8ca;
+  color: #fdda29;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #fff8ca;
+  color: #fdda29;
 }

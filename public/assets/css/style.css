@@ -1,8 +1,8 @@
 /*COLOR PALETTE*/
 /* for header/footer BG/landing BG - dark yellow - #ffdf3e*/
 /* for body BG - lighter yellow - #ffe97c */
-/* for text - lightest yellow - #fff8ca */
-/* for accents - teal - #6DDDB8  && charcoal - #767676*/
+/* for text - lightest yellow - #fffbe4 */
+/* for accents - light/dark teal - #6DDDB8/#00CB88  && charcoal - #767676*/
 
 /*-----------------*/
 /*GENERAL*/
@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
   width: 25%;
   height: 3px;
-  background-color: #fff8ca;
+  background-color: #fffbe4;
 }
 h2 {
   font-size: 24px;
@@ -29,9 +29,7 @@ h2 {
 h3 {
   font-size: 20px;
 }
-nav {
-	/*float: none;*/
-}
+
 nav .brand-logo {
 	font-family: 'Lobster', cursive;
 	color: #fffbe4;
@@ -206,7 +204,7 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-    color: #fff8ca;
+    color: #fffbe4;
 }
 
 .input-field label, input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
@@ -214,13 +212,13 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #fff8ca;
+  color: #fffbe4;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #fff8ca;
+  color: #fffbe4;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #fff8ca;
+  color: #fffbe4;
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #fff8ca;
