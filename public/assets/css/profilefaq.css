@@ -12,8 +12,8 @@
 	height: auto;
 }
 .collapsible, .collapsible-body, .collapsible-header, .faq-icon {
-	background-color: #ffdf3e;
-	color: #fff8ca;
+	background-color: #fee771;
+	color: #fffbe4;
 	box-shadow: none;
 	font-size: 20px;
 }
@@ -33,7 +33,14 @@
 	background-color: rgb(246, 215, 59);
 }
 
+#position {
+	font-size: 22px;
+}
+
 @media only screen and (max-width: 500px)  {
+	#position {
+		font-size: 18px;
+	}
 	li {
 		font-size: 16px;
 	}

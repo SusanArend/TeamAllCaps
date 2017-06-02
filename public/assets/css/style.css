@@ -10,8 +10,10 @@ body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	color: #fff9d6;
-	background-color: #fee771;
+	color: #fffbe4;
+	background-color: #ffe354;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.1em;
 }
 
 .header-border {
@@ -32,7 +34,7 @@ nav {
 }
 nav .brand-logo {
 	font-family: 'Lobster', cursive;
-	color: #fff8ca;
+	color: #fffbe4;
 	font-size: 2.6rem;
 }
 
@@ -45,13 +47,13 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
 }
 
 nav, .page-footer, .footer-copyright, .page-footer .footer-copyright {
-	background-color: #ffdf3e;
-	color: #fff9d6;
+	background-color: #fdda29;
+	color: #fffbe4;
 	box-shadow: none;
 }
 
 .material-icons, i, nav .input-field label.active i {
-	color: #fff8ca;
+	color: #fffbe4;
 }
 
 .userView {
@@ -72,7 +74,7 @@ nav .brand-logo {
 }
 
 .material-icons, i {
-    color: #fff8ca;
+    color: #fffbe4;
 }
 
 #search-icon, #nav-search {
@@ -81,7 +83,7 @@ nav .brand-logo {
 
 #nav-search {
   padding-bottom: 5px;
-  border-bottom: 1px solid #fff8ca;
+  /*border-bottom: 1px solid #fff8ca;*/
 }
 
 #search-col{
@@ -93,6 +95,24 @@ nav .brand-logo {
   margin: 0 auto;
   width: 90%;
   padding-right: 2rem;
+}
+
+nav .input-field label {
+    top: 0;
+    left: 15px;
+}
+
+.input-field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  text-align: center;
+}
+.input-field input::-moz-placeholder { /* Firefox 19+ */
+  text-align: center;
+}
+.input-field input:-ms-input-placeholder { /* IE 10+ */
+  text-align: center;
+}
+.input-field input:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
 }
 /*-----------------*/
 
@@ -153,14 +173,16 @@ input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:ho
 }
 /* label color */
 .input-field {
+    /*border-left: 1px solid;*/
+    padding-left: 20px;
     margin-top: 0;
 }
 .input-field label, .input-field label:active, .input-field label:hover {
-    color: #fff8ca;
+    color: #fffbe4;
 }
 
 input[type=text], input[type=password], input[type=email], textarea.materialize-textarea {
-    border-bottom: 1px solid #fff8ca;
+    border-bottom: 1px solid #fffbe4;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=textarea]:focus + label{
@@ -168,19 +190,19 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
 }
 /* label underline focus color */
 .input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus, textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #fff8ca;
-    box-shadow: 0 1px 0 0 #fff8ca;
+    border-bottom: 1px solid #fffbe4;
+    box-shadow: 0 1px 0 0 #fffbe4;
     color: #fff8ca;
 }
 /* valid color */
 .input-field input[type=text].valid, .input-field input[type=email].valid, .input-field input[type=password].valid {
-    border-bottom: 1px solid #fff8ca;
-    box-shadow: 0 1px 0 0 #fff8ca;
+    border-bottom: 1px solid #fffbe4;
+    box-shadow: 0 1px 0 0 #fffbe4;
 }
 /* invalid color */
 .input-field input[type=text].invalid, .input-field input[type=email].invalid, .input-field input[type=password].invalid {
-    border-bottom: 1px solid #fff8ca;
-    box-shadow: 0 1px 0 0 #fff8ca;
+    border-bottom: 1px solid #fffbe4;
+    box-shadow: 0 1px 0 0 #fffbe4;
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
