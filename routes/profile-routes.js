@@ -20,6 +20,9 @@ module.exports =  function(app){
 					var hbsObject = {
 						user : req.user, //feed logged in user info into main.handlebars
 						name: employee.name,
+						title: employee.title,
+						phone: employee.phone,
+						linkedin_url: employee.linkedin_url,
 						img_url : employee.photo_path,
 						badges: badges
 					}
