@@ -22,15 +22,15 @@
 			    <h1 id="landing-header">Plaudit!</h1>
 			</div>
 		</div>
-		{{#if message}}
-		<h3>{{message}}</h1>
-		{{/if}}
+		<div class="center-align" id="login-error">
+			{{#if message}}
+			<h3 class="red-text text-lighten-1">{{message}}</h3>
+			{{/if}}
+		</div>
 		<div class="row" id="intro-text">
 			<div class="col m8 offset-m2 col s10 offset-s1 center-align">
 			    <p id="plodet">ˈplôdət</p>
-				<!-- noun<br> -->
 				<p id="definition">an enthusiastic expression of approval</p>
-				<!-- 2. a demonstration or round of applause, as for some approved or admired performance. -->
 			</div>
 		</div>
 		<div class="row" id="sign-in">
