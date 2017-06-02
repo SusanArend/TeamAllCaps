@@ -4,13 +4,13 @@ module.exports =  function(app){
 	app.get("/profile/:name", 
 		require('connect-ensure-login').ensureLoggedIn(),
 		function(req, res){			
-		// console.log(req.params.name);
+		console.log("routehit", req.params.name);
 		db.employ_basic.findOne({
 			where: {
 				name: req.params.name
 			}
 		}).then(function(employee){	
-			// console.log("employee", employee)
+			console.log("employee", employee)
 			// if(valid_names.indexOf(req.params.name)!==-1){
 			if (employee) {
 				db.employ_badge.findAll({ where: {
