@@ -31,11 +31,11 @@ $(document).ready(function() {
 
   $("input.autocomplete").autocomplete({
     data: {
-        "Adam McNerney": "./images/profilePictures/Adam.png",
-        "Michelle Didier": "./images/profilePictures/Michelle.png",
-        "Rebecca Palmore": "./images/profilePictures/Rebecca.png",
-        "Susan Heiniger": "./images/profilePictures/Susan.png",
-        "Yilin Xu": "./images/profilePictures/Yilin.png"
+        "Adam McNerney": "/assets/images/profilePictures/Adam.png",
+        "Michelle Didier": "/assets/images/profilePictures/Michelle.png",
+        "Rebecca Palmore": "/assets/images/profilePictures/Rebecca.png",
+        "Susan Heiniger": "/assets/images/profilePictures/Susan.png",
+        "Yilin Xu": "/assets/images/profilePictures/Yilin.png",
     },
     limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
     onAutocomplete: function(val) {
@@ -44,30 +44,6 @@ $(document).ready(function() {
     minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
   });
 
-// Validate recipient is in database. If they are not in database: Alert user and clear out recipient name field.
-// TODO: FIX THIS. It is not working at present. See GIVEBADGE.JS for notes.
-
-// $(badgeRecipient).on("change", function(event) {
-//     event.preventDefault();
-//    $.post("/checkname", user, function(data) {
-//         if (data === true) {
-//           console.log("Great!");
-//         } else if (data === "invalid") {
-//           console.log("Shucks!");
-//           alert("There is no Plaudit user with that name. Please try again.")
-//           $(badgeRecipient).val("");
-//         };
-
-//     });
-
-// });
-
-//TODO DELETE IF NOT NEEDED:
-  // var postCategorySelect = $("#category");
-  // // Giving the postCategorySelect a default value
-  // postCategorySelect.val("Personal");
-
-  // Adding an event listener for when the form is submitted
   $(badgeSubmitForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
     var badgeType = $(':radio[name=badge-group]:checked').val();
@@ -96,6 +72,58 @@ $(document).ready(function() {
     //     alert("recipient not found");
     //   };
     })
+
+
+// Validate recipient is in database. If they are not in database: Alert user and clear out recipient name field.
+// TODO: FIX THIS. It is not working at present. See GIVEBADGE.JS for notes.
+
+// $(badgeRecipient).on("change", function(event) {
+//     event.preventDefault();
+//    $.post("/checkname", user, function(data) {
+//         if (data === true) {
+//           console.log("Great!");
+//         } else if (data === "invalid") {
+//           console.log("Shucks!");
+//           alert("There is no Plaudit user with that name. Please try again.")
+//           $(badgeRecipient).val("");
+//         };
+
+//     });
+
+// });
+
+
+  $(".nav-search").autocomplete({
+    data: {
+        "Adam McNerney": "/assets/images/profilePictures/Adam.png",
+        "Michelle Didier": "/assets/images/profilePictures/Michelle.png",
+        "Rebecca Palmore": "/assets/images/profilePictures/Rebecca.png",
+        "Susan Heiniger": "/assets/images/profilePictures/Susan.png",
+        "Yilin Xu": "/assets/images/profilePictures/Yilin.png",
+        "Ethan Romba": "/assets/images/profilePictures/Ethan.png",
+        "Steven Daoud": "/assets/images/profilePictures/Steven.png",
+        "Chris Mendoza": "/assets/images/profilePictures/Chris.png"
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    onAutocomplete: function(val) {
+      // Callback function when value is autcompleted.
+    },
+    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+  });
+
+
+  // Adding an event listener for when the form is submitted
+  $(".super-search").on("submit", function handleFormSubmit(event) {
+    event.preventDefault();
+    var userSearched = $('.nav-search').val().trim();
+    // Wont submit the badge if we are missing a body or a title
+    if (!userSearched) {
+      console.log("no search done")
+      return;
+    }    
+    console.log("searching", userSearched);
+    searchUser(userSearched);
+    })
     
     //TODO:  Add a query to check if recipient_name exists as a user
 
@@ -117,6 +145,15 @@ $(document).ready(function() {
       window.location.href = "/index";
     });
   }
+
+  function searchUser(user) {
+    var searchLink = "/profile/" + user;
+    console.log("pre-link SearchLink", searchLink);
+  //   $.get(searchLink, function(req,res) {
+  //     console.log("success SearchLink", searchLink);
+    window.location.href = searchLink;
+  }
+
 //TODO:  Following currently unused, but included if/when we want to edit badges
   // // Gets post data for a post if we're editing
   // function getBadgeData(id) {

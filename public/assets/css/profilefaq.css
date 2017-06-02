@@ -7,10 +7,13 @@
 /*-----------------*/
 
 /*FAQ*/
-
+.profile-photo {
+	width: 100%;
+	height: auto;
+}
 .collapsible, .collapsible-body, .collapsible-header, .faq-icon {
-	background-color: #ffdf3e;
-	color: #fff8ca;
+	background-color: #fee771;
+	color: #fffbe4;
 	box-shadow: none;
 	font-size: 20px;
 }
@@ -28,4 +31,43 @@
 .collapsible-body {
 	border-bottom: 3px solid #ffe97c;
 	background-color: rgb(246, 215, 59);
+}
+
+#position {
+	font-size: 22px;
+}
+
+@media only screen and (max-width: 500px)  {
+	#position {
+		font-size: 18px;
+	}
+	li {
+		font-size: 16px;
+	}
+	.row {
+		margin-bottom: 5px;
+	}
+
+	.row .collapsible {
+		margin-top: 15px;
+	}
+	
+	.badge-comment, .collection .collection-item.avatar .title {
+		font-size: 14px;
+	}
+	.collection .collection-item.avatar .circle {
+    	width: 45px;
+    	height: 45px;
+    	left: 10px;
+    	padding-right: 0px;
+	}
+}
+
+@media only screen and (max-width: 320px)  {
+	li {
+		font-size: 14px;
+	}
+	.badge-comment, .collection .collection-item.avatar .title {
+		font-size: 12px;
+	}
 }

@@ -3,7 +3,6 @@ var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
 var bcrypt = require('bcryptjs')
-var mysqlPassword = require("../config/mysqlPassword.js");
 var authentication = require("../config/authentication.js");
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -73,8 +72,9 @@ module.exports = function(app) {
             subject: "Your Plaudit Password Reset Request",
             text: "Here is your new Plaudit password: " + newPassword,
             html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + newPassword + "</b></p><p><a href='https://plaudit.herokuapp.com/' target='blank'>Log in to Plaudit now!</p></body>"
-            };
-            smtpTransport.sendMail(mailOptions, function(error, response) {
+            }
+
+            smtpTransport.sendMail(mailOptions, function(error, response){
                 if (error){
                     console.log(error);
                     res.send("error");
@@ -83,7 +83,6 @@ module.exports = function(app) {
                     var sendObject = {status: "sent", password: newPassword};
                     console.log("sendObject: ", sendObject)
                     res.send(sendObject);
-                    // res.send("sent")
                     }
             });
         }else{
@@ -91,6 +90,7 @@ module.exports = function(app) {
             };
         });
     });
+
 
 
     //If the user email is valid and the user hasn't registed before, 
@@ -118,7 +118,6 @@ module.exports = function(app) {
                     }
                 }).then(function(data){
                     if(!data){
-                        console.log(employ_id);
                         db.employ_option.create({
                             employBasicId:employ_id,
                             password: hashedPassword,
