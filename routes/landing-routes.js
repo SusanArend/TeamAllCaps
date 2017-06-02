@@ -60,7 +60,6 @@ module.exports = function(app) {
             }
         }).then(function(data){
             if(data){
-                console.log("Got to the employ data", data)
                 var employ_id = data.dataValues.id;
                 db.employ_option.update({
                     password: hashedPassword,
@@ -72,13 +71,13 @@ module.exports = function(app) {
                     res.send(true);
                 });
             }else{
-                console.log("got to employ data, invalid")
                 res.send("This user does not exist.");
             }
         })
     });
 
-
+    //Sends a new password to user's email if they forgot password.
+    //TODO In a future build, would like to send an authentication link that would redirect user to a password update screen instead of generating a new, random password.
     app.post('/sendemail', function(req, res) {        
     var newPassword = randomstring.generate(8);
     var email = req.body.email;
@@ -129,11 +128,13 @@ module.exports = function(app) {
     //not valid to frontend
     app.post("/newuser/post", function(req, res){
         var hashedPassword;
-        bcrypt.genSalt(10, function(err, salt) {
-            bcrypt.hash(req.body.password, salt, function(err, hash) {
-                hashedPassword = hash;
-            });
-        });           
+        var salt = bcrypt.genSaltSync(10);
+        hashedPassword = bcrypt.hashSync(req.body.password, salt);
+       //  bcrypt.genSalt(10, function(err, salt) {
+       //      bcrypt.hash(newPassword, salt, function(err, hash) {
+       //          hashedPassword = hash;
+       //          });
+       // })
         db.employ_basic.findOne({
             where:{
                 email:req.body.email
@@ -155,11 +156,11 @@ module.exports = function(app) {
                             res.send(true);
                             });
                     }else{
-                        res.send("exist user");
+                        res.send("This user already exists.");
                     }
                 })
             }else{
-                res.send('invalid email');
+                res.send('This is an invalid email.');
             }
         })
     });
@@ -173,7 +174,7 @@ module.exports = function(app) {
             if(data){
                 res.send(true)
             }else{
-                res.send("invalid email");
+                res.send("Invalid email.");
             }
         });
     });
