@@ -11,7 +11,7 @@ While the Plaudit! app has a bright and cheery theme by deisgn, styling can be c
 ## Screen Shots
 
 Landing Page
-INSERT SCREEN GRAB
+![](https://www.flickr.com/photos/155476413@N02/shares/q2U707) 
 
 Main Page (Activity Feed)
 INSERT SCREEN GRAB
