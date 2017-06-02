@@ -3,7 +3,6 @@ var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
 var bcrypt = require('bcryptjs')
-var mysqlPassword = require("../config/mysqlPassword.js");
 var authentication = require("../config/authentication.js");
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -103,25 +102,25 @@ module.exports = function(app) {
     // });
 
         app.put('/api/updatePassword', function(req, res) {
-            // var newPassword = randomstring.generate(8);
-            // console.log("req", req);
             console.log("body", req.body.password);
-        //     var newPassword = req.body.password; 
-        //     var email = req.body.email;
-        //     console.log(newPassword, email);
-        //     var hashedPassword;
-        //     bcrypt.genSalt(10, function(err, salt) {
-        //         bcrypt.hash(newPassword, salt, function(err, hash) {
-        //             hashedPassword = hash;
-        //             });
-        //    }).then(function(data){db.employ_option.update({
-        //                 password: hashedPassword
-        //             }, {
-        //                 where: {
-        //                     email: email
-        //                 }
-        //             })
-        //     })
+            var newPassword = req.body.password; 
+            var email = req.body.email;
+            console.log(newPassword, email);
+            var hashedPassword;
+            var salt = bcrypt.genSaltSync(10);
+            hashedPassword = bcrypt.hashSync(req.body.password, salt);
+           //  bcrypt.genSalt(10, function(err, salt) {
+           //      bcrypt.hash(newPassword, salt, function(err, hash) {
+           //          hashedPassword = hash;
+           //          });
+           // })
+            db.employ_option.update({
+                        password: hashedPassword
+                    }, {
+                        where: {
+                            email: email
+                        }
+            });
         });
 
         app.post('/sendemail', function(req, res) {
@@ -175,11 +174,13 @@ module.exports = function(app) {
     app.post("/newuser/post", function(req, res) {
         db.employ_basic.findAll({ attributes: ['email'] }).then(function(data) {
             var hashedPassword;
-            bcrypt.genSalt(10, function(err, salt) {
-                bcrypt.hash(req.body.password, salt, function(err, hash) {
-                    hashedPassword = hash;
-                });
-            });
+            var salt = bcrypt.genSaltSync(10);
+            hashedPassword = bcrypt.hashSync(req.body.password, salt);
+            // bcrypt.genSaltSync(10, function(err, salt) {
+            //     bcrypt.hash(req.body.password, salt, function(err, hash) {
+            //         hashedPassword = hash;
+            //     });
+            // });
             var valid_email = [];
             for (key in data) {
                 valid_email.push(data[key].dataValues.email)
