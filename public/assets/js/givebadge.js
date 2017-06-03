@@ -41,26 +41,6 @@ $(document).ready(function() {
     submitBadge(newBadge);
     })
 
-
-// Validate recipient is in database. If they are not in database: Alert user and clear out recipient name field.
-// TODO: FIX THIS. It is not working at present. See GIVEBADGE.JS for notes.
-
-// $(badgeRecipient).on("change", function(event) {
-//     event.preventDefault();
-//    $.post("/checkname", user, function(data) {
-//         if (data === true) {
-//           console.log("Great!");
-//         } else if (data === "invalid") {
-//           console.log("Shucks!");
-//           alert("There is no Plaudit user with that name. Please try again.")
-//           $(badgeRecipient).val("");
-//         };
-
-//     });
-
-// });
-
-
   $(".nav-search").autocomplete({
     data: {
         "Adam McNerney": "/assets/images/profilePictures/Adam.png",
