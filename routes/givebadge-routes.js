@@ -81,26 +81,3 @@ module.exports = function(app) {
             res.render("givebadge", hbsObject);
         })
 };
-
-// Having trouble validating user name because can't read name input in givebadge.js
-// Maybe this can be integrated into app.post("/badge/post") route?
-//   app.post('/checkname', function(req, res) {
-//        db.employ_basic.findOne({
-//            attributes: ['name'],
-//            where: {
-//                name: // how to collect badgeRecipient???
-//            }
-//        }).then(function(data) {
-//              // can we use this type of validation for name check???
-//            var valid_email = [];
-//            for (key in data) {
-//                valid_email.push(data[key].dataValues.email)
-//            };
-//            if (valid_email.indexOf(req.body.email) !== -1) {
-//                res.send(true)
-//            } else {
-//                res.send("invalid");
-//            }
-//        });
-//    });
-// };
