@@ -115,8 +115,9 @@ input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:ho
 }
 
 #replace-name {
-  font-size: 16px;
+  font-size: 12px;
   color: #00cb88;
+  margin-bottom: 15px;
 }
 /* label color */
 .input-field {
