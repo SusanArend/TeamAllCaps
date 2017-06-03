@@ -52,9 +52,6 @@
 	margin-bottom: 2px;
 }
 
-.scroll {
-	margin-bottom: 50px;
-}
 /*-----------------*/
 
 /*MEDIA QUERIES*/
@@ -85,6 +82,9 @@
 
 	#profile-info-list {
 		text-align: center;
+	}
+	.collapsible, .collapsible-body, .collapsible-header, .faq-icon {
+		font-size: 14px;
 	}
 }
 

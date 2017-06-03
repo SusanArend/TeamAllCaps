@@ -16,6 +16,14 @@ body {
   letter-spacing: 0.1em;
 }
 
+a {
+  color: #00CB88
+}
+
+a:hover {
+  color: #6DDDB8  
+}
+
 h2 {
   font-size: 26px;
   margin: 2.5rem 0 1rem 0;
@@ -129,11 +137,11 @@ nav .input-field label {
 }
  
 .scroll::-webkit-scrollbar-track {
-    background-color: #00CB88;
+    background-color: #6DDDB8;
 }
  
 .scroll::-webkit-scrollbar-thumb {
-  background-color: #6DDDB8;
+  background-color: #00CB88;
 }
 
 /*-----------------*/
@@ -258,6 +266,7 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
 
 footer.page-footer {
 	padding: 10px 30px 0px 30px;
+  margin-top: 30px;
 
 }
 
@@ -284,6 +293,10 @@ footer.page-footer {
   .with-gap img {
     width: 30%;
     height: auto;
+  }
+  /*disable scroll bar*/
+  .scroll{
+    overflow: visible;
   }
 }
 
