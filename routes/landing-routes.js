@@ -156,11 +156,11 @@ module.exports = function(app) {
                             res.send(true);
                             });
                     }else{
-                        res.send("This user already exists.");
+                        res.send("exist user");
                     }
                 })
             }else{
-                res.send('This is an invalid email.');
+                res.send('invalid email');
             }
         })
     });

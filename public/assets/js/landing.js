@@ -63,7 +63,7 @@ $("#email-search").on("click", function(event) {
 			}else if(data === "exist user"){
 				alert("you already registed before, please log in")
 			}else if(data === "invalid email"){
-				alert("invalid email");
+				alert("invalid email, please regist again");
 			};
 			$("#newuser-email").val("");
 			$("#pw-new").val("");
