@@ -64,23 +64,26 @@ The log out function in the side nav returns the user to the landing page.
 
 ## Application and Features Visual Tour
 
-### Landing Page
-![](Insert Screen Grab) 
+### Landing Page (New User)
+![](http://i.imgur.com/LLcKo0i.png) 
+
+### Landing Page (Returning User)
+![](http://i.imgur.com/59nJGro.png) 
 
 ### Main Page (Activity Feed)
-![](Insert Screen Grab) 
+![](http://i.imgur.com/Bs0FZLj.png) 
 
 ### Profile Page (with user specific activity feed)
-![](Insert Screen Grab) 
+![](http://i.imgur.com/bPuw4Nj.png) 
 
 ### Give a Badge Page
-![](Insert Screen Grab) 
+![](http://i.imgur.com/3ICn3bg.png) 
 
 ### Frequently Asked Questions Page
-![](Insert Screen Grab)
+![](http://i.imgur.com/hJ0EjSl.png)
 
 ### Badge Receipt Notification Email
-![](http://i.imgur.com/oVxQrfE.png) 
+![](http://i.imgur.com/eO9jKqY.png) 
 
 ### Forgot Password Email
 ![](http://i.imgur.com/cVSKVhW.png) 

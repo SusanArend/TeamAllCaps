@@ -8,7 +8,8 @@ module.exports =  function(app){
 		db.employ_basic.findOne({
 			where: {
 				name: req.params.name
-			}
+			},
+        	include:[db.employ_option]
 		}).then(function(employee){	
 			console.log("employee", employee)
 			// if(valid_names.indexOf(req.params.name)!==-1){
@@ -18,6 +19,7 @@ module.exports =  function(app){
 					}, order: 'createdAt DESC', limit:10
 				}).then(function(badges){
 					var hbsObject = {
+						favorite : employee.dataValues.employ_option.dataValues.favorite,
 						user : req.user, //feed logged in user info into main.handlebars
 						name: employee.name,
 						title: employee.title,
