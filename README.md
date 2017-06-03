@@ -13,6 +13,7 @@ While the Plaudit! app has a bright and cheery theme by deisgn, styling can be c
 
 ### Deployment
 * Heroku
+* JawsDB MySQL
 
 ### NPM Packages:
 * bcrypt
@@ -42,7 +43,7 @@ Clone or download the repository to your desktop.
 
 Users will need Google Chrome web browser for testing the application and Sublime (or another tool) for viewing/editing the code.  Users will also need to install the npm packages (provided in the package.json and listed above under "Technologies Used") via the terminal and use MySQL Workbench in order to establish a database.
 
-## Testing the Website
+## Testing
 
 Download or clone the repository to your desktop.  Create a database in MySQL Workbench entitled "star_power."  Use said database and seed it with the seeds from the document SQL_credit or add your own seeds into SQL_credit and enter them into the MySQL database.  Add your MySQL Workbench password to the config.json.
 
