@@ -55,7 +55,7 @@
 /*-----------------*/
 
 /*MEDIA QUERIES*/
-@media only screen and (max-width: 500px)  {
+@media only screen and (max-width: 600px)  {
 	#position {
 		font-size: 18px;
 	}
@@ -80,9 +80,6 @@
     	padding-right: 0px;
 	}
 
-	#profile-info-list {
-		text-align: center;
-	}
 	.collapsible, .collapsible-body, .collapsible-header, .faq-icon {
 		font-size: 14px;
 	}
@@ -95,8 +92,4 @@
 	.badge-comment, .collection .collection-item.avatar .title {
 		font-size: 12px;
 	}
-	.profile-photo {
-	width: 100%;
-	height: auto;
-}
 }

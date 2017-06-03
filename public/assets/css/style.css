@@ -270,8 +270,10 @@ footer.page-footer {
 
 }
 
-@media only screen and (max-width: 500px) {
-  
+
+
+@media only screen and (max-width: 600px) {
+
   h2 {
     font-size: 20px;
   }
@@ -282,7 +284,7 @@ footer.page-footer {
 
   h3 {
     font-size: 16px;
-    margin: 0.5rem 0 1rem 0;
+    margin: 1.2rem 0 1rem 0;
     color: #00CB88;
   }
 
@@ -298,6 +300,27 @@ footer.page-footer {
   .scroll{
     overflow: visible;
   }
+
+  nav:first-child {
+    border-bottom: 1px solid rgba(255, 251, 228, 0.52);
+  }
+  
+  nav .input-field label {
+    left: 5px;
+  }
+
+.input-field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  text-align: left;
+}
+.input-field input::-moz-placeholder { /* Firefox 19+ */
+  text-align: left;
+}
+.input-field input:-ms-input-placeholder { /* IE 10+ */
+  text-align: left;
+}
+.input-field input:-moz-placeholder { /* Firefox 18- */
+  text-align: left;
+}
 }
 
 
