@@ -65,28 +65,28 @@ The log out function in the side nav returns the user to the landing page.
 ## Application and Features Visual Tour
 
 ### Landing Page (New User)
-![](http://i.imgur.com/LLcKo0i.png) 
+![](http://i.imgur.com/JdiUKca.png) 
 
 ### Landing Page (Returning User)
-![](http://i.imgur.com/59nJGro.png) 
+![](http://i.imgur.com/GgjTBvP.png) 
 
 ### Main Page (Activity Feed)
-![](http://i.imgur.com/Bs0FZLj.png) 
+![](http://i.imgur.com/ZGfOS1s.png) 
 
 ### Profile Page (with user specific activity feed)
-![](http://i.imgur.com/bPuw4Nj.png) 
+![](http://i.imgur.com/Ae1vxhz.png) 
 
 ### Give a Badge Page
-![](http://i.imgur.com/3ICn3bg.png) 
+![](http://i.imgur.com/bqPdgiT.png) 
 
 ### Frequently Asked Questions Page
-![](http://i.imgur.com/hJ0EjSl.png)
+![](http://i.imgur.com/2obdk0J.png)
 
 ### Badge Receipt Notification Email
-![](http://i.imgur.com/eO9jKqY.png) 
+![](http://i.imgur.com/29w0hzW.png) 
 
 ### Forgot Password Email
-![](http://i.imgur.com/cVSKVhW.png) 
+![](http://i.imgur.com/gDwFH43.png) 
 
 ## Code Walkthrough
 Please refer to the repository files for coding samples; The sections are commented to indicate their functionality.
