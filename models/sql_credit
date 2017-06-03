@@ -6,3 +6,21 @@ INSERT INTO `star_power`.`employ_basics` (`id`, `name`, `email`, `phone`, `linke
 INSERT INTO `star_power`.`employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('6', 'Chris Mendoza', 'cmend85@gmail.com', '5555555555', 'https://www.linkedin.com/in/chris-mendoza-02384784/', 'TA Extraordinaire', '1', '/assets/images/profilePictures/Chris.png');
 INSERT INTO `star_power`.`employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('7', 'Ethan Romba', 'ethan.romba@gmail.com', '5555555555', 'https://www.linkedin.com/in/ethanromba/', 'Another TA Extraordinaire', '1', '/assets/images/profilePictures/Ethan.png');
 INSERT INTO `star_power`.`employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('8', 'Steven Daoud', 'Steven.Daoud@Gmail.com', '5555555555', 'https://www.linkedin.com/in/stevendaoud/', 'Instructor Extraordinaire', '1', '/assets/images/profilePictures/Steven.png')
+
+
+
+
+
+
+
+
+FOR HEROKU SEEDING USE THIS BLOCK:
+
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('1', 'Yilin Xu', 'yellen10@gmail.com', '3125031460', 'https://www.linkedin.com/in/yilin-elaine-xu-b7777659/', 'Manager', '1', '/assets/images/profilePictures/Yilin.png');
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('2', 'Rebecca Palmore', 'rkpalmore@gmail.com', '3125604191', 'https://www.linkedin.com/in/rebecca-palmore/', 'Getaway Driver', '2', '/assets/images/profilePictures/Rebecca.png');
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('3', 'Adam McNerney', 'northnern@gmail.com', '8153820199', 'https://www.linkedin.com/in/adam-mcnerney-3248699/', 'Snuffleupagus Rancher', '1', '/assets/images/profilePictures/Adam.png');
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('4', 'Michelle Didier', 'michellemdidier@gmail.com', '8477073825', 'https://www.linkedin.com/in/michelledidier/', 'Cat Lover', '1', '/assets/images/profilePictures/Michelle.png');
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('5', 'Susan Heiniger', 'susan.heiniger@gmail.com', '3129266632', 'https://www.linkedin.com/in/susan-heiniger-6b7a4868/', 'Chief Executive Unicorn', '1', '/assets/images/profilePictures/Susan.png');
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('6', 'Chris Mendoza', 'cmend85@gmail.com', '5555555555', 'https://www.linkedin.com/in/chris-mendoza-02384784/', 'TA Extraordinaire', '1', '/assets/images/profilePictures/Chris.png');
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('7', 'Ethan Romba', 'ethan.romba@gmail.com', '5555555555', 'https://www.linkedin.com/in/ethanromba/', 'Another TA Extraordinaire', '1', '/assets/images/profilePictures/Ethan.png');
+INSERT INTO `employ_basics` (`id`, `name`, `email`, `phone`, `linkedin_url`, `title`, `manager_id`, `photo_path`) VALUES ('8', 'Steven Daoud', 'Steven.Daoud@Gmail.com', '5555555555', 'https://www.linkedin.com/in/stevendaoud/', 'Instructor Extraordinaire', '1', '/assets/images/profilePictures/Steven.png')
