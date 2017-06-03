@@ -4,7 +4,7 @@
 
 Plaudit! is a workplace application that focuses on encouraging a supportive and uplifting work environment through positive peer feedback and recognition. Co-workers are enabled to commend one another for their hard work with company-wide visibility.
 
-While the Plaudit! app has a bright and cheery theme by deisgn, styling can be customized based on client preference or corporate branding.
+While the Plaudit! app has a bright and cheery theme by design, styling can be customized based on client preference or corporate branding.
 
 ## Technologies Used
 
@@ -47,9 +47,9 @@ Users will need Google Chrome web browser for testing the application and Sublim
 
 Download or clone the repository to your desktop.  Create a database in MySQL Workbench entitled "star_power."  Use said database and seed it with the seeds from the document SQL_credit or add your own seeds into SQL_credit and enter them into the MySQL database.  Add your MySQL Workbench password to the config.json.
 
-Naviagate to the file folder that holds the Plaudit! files in the terminal.  Type "npm i --s".  Then run the server: "node server.js" 
+Navigate to the file folder that holds the Plaudit! files in the terminal.  Type "npm i --s".  Then run the server: "node server.js" 
 
-From there, navigate to localhost:8080 in your browser to open up the landing page of the website. Create an account based on one of the established seeds and log in.  Once logged in, you will be taken to the index.handlebars page were the main activitie feed is located.  You will also see a nav bar at the top of the page which includes both a search bar in the righthand corner and a hamburger menu in the left. 
+From there, navigate to localhost:8080 in your browser to open up the landing page of the website. Create an account based on one of the established seeds and log in.  Once logged in, you will be taken to the index.handlebars page were the main activity feed is located.  You will also see a nav bar at the top of the page which includes both a search bar in the right hand corner and a hamburger menu in the left. 
 
 One can search for other users using the search bar.  It will take the user to that person's profile page.  The hamburger menu, once clicked, will trigger a side nav to slide out from the left side of the page.  Users can navigate to the main activity feed, their profile page, the give a badge page, or the frequently asked questions page.  Users can also log out from the side nav.
 
