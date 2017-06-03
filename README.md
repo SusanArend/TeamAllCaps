@@ -90,7 +90,8 @@ The log out function in the side nav returns the user to the landing page.
 
 
 ### Mobile Versions
-![](http://i.imgur.com/7KTqqqu.png) ![](http://i.imgur.com/WwgZ5xh.png)
+![](http://i.imgur.com/7KTqqqu.png) ![](http://i.imgur.com/WwgZ5xh.png) ![](http://i.imgur.com/PJSFd2i.png)
+![](http://i.imgur.com/LAw0hbr.png) ![](http://i.imgur.com/3Cvu5y9.png) ![](http://i.imgur.com/8ZGCW7H.png)
 
 ## Code Walkthrough
 Please refer to the repository files for coding samples; The sections are commented to indicate their functionality.
