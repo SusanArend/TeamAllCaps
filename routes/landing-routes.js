@@ -71,7 +71,7 @@ module.exports = function(app) {
                     res.send(true);
                 });
             }else{
-                res.send("This user does not exist.");
+                res.send("invalid email");
             }
         })
     });
@@ -112,11 +112,11 @@ module.exports = function(app) {
                             }
                     });
                     }else{
-                        res.send("Invalid user")
+                        res.send("invalid user")
                     };
                 });
              }else{
-                res.send("Invalid email")
+                res.send("invalid email")
             };
         });    
     });   
@@ -165,16 +165,25 @@ module.exports = function(app) {
         })
     });
 
-    app.post('/checkemail', function(req, res){
-        db.employ_basic.findAll({
+    app.post('/checkemail', function(req, res){ 
+        db.employ_basic.findOne({
             where: {
                 email: req.body.email
             }
         }).then(function(data){
             if(data){
-                res.send(true)
-            }else{
-                res.send("Invalid email.");
+                var employ_id = data.dataValues.id;
+                db.employ_option.findOne({
+                    where:{
+                        employBasicId :employ_id
+                    }
+                }).then(function(data){
+                    if(data){
+                        res.send("exist user")
+                    } else  res.send(true)
+                });
+            } else {
+                res.send("invalid email");
             }
         });
     });
