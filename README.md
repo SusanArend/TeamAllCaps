@@ -8,14 +8,14 @@ While the Plaudit! app has a bright and cheery theme by deisgn, styling can be c
 
 ## Technologies Used
 
-### Database Management:
+### Database Management
 * mySQL
 
 ### Deployment
 * Heroku
 * JawsDB MySQL
 
-### NPM Packages:
+### NPM Packages
 * bcrypt
 * body-parser
 * connect-ensure-login
@@ -27,7 +27,7 @@ While the Plaudit! app has a bright and cheery theme by deisgn, styling can be c
 * sequelize
 * session-store
 
-### Languages and Libraries:
+### Languages and Libraries
 * CSS
 * Handlebars
 * HTML
