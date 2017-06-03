@@ -4,38 +4,7 @@
 
 Plaudit! is a workplace application that focuses on encouraging a supportive and uplifting work environment through positive peer feedback and recognition. Co-workers are enabled to commend one another for their hard work with company-wide visibility.
 
-Users 
-
 While the Plaudit! app has a bright and cheery theme by deisgn, styling can be customized based on client preference or corporate branding.
-
-## Screen Shots
-
-### Landing Page
-![](Insert Screen Grab) 
-
-### Main Page (Activity Feed)
-![](Insert Screen Grab) 
-
-### Profile Page (with user specific activity feed)
-![](Insert Screen Grab) 
-
-### Give a Badge Page
-![](Insert Screen Grab) 
-
-### Frequently Asked Questions Page
-![](Insert Screen Grab)
-
-### Email Notification
-![](http://i.imgur.com/oVxQrfE.png) 
-
-### Forgot Password Email
-![](http://i.imgur.com/cVSKVhW.png) 
-
-## Getting Started and Prerequisites
-
-Clone or download the repository to your desktop.
-
-Users will need Google Chrome web browser for testing the web page and Sublime (or another tool) for viewing/editing the code.  Users will also need to install the npm packages (provided in the package.json and listed below) via the terminal and use MySQL Workbench in order to establish the star_power database.
 
 ## Technologies Used
 
@@ -67,6 +36,12 @@ Users will need Google Chrome web browser for testing the web page and Sublime (
 * jQuery
 * Materialize
 
+## Getting Started and Prerequisites
+
+Clone or download the repository to your desktop.
+
+Users will need Google Chrome web browser for testing the application and Sublime (or another tool) for viewing/editing the code.  Users will also need to install the npm packages (provided in the package.json and listed above under "Technologies Used") via the terminal and use MySQL Workbench in order to establish a database.
+
 ## Testing the Website
 
 Download or clone the repository to your desktop.  Create a database in MySQL Workbench entitled "star_power."  Use said database and seed it with the seeds from the document SQL_credit or add your own seeds into SQL_credit and enter them into the MySQL database.  Add your MySQL Workbench password to the config.json.
@@ -85,6 +60,32 @@ The FAQ page lists commonly asked questions and their corresponding answers in a
 
 The log out function in the side nav returns the user to the landing page.
 
+
+## Application and Features Visual Tour
+
+### Landing Page
+![](Insert Screen Grab) 
+
+### Main Page (Activity Feed)
+![](Insert Screen Grab) 
+
+### Profile Page (with user specific activity feed)
+![](Insert Screen Grab) 
+
+### Give a Badge Page
+![](Insert Screen Grab) 
+
+### Frequently Asked Questions Page
+![](Insert Screen Grab)
+
+### Badge Receipt Notification Email
+![](http://i.imgur.com/oVxQrfE.png) 
+
+### Forgot Password Email
+![](http://i.imgur.com/cVSKVhW.png) 
+
+## Code Walkthrough
+Please refer to the repository files for coding samples; The sections are commented to indicate their functionality.
 
 If you have any questions about how or why something works, feel free to contact a member of the [Project Team](https://github.com/SusanArend/TeamAllCaps) for details!
 
