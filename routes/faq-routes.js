@@ -5,6 +5,9 @@ module.exports =  function(app){
 	app.get("/faq", 
 	require('connect-ensure-login').ensureLoggedIn("/login"),
 	function(req, res){
-		res.render("faq");
+		var hbsObject = {
+			user : req.user, //feed logged in user info into main.handlebars
+		}
+		res.render("faq", hbsObject);;
 	})
 }
