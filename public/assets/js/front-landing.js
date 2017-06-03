@@ -2,16 +2,17 @@ $(document).ready(function(){
 
 	// hide new user sign in until sign-up link is clicked
 	$('#newuser-page').hide();
+
+	// click events to toggle sign-in and new user forms using GreenSock
 	$('#sign-up-link').on('click',function(event){
 		
-		// $('#newuser-page').show();
 		TweenLite.to("#newuser-page", .6, {display: 'block', ease:Back.easeOut}, "+=0");
 		TweenLite.from("#newuser-page", .6, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=0");
 		$('#sign-in').hide();
 
 	})
 	$('#sign-in-link').on('click',function(event){
-		// $('#greeting-page').show();
+
 		TweenLite.to("#sign-in", .6, {display: 'block', ease:Back.easeOut}, "+=0");
 		TweenLite.from("#sign-in", .6, {opacity: 0, scale:1.5, ease:Back.easeOut}, "+=0");
 		$('#newuser-page').hide();
@@ -19,47 +20,6 @@ $(document).ready(function(){
 
 	// Materialize modal open/close
 	$('.modal').modal();
-
-	// //ONE PAGE SMOOTH SCROLL//
-		
-	// 	// Select all links with hashes
-	// 	$('a[href*="#"]')
-	// 	// Remove links that don't actually link to anything
-	// 	.not('[href="#"]')
-	// 	.not('[href="#0"]')
-		
-	// 	.click(function(event) {
-	// 	// On-page links
-	// 	if (
-	// 		location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-	// 		&& 
-	// 		location.hostname == this.hostname
-	// 		) {
-	// 		// Figure out element to scroll to
-	// 		var target = $(this.hash);
-	// 		console.log(this);
-	// 		target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-	// 		// Does a scroll target exist?
-	// 			if (target.length) {
-	// 		 	// Only prevent default if animation is actually going to happen
-	// 		        event.preventDefault();
-	// 		        $('html, body').animate({
-	// 		        scrollTop: target.offset().top
-	// 		        }, 1000, function() {
-	// 		            // Callback after animation
-	// 		            // Must change focus!
-	// 		            var $target = $(target);
-	// 		            $target.focus();
-	// 		            if ($target.is(":focus")) { // Checking if the target was focused
-	// 		                // res.json(true);
-	// 		            } else {
-	// 		                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-	// 		                $target.focus(); // Set focus again
-	// 		            };
-	// 		        });
-	// 		    };
-	// 		};
-	// 	});
 
 	// The remaining code is for the Plaudit intro animation. 
 	// Note: Passport essentially refreshes page through a redirect upon incorrect password input,
@@ -75,7 +35,7 @@ $(document).ready(function(){
   	// If no login errors displayed on page, okay to play intro animation
   	if (isEmpty($('#login-error'))) {
 
-		// Greensock intro animation
+		// GreenSock intro animation
 		var tl = new TimelineLite, 
 		plodetSplitText = new SplitText("#plodet", {type:"words,chars"}), 
 		words1 = plodetSplitText.chars;
