@@ -74,7 +74,7 @@ The log out function in the side nav returns the user to the landing page.
 ![](http://i.imgur.com/ZGfOS1s.png)
 
 ### Side Navigation
-![](http://i.imgur.com/Qd1heRA.png?1)
+![](http://i.imgur.com/CarLeh2.png?1)
 
 ### Profile Page (with user specific activity feed)
 ![](http://i.imgur.com/Ae1vxhz.png) 
@@ -93,8 +93,8 @@ The log out function in the side nav returns the user to the landing page.
 
 
 ### Mobile Versions
-![](http://i.imgur.com/7KTqqqu.png) ![](http://i.imgur.com/WwgZ5xh.png) ![](http://i.imgur.com/PJSFd2i.png)
-![](http://i.imgur.com/LAw0hbr.png) ![](http://i.imgur.com/3Cvu5y9.png) ![](http://i.imgur.com/8ZGCW7H.png)
+![](http://i.imgur.com/WwgZ5xh.png) ![](http://i.imgur.com/PJSFd2i.png) ![](http://i.imgur.com/LAw0hbr.png)
+![](http://i.imgur.com/3Cvu5y9.png) ![](http://i.imgur.com/8ZGCW7H.png) ![](http://i.imgur.com/YyhR6DR.png)
 
 ## Code Walkthrough
 Please refer to the repository files for coding samples; The sections are commented to indicate their functionality.
