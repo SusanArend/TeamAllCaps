@@ -49,11 +49,12 @@ module.exports = function(app) {
                         manager_id: data.manager_id
                     }
                 }).then(function(data) {
+                    console.log("testing");
                     var mailOptions = {
                         to: data.email,
                         subject: "A Plaudit Badge For Your Employee!",
                         text: "Hi " + data.name + "! One of your employees got a Plaudit Badge for their good work at the office.",
-                        html: "<body style='background-color: #ffda21; text-align: center; padding-bottom: 15px; padding-top: 15px; font-family: Georgia; font-style: normal; font-size: 1.6rem;'><p style='color: #fffbe4; font-style: italic; font-size: 2.6rem;'>Plaudit!</p><p style='color: #fffbe4;'>Hi, <b>" + newPassword + "!</b></p><p style='color: #fffbe4; font-size: 1.6rem;'>One of your employees received a Plaudit Badge for their awesome work. We thought you might like to know!</p><p><a href='https://plaudit.herokuapp.com/' target='blank' style='color: #00CB88; font-size: 1.3rem; font-style: italic;'>Log in to Plaudit to see details.</p></body>"
+                        html: "<body style='background-color: #ffda21; text-align: center; padding-bottom: 15px; padding-top: 15px; font-family: Georgia; font-style: normal; font-size: 1.6rem;'><p style='color: #fffbe4; font-style: italic; font-size: 2.6rem;'>Plaudit!</p><p style='color: #fffbe4;'>Hi, <b>" + data.name + "!</b></p><p style='color: #fffbe4; font-size: 1.6rem;'>One of your employees received a Plaudit Badge for their awesome work. We thought you might like to know!</p><p><a href='https://plaudit.herokuapp.com/' target='blank' style='color: #00CB88; font-size: 1.3rem; font-style: italic;'>Log in to Plaudit to see details.</p></body>"
                     };
                     smtpTransport.sendMail(mailOptions, function(error, response) {
                         if (error) {
