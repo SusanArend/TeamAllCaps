@@ -10,23 +10,26 @@ While the Plaudit! app has a bright and cheery theme by deisgn, styling can be c
 
 ## Screen Shots
 
-Landing Page
+### Landing Page
 ![](Insert Screen Grab) 
 
-Main Page (Activity Feed)
+### Main Page (Activity Feed)
 ![](Insert Screen Grab) 
 
-Profile Page (with user specific activity feed)
+### Profile Page (with user specific activity feed)
 ![](Insert Screen Grab) 
 
-Give a Badge Page
+### Give a Badge Page
 ![](Insert Screen Grab) 
 
-Frequently Asked Questions Page
+### Frequently Asked Questions Page
 ![](Insert Screen Grab)
 
-Email Notification (Desktop and Mobile)
-![](Insert Screen Grab) 
+### Email Notification
+![](http://i.imgur.com/oVxQrfE.png) 
+
+### Forgot Password Email
+![](http://i.imgur.com/cVSKVhW.png) 
 
 ## Getting Started and Prerequisites
 
@@ -58,6 +61,7 @@ Users will need Google Chrome web browser for testing the web page and Sublime (
 * CSS
 * Handlebars
 * HTML
+* GreenSock
 * Google Fonts
 * Javascript
 * jQuery
@@ -69,7 +73,7 @@ Download or clone the repository to your desktop.  Create a database in MySQL Wo
 
 Naviagate to the file folder that holds the Plaudit! files in the terminal.  Type "npm i --s".  Then run the server: "node server.js" 
 
-From there, navigate to localhost:8080 in your browser to open up the landing page of the website. Create an account based on one of the extablished seeds and log in.  Once logged in, you will be taken to the index.handlebars page were the main activitie feed is located.  You will also see a nav bar at the top of the page which includes both a search bar in the righthand corner and a hamburger menu in the left. 
+From there, navigate to localhost:8080 in your browser to open up the landing page of the website. Create an account based on one of the established seeds and log in.  Once logged in, you will be taken to the index.handlebars page were the main activitie feed is located.  You will also see a nav bar at the top of the page which includes both a search bar in the righthand corner and a hamburger menu in the left. 
 
 One can search for other users using the search bar.  It will take the user to that person's profile page.  The hamburger menu, once clicked, will trigger a side nav to slide out from the left side of the page.  Users can navigate to the main activity feed, their profile page, the give a badge page, or the frequently asked questions page.  Users can also log out from the side nav.
 
@@ -79,8 +83,10 @@ The Give a Badge page offers a brief form in which the user can enter the name o
 
 The FAQ page lists commonly asked questions and their corresponding answers in a collapsible format.
 
+The log out function in the side nav returns the user to the landing page.
 
-If you have any questions about how or why something works, feel free to contact a member of the [Project Team](https://github.com/SusanArend/TeamAllCaps) for details.
+
+If you have any questions about how or why something works, feel free to contact a member of the [Project Team](https://github.com/SusanArend/TeamAllCaps) for details!
 
 ## Authors
 * **Michelle Didier** [meeshyd](https://github.com/meeshyd)
