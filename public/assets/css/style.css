@@ -208,7 +208,7 @@ input[type=text], input[type=password], input[type=email], textarea.materialize-
     border-bottom: 1px solid #fffbe4;
 }
 /* label focus color */
-.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=textarea]:focus + label{
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label, .input-field input[type=textarea]:focus + label, textarea.materialize-textarea:focus:not([readonly]) + label {
     color: #fff8ca;
 }
 /* label underline focus color */
