@@ -43,7 +43,11 @@ $("#email-search").on("click", function(event) {
             $("#replace-name").empty().html("Welcome " + user.email + "! Please complete the sign-up process below.");
         } else if (data === "invalid email") {
             $("#replace-name").empty().html("You are not registered for Plaudit with this email. Please try again.");
-        };
+        }else if(data === "exist user"){
+				if(confirm("This account is already registered, please log in.")){
+					document.location.href="/";
+				};
+		}
 
     });
 
