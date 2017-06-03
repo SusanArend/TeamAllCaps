@@ -10,25 +10,25 @@ While the Plaudit! app has a bright and cheery theme by deisgn, styling can be c
 
 ## Screen Shots
 
-Landing Page
+### Landing Page
 ![](Insert Screen Grab) 
 
-Main Page (Activity Feed)
+### Main Page (Activity Feed)
 ![](Insert Screen Grab) 
 
-Profile Page (with user specific activity feed)
+### Profile Page (with user specific activity feed)
 ![](Insert Screen Grab) 
 
-Give a Badge Page
+### Give a Badge Page
 ![](Insert Screen Grab) 
 
-Frequently Asked Questions Page
+### Frequently Asked Questions Page
 ![](Insert Screen Grab)
 
-Email Notification
+### Email Notification
 ![](http://i.imgur.com/oVxQrfE.png) 
 
-Forgot Password Email
+### Forgot Password Email
 ![](http://i.imgur.com/cVSKVhW.png) 
 
 ## Getting Started and Prerequisites
