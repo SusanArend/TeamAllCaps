@@ -16,13 +16,6 @@ body {
   letter-spacing: 0.1em;
 }
 
-#greeting-page {
-  height: 150vh;
-}
-#newuser-page {
-  height: 100vh;
-}
-
 h1, p {
     color: #fffbe4;
 }
