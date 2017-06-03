@@ -8,6 +8,6 @@ module.exports =  function(app){
 		var hbsObject = {
 			user : req.user, //feed logged in user info into main.handlebars
 		}
-		res.render("faq", hbsObject);;
+		res.render("faq", hbsObject);
 	})
 }
