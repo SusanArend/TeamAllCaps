@@ -96,9 +96,9 @@ module.exports = function(app) {
                     if(data){
                     var mailOptions = {
                         to: email,
-                        subject: "Your Plaudit Password Reset Request",
+                        subject: "Your Plaudit Password Request",
                         text: "Here is your new Plaudit password: " + newPassword,
-                        html: "<body style='background-color: #ffe97c; text-align:center; padding-bottom: 15px; padding-top: 15px; color: #6DDDB8;'><h1 style='  font-family: 'Lobster', cursive;'><p>Plaudit!</h1></p><p>Here is your Plaudit password: </p><b><p>" + newPassword + "</b></p><p><a href='https://plaudit.herokuapp.com/' target='blank'>Log in to Plaudit now!</p></body>"
+                        html: "<body style='background-color: #ffda21; text-align: center; padding-bottom: 15px; padding-top: 15px; font-family: Georgia; font-style: normal; font-size: 1.6rem;'><p style='color: #fffbe4; font-style: italic; font-size: 2.6rem;'>Plaudit!</p><p style='color: #fffbe4;'>Here is your new Plaudit password: </p><b>" + newPassword + "</b></p><p><a href='https://plaudit.herokuapp.com/' target='blank' style='color: #00CB88; font-size: 1.3rem; font-style: italic;'>Log in to Plaudit</p></body>"
                     }
                     smtpTransport.sendMail(mailOptions, function(error, response){
                         if (error){
@@ -119,7 +119,7 @@ module.exports = function(app) {
                 res.send("Invalid email")
             };
         });    
-    });    
+    });   
 
     //If the user email is valid and the user hasn't registed before, 
     //user information will updated in employ_option table based on form information
