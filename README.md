@@ -65,7 +65,8 @@ The log out function in the side nav returns the user to the landing page.
 ## Application and Features Visual Tour
 
 ### Landing Page (New User)
-![](http://i.imgur.com/JdiUKca.png)  ![](http://i.imgur.com/AgCXZob.png)
+![](http://i.imgur.com/JdiUKca.png)  
+![](http://i.imgur.com/AgCXZob.png)
 
 ### Landing Page (Returning User)
 ![](http://i.imgur.com/GgjTBvP.png) 
