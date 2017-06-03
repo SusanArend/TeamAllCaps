@@ -4,7 +4,10 @@ var authentication = require("../config/authentication.js");
 module.exports =  function(app){
 	app.get("/faq", 
 	require('connect-ensure-login').ensureLoggedIn(),
-	function(req, res){
-		res.render("faq");
+	function(req, res){	
+	var hbsObject = {
+		user : req.user, //feed logged in user info into main.handlebars
+	}
+		res.render("faq", hbsObject);
 	})
 }
