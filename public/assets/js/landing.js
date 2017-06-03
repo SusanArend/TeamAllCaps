@@ -59,16 +59,15 @@ $("#email-search").on("click", function(event) {
 		};
 		$.post("/newuser/post", newuser, function(data){
 			if (data===true){
-				// alert("successfully regist, please log in");
-				if(confirm("successfully regist, please log in")){
+				if(confirm("Successfully registered, please log in.")){
 					document.location.href="/";
 				}
 			}else if(data === "exist user"){
-				if(confirm("you already registed before, please log in")){
+				if(confirm("This account is already registered, please log in.")){
 					document.location.href="/";
 				};
 			}else if(data === "invalid email"){
-				alert("invalid email, please regist again");
+				alert("Invalid email, please register again.");
 			};
 			$("#newuser-email").val("");
 			$("#pw-new").val("");
