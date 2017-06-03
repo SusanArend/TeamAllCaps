@@ -71,7 +71,10 @@ The log out function in the side nav returns the user to the landing page.
 ![](http://i.imgur.com/GgjTBvP.png) 
 
 ### Main Page (Activity Feed)
-![](http://i.imgur.com/ZGfOS1s.png) 
+![](http://i.imgur.com/ZGfOS1s.png)
+
+### Side Navigation
+![](http://i.imgur.com/Qd1heRA.png?1)
 
 ### Profile Page (with user specific activity feed)
 ![](http://i.imgur.com/Ae1vxhz.png) 
