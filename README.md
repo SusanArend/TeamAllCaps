@@ -66,11 +66,9 @@ The log out function in the side nav returns the user to the landing page.
 
 ### Landing Page (New User)
 ![](http://i.imgur.com/JdiUKca.png)  
-![](http://i.imgur.com/AgCXZob.png)
 
 ### Landing Page (Returning User)
 ![](http://i.imgur.com/GgjTBvP.png) 
-![](http://i.imgur.com/eO4ZqdN.png)
 
 ### Main Page (Activity Feed)
 ![](http://i.imgur.com/ZGfOS1s.png) 
@@ -89,6 +87,10 @@ The log out function in the side nav returns the user to the landing page.
 
 ### Forgot Password Email
 ![](http://i.imgur.com/gDwFH43.png) 
+
+
+### Mobile Versions
+![](http://i.imgur.com/7KTqqqu.png)
 
 ## Code Walkthrough
 Please refer to the repository files for coding samples; The sections are commented to indicate their functionality.
