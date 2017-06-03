@@ -309,18 +309,18 @@ footer.page-footer {
     left: 5px;
   }
 
-.input-field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  text-align: left;
-}
-.input-field input::-moz-placeholder { /* Firefox 19+ */
-  text-align: left;
-}
-.input-field input:-ms-input-placeholder { /* IE 10+ */
-  text-align: left;
-}
-.input-field input:-moz-placeholder { /* Firefox 18- */
-  text-align: left;
-}
+  .input-field input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    text-align: left;
+  }
+  .input-field input::-moz-placeholder { /* Firefox 19+ */
+    text-align: left;
+  }
+  .input-field input:-ms-input-placeholder { /* IE 10+ */
+    text-align: left;
+  }
+  .input-field input:-moz-placeholder { /* Firefox 18- */
+    text-align: left;
+  }
 }
 
 

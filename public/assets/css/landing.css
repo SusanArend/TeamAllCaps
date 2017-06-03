@@ -98,6 +98,7 @@ a:hover, a:active {
 /*MODAL*/
 .modal, .modal .modal-footer {
     background-color: #ffda21;
+    font-size: 18px;
 }
 
 .modal .modal-close {
@@ -107,6 +108,19 @@ a:hover, a:active {
 
 .modal .modal-close:hover {
   color: #fff;
+}
+
+#modal-text-row {
+  margin-top: 0;
+}
+
+#confirm {
+  height: 50px;
+  color: #00CB88;
+}
+
+#recover-pw {
+  margin: 0 auto;
 }
 
 /*-----------------*/
@@ -174,3 +188,13 @@ input[type=text], input[type=password], input[type=email] {
 :-moz-placeholder { /* Firefox 18- */
   color: #fdda29;
 }
+
+@media only screen and (max-width: 600px) {
+  .modal, .modal .modal-footer {
+      font-size: 12px;
+  }
+}
+
+
+
+
