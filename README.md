@@ -83,11 +83,11 @@ The log out function in the side nav returns the user to the landing page.
 ### Landing Page (New User)
 ![](http://i.imgur.com/JdiUKca.png)  
 
+### Landing Page (New User - ALTERNATE COLOR SCHEME)
+![](http://i.imgur.com/mmglk0Y.png)
+
 ### Landing Page (Returning User)
 ![](http://i.imgur.com/GgjTBvP.png) 
-
-### Landing Page (Returning User - ALTERNATE COLOR SCHEME)
-![](http://i.imgur.com/mmglk0Y.png)
 
 ### Main Page (Activity Feed)
 ![](http://i.imgur.com/ZGfOS1s.png)
