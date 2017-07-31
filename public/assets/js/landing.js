@@ -12,13 +12,12 @@ function updatePassword(email, password){
 	   	})
 };
 
-	$("#recover-pw").click(function() {
+	$("#recover-pw").click(function(event) {
+		event.preventDefault();
 	    var user ={email:$("#recover-email").val().trim()};
 	    $("#confirm").text("Sending E-mail ... Please wait");
 	    $.post("/sendemail",user,function(data){
 	    	if(data.status ==="sent"){
-	    	// if(data === "sent"){
-	    		// updatePassword(user);
 	    		$("#confirm").empty().html(
 	           		"Thank you. Your Plaudit account password has been emailed to "
 	           		+ user.email + "."

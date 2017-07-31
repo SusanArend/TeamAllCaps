@@ -1,11 +1,30 @@
 var db = require("../models");
-var authentication = require("../config/authentication.js");
+// var authentication = require("../config/authentication.js");
 var nodemailer = require("nodemailer");
+
+// Determine our connection
+// =============================================================|
+if (!process.env.PORT) {
+    var authentication = require("../config/authentication.js");
+} else {
+    console.log("Heroku connection");
+    var authentication = process.env
+};
+
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
-    auth: authentication
+    auth: {
+      user: authentication.user,
+      pass: authentication.pass
+    }
 });
+
+// var smtpTransport = nodemailer.createTransport({
+//     service: "gmail",
+//     host: "smtp.gmail.com",
+//     auth: authentication
+// });
 
 module.exports = function(app) {
     app.post("/badge/post",

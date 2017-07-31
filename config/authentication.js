@@ -1,6 +1,6 @@
 var authentication = {
     user: 'plauditapp@gmail.com',
-    pass: 'plauditapp2017!'
+    pass: 'teambooklove2017!'
 }
 
 module.exports = authentication;

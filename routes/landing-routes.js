@@ -3,11 +3,24 @@ var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
 var bcrypt = require('bcryptjs')
-var authentication = require("../config/authentication.js");
+// var authentication = require("../config/authentication.js");
+
+// Determine our connection
+// =============================================================|
+if (!process.env.PORT) {
+    var authentication = require("../config/authentication.js");
+} else {
+    console.log("Heroku connection");
+    var authentication = process.env
+};
+
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
-    auth: authentication
+    auth: {
+      user: authentication.user,
+      pass: authentication.pass
+    }
 });
 var randomstring = require("randomstring"); 
     
@@ -40,6 +53,18 @@ module.exports = function(app) {
         res.redirect('/');
     });
 
+
+function updatePassword(email, password){
+    console.log("email", email)
+    console.log("password", password)   
+    var dataObject = {email: email, password : password}
+    $.ajax({
+            method: "PUT",
+            url: "/api/updatePassword",
+            // dataType: "JSON",
+            data: dataObject
+        })
+};
 
     app.put('/api/updatePassword', function(req, res) {
         console.log("body", req.body.password);
@@ -147,7 +172,7 @@ module.exports = function(app) {
                         employBasicId :employ_id
                     }
                 }).then(function(data){
-                    if(!data){
+                    if(!data) {
                         db.employ_option.create({
                             employBasicId:employ_id,
                             password: hashedPassword,
@@ -155,7 +180,7 @@ module.exports = function(app) {
                         }).then(function() {
                             res.send(true);
                             });
-                    }else{
+                    } else {
                         res.send("exist user");
                     }
                 })
