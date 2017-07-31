@@ -11,6 +11,15 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+// Determine our connection
+// =============================================================
+if (PORT === 8080) {
+	var keys = require("./config/authentication.js");
+} else {
+	console.log("Heroku connection");
+	var keys = process.env
+};
+
 // *** Dependencies
 // =============================================================
 var bodyParser = require("body-parser");
