@@ -56,7 +56,12 @@ When giving a badge, a user can choose to award a co-worker a number of differen
 
 ## Getting Started and Prerequisites
 
-Clone or download the repository to your desktop.
+Log in as a guest user
+
+username: plauditapp@gmail.com
+password: guest
+
+Clone or download the repository to your desktop
 
 Users will need Google Chrome web browser for testing the application and Sublime (or another tool) for viewing/editing the code.  Users will also need to install the npm packages (provided in the package.json and listed above under "Technologies Used") via the terminal and use MySQL Workbench in order to establish a database.
 
