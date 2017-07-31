@@ -1,5 +1,4 @@
 var db = require("../models");
-// var authentication = require("../config/authentication.js");
 var nodemailer = require("nodemailer");
 
 // Determine our connection
@@ -19,12 +18,6 @@ var smtpTransport = nodemailer.createTransport({
       pass: authentication.pass
     }
 });
-
-// var smtpTransport = nodemailer.createTransport({
-//     service: "gmail",
-//     host: "smtp.gmail.com",
-//     auth: authentication
-// });
 
 module.exports = function(app) {
     app.post("/badge/post",

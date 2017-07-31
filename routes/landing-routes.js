@@ -3,7 +3,6 @@ var db = require("../models");
 var passport = require('passport');
 var nodemailer = require("nodemailer");
 var bcrypt = require('bcryptjs')
-// var authentication = require("../config/authentication.js");
 
 // Determine our connection
 // =============================================================|
