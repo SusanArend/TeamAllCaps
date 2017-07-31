@@ -15,21 +15,24 @@ function updatePassword(email, password){
 	$("#recover-pw").click(function(event) {
 		event.preventDefault();
 	    var user ={email:$("#recover-email").val().trim()};
-	    $("#confirm").text("Sending E-mail ... Please wait");
-	    $.post("/sendemail",user,function(data){
-	    	if(data.status ==="sent"){
+	    if (user.email === "plauditapp@gmail.com") {
+	    	$("#confirm").text("This feature is disabled. Your password is 'guest'. Please log in.");
+	    	console.log("This feature is disabled. Your password is 'guest'.");
+	    } else {
+	    $("#confirm").text("Sending email ... Please wait");
+	    $.post("/sendemail", user, function(data){
+	    	if (data.status === "sent") {
 	    		$("#confirm").empty().html(
 	           		"Thank you. Your Plaudit account password has been emailed to "
 	           		+ user.email + "."
 	           	);
 	           	console.log("passwordfirst", data.password);	
 	           	updatePassword(user.email, data.password);
-	    	}else if(data==="invalid email"){
-	    		alert("invalid email");
-	    	};
-	    });
-	    $("#recover-email").val("");
-	    $("#confirm").text("");
+	    	} else if (data === "invalid email") {
+	    		alert ("invalid email");
+	    		}
+	    	});
+	    };
 	});
 
 // Adding feedback message to front-end on "sign up" section.
